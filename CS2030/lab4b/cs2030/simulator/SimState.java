@@ -233,8 +233,8 @@ public class SimState {
     return server.getWaitingCustomer()
             .map(customer -> this.serveCustomer(time,
                     server.removeWaitingCustomer(), customer))
-            .orElse(new SimState(this.shop.updateServer(server.makeIdle())
-            ,this.stats ,this.events, this.eventLog));
+            .orElse(new SimState(this.shop.updateServer(server.makeIdle()), 
+            this.stats, this.events, this.eventLog));
   }
 
   /**

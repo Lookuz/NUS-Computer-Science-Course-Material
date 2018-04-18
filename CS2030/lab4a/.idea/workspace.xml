@@ -44,8 +44,8 @@
       <file leaf-file-name="SimState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cs2030/simulator/SimState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="228" column="56" lean-forward="true" selection-start-line="228" selection-start-column="56" selection-end-line="228" selection-end-column="56" />
+            <state relative-caret-position="-3001">
+              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding>
                 <element signature="e#1750#1757#0" expanded="true" />
                 <element signature="e#9108#9109#0" expanded="true" />
@@ -351,7 +351,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -488,12 +488,12 @@
       <updated>1522132353377</updated>
       <workItem from="1522132355132" duration="21208000" />
       <workItem from="1522202748334" duration="9068000" />
-      <workItem from="1522303666861" duration="9812000" />
+      <workItem from="1522303666861" duration="9406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40088000" />
+    <option name="totallyTimeSpent" value="39682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="1" width="1440" height="900" extended-state="6" />
@@ -820,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cs2030/simulator/SimState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="228" column="56" lean-forward="true" selection-start-line="228" selection-start-column="56" selection-end-line="228" selection-end-column="56" />
+        <state relative-caret-position="-3001">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           <folding>
             <element signature="e#1750#1757#0" expanded="true" />
             <element signature="e#9108#9109#0" expanded="true" />

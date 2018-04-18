@@ -34,13 +34,13 @@ public class SimState {
     this.events = new PriorityQueue<Event>();
   }
 
-    /**
-     * Secondary constructor method that initializes a SimState class
-     * using separate fields.
-     * @param shop Shop Object to be assigned to this SimState
-     * @param statistics Statistics Object to be assigned to this SimState
-     * @param priorityQueue Queue of Events to be assigned to this SimState
-     */
+  /**
+   * Secondary constructor method that initializes a SimState class
+   * using separate fields.
+   * @param shop Shop Object to be assigned to this SimState
+   * @param statistics Statistics Object to be assigned to this SimState
+   * @param priorityQueue Queue of Events to be assigned to this SimState
+   */
   private SimState(Shop shop, Statistics statistics,
                   PriorityQueue<Event> priorityQueue) {
     this.shop = new Shop(shop.getServers());
@@ -179,9 +179,9 @@ public class SimState {
    */
   public SimState simulateDone(double time, Server server, Customer customer) {
     SimState newState = this.customerDone(time, server, customer);
-      Optional<Server> newServer = newState.shop.getServers().stream()
-              .filter(x -> x.equals(server))
-              .findFirst();
+    Optional<Server> newServer = newState.shop.getServers().stream()
+        .filter(x -> x.equals(server))
+        .findFirst();
     return newState.serveNextOrIdle(time, newServer.get());
   }
 
@@ -195,7 +195,7 @@ public class SimState {
    */
   private SimState serveNextOrIdle(double time, Server server) {
     Optional<Customer> c = server.getWaitingCustomer();
-    return (c.isPresent())?
+    return (c.isPresent()) ?
             this.serveCustomer(time, server.removeWaitingCustomer(), c.get()) :
             new SimState(this.shop.updateServer(server.makeIdle()),
                     this.stats, this.events);

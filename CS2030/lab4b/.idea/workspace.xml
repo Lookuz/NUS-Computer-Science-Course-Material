@@ -42,8 +42,8 @@
       <file leaf-file-name="LabFourB.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LabFourB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="23" selection-end-column="61" />
+            <state relative-caret-position="391">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,10 +123,10 @@
         <option value="$PROJECT_DIR$/LabFourA.java" />
         <option value="$PROJECT_DIR$/cs2030/simulator/Server.java" />
         <option value="$PROJECT_DIR$/cs2030/simulator/Shop.java" />
+        <option value="$PROJECT_DIR$/LabFourB.java" />
         <option value="$PROJECT_DIR$/cs2030/util/PriorityQueue.java" />
         <option value="$PROJECT_DIR$/cs2030/simulator/Simulator.java" />
         <option value="$PROJECT_DIR$/cs2030/simulator/SimState.java" />
-        <option value="$PROJECT_DIR$/LabFourB.java" />
       </list>
     </option>
   </component>
@@ -307,12 +307,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522742495245</updated>
       <workItem from="1522742498708" duration="22545000" />
-      <workItem from="1523004937558" duration="13187000" />
+      <workItem from="1523004937558" duration="12720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35732000" />
+    <option name="totallyTimeSpent" value="35265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -531,8 +531,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LabFourB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="80" lean-forward="true" selection-start-line="22" selection-start-column="80" selection-end-line="23" selection-end-column="61" />
+        <state relative-caret-position="391">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

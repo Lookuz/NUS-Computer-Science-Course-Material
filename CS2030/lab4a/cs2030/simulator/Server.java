@@ -75,7 +75,7 @@ class Server implements Comparable<Server> {
    * @return customer waiting for given server.
    */
   public Optional<Customer> getWaitingCustomer() {
-    return (this.customerWaiting())? this.waitingCustomer : Optional.empty();
+    return (this.customerWaiting()) ? this.waitingCustomer : Optional.empty();
   }
 
   /**
