@@ -3,7 +3,6 @@ import java.time.Instant;
 import java.util.Random;
 import java.util.function.Supplier;
 
-
 /**
  * LabFive is the main driver class for testing matrix multiplication.
  * Usage: java LabFive n
@@ -27,7 +26,7 @@ class LabFive {
     Matrix matrixOne = Matrix.generate(dimension, () -> random.nextDouble());
     Matrix matrixTwo = Matrix.generate(dimension, () -> random.nextDouble());
 
-    Matrix result1 = Matrix.multiplyNonRecursively(matrixOne, matrixTwo);
+    Matrix result1 = Matrix.multiplyRecursively(matrixOne, matrixTwo);
     Matrix result2 = Matrix.multiplyParallely(matrixOne, matrixTwo);
     boolean match = Matrix.equals(result1, result2);
     if (!match) {

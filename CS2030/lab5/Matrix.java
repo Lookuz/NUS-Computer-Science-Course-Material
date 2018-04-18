@@ -13,7 +13,7 @@ class Matrix {
    */
   int dimension;
 
-  private static final int THRESHOLD = 64;
+  private static final int THRESHOLD = 128;
 
   /**
    * Checks if two matrices are equals.
@@ -64,24 +64,17 @@ class Matrix {
    * Method that adds 2 Matrices of the same size together to this matrix.
    * @param m1 First Matrix for Addition.
    * @param m2 Second Matrix for Addition.
-//   * @param row Starting row of the result matrix.
+   * @param row Starting row of the result matrix.
    * @param col Starting column of the result matrix.
    * @param dimension Dimension of the adding matrices.
    * @return The result matrix with the added values.
    */
   public Matrix add(Matrix m1, Matrix m2, int row, int col, int dimension) {
-//    System.out.println("Total dimension: " + dimension + " result dimension :" +
-//            " " + this.dimension + " Operand dimension: " + row + ", " + col);
-//    for (int i = 0; i < dimension; i++)
-//      for (int j = 0; j < dimension; j++) {
-//        this.m[i + row][j + col] = m1.m[i][j] + m2.m[i][j];
-//      }
     for (int i = 0; i < dimension; i++) {
       double[] m1m = m1.m[i];
       double[] m2m = m2.m[i];
       double[] r1m = this.m[i + row];
       for (int j = 0; j < dimension; j++) {
-        // result.m[i][j] = m1.m[i][j] + m2.m[i][j];
         r1m[j + col] = m1m[j] + m2m[j];
       }
     }
@@ -140,7 +133,7 @@ class Matrix {
     }
     return result;
   }
-  
+
   /**
    * Multiple two matrices non-recursively.
    * @param m1 The matrix to multiply with.
@@ -211,7 +204,7 @@ class Matrix {
       double[] m2m = a22b21.m[i];
       double[] r1m = result.m[i + size];
       for (int j = 0; j < size; j++) {
-          r1m[j] = m1m[j] + m2m[j];
+        r1m[j] = m1m[j] + m2m[j];
       }
     }
 
@@ -245,13 +238,12 @@ class Matrix {
   /**
    * Multiple two matrices recursively and parallely with
    * divide-and-conquer algorithm.
-   * TODO: call the non-parallel version in this skeleton code.
    * @param m1 The matrix to multiply with.
    * @param m2 The matrix to multiply with.
    * @return The resulting matrix m1 * m2
    */
   public static Matrix multiplyParallely(Matrix m1, Matrix m2) {
     return new MatrixMultiplication(m1, m2, 0, 0, 0, 0, m1.dimension)
-            .compute();
+      .compute();
   }
 }
