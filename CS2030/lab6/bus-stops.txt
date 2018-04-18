@@ -1,0 +1,4857 @@
+60201,18 Woodsville
+58301,3M Bldg
+26161,3NC S'pore
+95051,3rd Cargo Agents
+46699,888 Plaza
+67649,AFT ANCHORVALE ST
+67701,AFT BLK 467B
+43452,AFT BT BATOK WEST AVE 3
+21261,AFT CHIN BEE AVE
+43891,AFT DAIRY FARM CRES
+49099,AFT KRANJI WATER RECLAMATION PLANT
+81191,AFT OLD AIRPORT RD
+68159,AFT SHELL AVIATION
+21359,AFT ST KINETICS
+75401,AFT TAMPINES AVE 1
+75419,AFT TAMPINES AVE 5
+21471,AFT TUKANG INNOVATION DR
+71121,AFT UBI RD 3
+55301,AMK Police Div HQ
+44891,APSN
+19089,Acs Independent
+46779,Admiralty Stn
+46399,Aft 888 Plaza
+13091,Aft AA Ctr
+66451,Aft AMK Ind Pk 2
+68039,Aft Abundant Grace Ch
+58159,Aft Admiral Hill
+71069,Aft Airport Rd
+96361,Aft Akzonobel
+14189,Aft Alexandra Rd
+81011,Aft Aljunied Stn
+07319,Aft Allenby Rd
+32039,Aft Ama Keng Rd
+58089,Aft Andrews Ave
+53099,Aft Ang Mo Kio Ave 1
+54101,Aft Ang Mo Kio Ave 10
+64121,Aft Ang Mo Kio Ave 5
+55211,Aft Ang Mo Kio Fire Stn
+54391,Aft Ang Mo Kio Int
+18141,Aft Anglo-Chinese JC
+43089,Aft Assumption Eng Sch
+58131,Aft Assyafaah Mque
+47061,Aft Attap Valley Rd
+68091,Aft Baker St
+98319,Aft Ballota Pk
+61049,Aft Bartley Rd
+62011,Aft Bartley Rd
+01631,Aft Beach Rd
+84481,Aft Bedok Ind Pk C
+84489,Aft Bedok Ind Pk C
+84271,Aft Bedok Ind Pk E
+85029,Aft Bedok Meth Ch
+84279,Aft Bedok Nth St 5
+85101,Aft Bedok Rd
+84121,Aft Bedok Sth Ave 1
+94049,Aft Bedok Sth Ave 3
+67019,Aft Begonia Rd
+23039,Aft Benoi Flyover
+23241,Aft Benoi Rd
+23471,Aft Benoi Rd
+24639,Aft Benoi Rd
+23021,Aft Benoi Sector
+83181,Aft Bethesda Frankel Ch
+70069,Aft Bidadari Pk Dr
+52019,Aft Bishan Rd
+53119,Aft Bishan St 21
+10041,Aft Blair Rd
+46709,Aft Blk 1
+84671,Aft Blk 156
+78191,Aft Blk 182
+52081,Aft Blk 195
+44391,Aft Blk 202
+44579,Aft Blk 272
+54019,Aft Blk 304
+46359,Aft Blk 336
+46349,Aft Blk 353
+70049,Aft Blk 4
+14351,Aft Blk 48
+54509,Aft Blk 5000
+77201,Aft Blk 601
+28039,Aft Boon Lay Sub Stn
+66011,Aft Braddell Rd
+42199,Aft Bt Batok East Ave 6
+28111,Aft Bt Batok Rd
+43779,Aft Bt Batok West Ave 2
+43461,Aft Bt Batok West Ave 5
+44161,Aft Bt Batok West Ave 5
+44179,Aft Bt Batok West Ave 5
+10339,Aft Bt Merah Ctrl
+44031,Aft Bt Panjang Stn
+43019,Aft Bt Timah Fire Stn
+42149,Aft Bt Timah Rd
+67459,Aft Buangkok Dr
+64171,Aft Buangkok East Dr
+22059,Aft Buroh St
+11041,Aft C'wealth Dr
+92199,Aft CP C4
+54491,Aft CTE
+52249,Aft Caldecott Stn
+58029,Aft Canberra Rd
+70029,Aft Canossa Convent Pr
+03111,Aft Capital Twr
+95141,Aft Cargo Bldg D
+83279,Aft Carmen St
+43121,Aft Cashew Terr
+11159,Aft Ch Of Our Saviour
+84579,Aft Chai Chee St
+95019,Aft Changi Airport PTB2
+95169,Aft Changi Ferry Rd
+96259,Aft Changi General Hosp
+99041,Aft Changi Golf Course
+97151,Aft Changi Nth St 2
+83149,Aft Changi Rd
+66181,Aft Chartwell Rd
+80259,Aft Chen Li Presby Ch
+44351,Aft Chestnut Ave
+04159,Aft Chijmes
+31071,Aft Chinese Cemy Path 11
+31201,Aft Chinese Cemy Path 13
+59139,Aft Chong Pang CC
+31059,Aft Chr Cemy Path 3
+31049,Aft Chr Cemy Path 9
+66129,Aft Chuan Gdn
+42179,Aft Chun Tin Rd
+04168,Aft City Hall Stn Exit B
+17091,Aft Clementi Ave 1
+16089,Aft Clementi Rd
+17351,Aft Clementi Rd
+17139,Aft Clementi Swim Cplx
+93101,Aft Coldstream Ave
+97321,Aft Compass Green
+66191,Aft Corfe Pl
+11279,Aft Coronation Rd West
+21771,Aft Corporation Dr
+21029,Aft Corporation Pl
+21619,Aft Corporation Rd
+05421,Aft Craig Rd
+99029,Aft Cranwell Rd
+99081,Aft Cranwell Rd
+42111,Aft Ct Bt Timah
+09139,Aft Cuscaden Rd
+44369,Aft Dairy Farm Rd
+10299,Aft Dawson Rd
+67029,Aft Dedap Rd
+64209,Aft Defu Ave 1
+64219,Aft Defu Ave 2
+71191,Aft Defu Lane 12
+08058,Aft Dhoby Ghaut Stn
+17099,Aft Dover Rd
+92179,Aft Duku Rd
+93051,Aft Dunbar Wk
+40099,Aft Dunkirk Ave
+82081,Aft Dunman Rd
+58061,Aft Durban Rd
+94099,Aft E.C. Sea Sports Club
+13079,Aft ERC Inst
+83301,Aft East Coast Rd
+11271,Aft East Sussex Lane
+93119,Aft Elite Pk Ave
+63139,Aft En-Naeem Mque
+42241,Aft Eng Kong Pl
+98069,Aft Engine Test Facility
+11231,Aft Estoril Mans
+22309,Aft Fan Yoong Rd
+23159,Aft Fifth Lok Yang Rd
+55339,Aft Florissa Pk
+22439,Aft Four Leaves
+23119,Aft Fourth Lok Yang Rd
+83199,Aft Frankel Dr
+83209,Aft Frankel Terr
+06069,Aft Furama RiverFront
+46489,Aft Gambas Ave
+47621,Aft Gambas Ave
+03349,Aft Gdns by the Bay
+70311,Aft Genting Lane
+80119,Aft Geylang Rd
+80309,Aft Geylang West CC
+50321,Aft Gloucester Rd
+54251,Aft Grandeur 8
+64151,Aft Greenwich Dr
+12131,Aft Grove Ave
+23351,Aft Gul Ave
+24089,Aft Gul Ave
+24209,Aft Gul Lane
+24229,Aft Gul St 3
+23221,Aft Gul Way
+24299,Aft Gul Way
+30089,Aft Hai Inn See Tp
+20239,Aft Hasanah Mque
+08019,Aft Haw Par Glass Twr
+58451,Aft Heavy Veh Pk
+14209,Aft Hewlett Packard
+43279,Aft Hillview Stn
+58169,Aft HomeTeamNS Sembawang Resort
+28159,Aft Hong Kah Circle
+28169,Aft Hong Kah Flyover
+44101,Aft Hong San Terr
+10017,Aft Hosp Dr
+64201,Aft Hougang Ave 3
+64211,Aft Hougang Ave 7
+28011,Aft ITE West (Clementi)
+60061,Aft Infineon
+58479,Aft Innova Pr Sch
+22169,Aft Intl Rd
+82089,Aft Ipoh Lane
+50169,Aft Irrawaddy Rd
+83129,Aft Ji Xiang Ct
+70151,Aft Jln Anggerek
+33031,Aft Jln Bahtera
+92209,Aft Jln Baiduri
+58079,Aft Jln Basong
+98081,Aft Jln Batalong
+70139,Aft Jln Belangkas
+97031,Aft Jln Bena
+31179,Aft Jln Berseri
+10049,Aft Jln Bt Merah
+93059,Aft Jln Buloh Perindu
+45099,Aft Jln Bumbong
+21141,Aft Jln Buroh
+21291,Aft Jln Buroh
+22141,Aft Jln Buroh
+22399,Aft Jln Buroh
+29021,Aft Jln Buroh
+85051,Aft Jln Chempaka Kuning
+62051,Aft Jln Chermat
+72039,Aft Jln Damai
+42239,Aft Jln Jurong Kechil
+68019,Aft Jln Kayu
+57139,Aft Jln Kemuning
+49111,Aft Jln Lam Huat
+97109,Aft Jln Mariam
+70121,Aft Jln Muhibbah
+41089,Aft Jln Naga Sari
+83371,Aft Jln Paras
+21309,Aft Jln Pesawat
+43291,Aft Jln Remaja
+74031,Aft Jln Sam Kong Si
+22091,Aft Jln Samulun
+67061,Aft Jln Selaseh
+64141,Aft Jln Telawi
+21041,Aft Jln Terusan
+48041,Aft Jln Ulu Sembawang
+83139,Aft Joo Chiat Pl
+83291,Aft Joo Chiat Pl
+24149,Aft Joo Koon Cres
+24159,Aft Joo Koon Rd
+24489,Aft Joo Koon Way
+70051,Aft Joo Seng Rd
+70059,Aft Joo Seng Rd
+21011,Aft Jurong Lake
+21111,Aft Jurong Pier Rd
+22079,Aft Jurong Pier Rd
+21139,Aft Jurong Port Rd
+20061,Aft Jurong Town Hall Rd
+28379,Aft Jurong West St 51
+22479,Aft Jurong West St 93
+44069,Aft KJE Slip Rd
+55079,Aft KLC Intl Inst
+07369,Aft Kallang Bahru
+07371,Aft Kallang Rd
+70359,Aft Kallang Sector
+70321,Aft Kallang Way 1
+70329,Aft Kallang Way 2
+70319,Aft Kallang Way 4
+92161,Aft Katong PO
+07249,Aft Kempas Rd
+80011,Aft Kg Bugis
+83029,Aft Kg Eunos
+41019,Aft Kheam Hock Rd
+23059,Aft Kian Teck Rd
+23061,Aft Kian Teck Rd
+23161,Aft Kian Teck Rd
+23181,Aft Kian Teck Rd
+71051,Aft Kim Chuan Rd
+07331,Aft King George's Ave
+82141,Aft Koon Seng Rd
+49081,Aft Kranji Cres
+49179,Aft Kranji Cres
+49189,Aft Kranji Rd
+05259,Aft Kreta Ayer Rd
+49059,Aft LCS Optiroc Pte Ltd
+32049,Aft LP 161
+45101,Aft LP 234
+32111,Aft LP 93
+32119,Aft LP 96
+42131,Aft Lantana Ave
+55271,Aft Lentor Flyover
+55331,Aft Lentor Gr
+55371,Aft Lentor St
+33049,Aft Lim Chu Kang Lane 3
+33059,Aft Lim Chu Kang Lane 3A
+34019,Aft Lim Chu Kang Lane 4
+34031,Aft Lim Chu Kang Lane 6
+34049,Aft Lim Chu Kang Lane 8
+34051,Aft Lim Chu Kang Lane 8
+31151,Aft Lim Chu Kang Rd
+34109,Aft Lim Chu Kang Rd
+22161,Aft Lok Yang Way
+80051,Aft Lor 1 Geylang
+82069,Aft Lor 106 Changi
+80251,Aft Lor 14 Geylang
+81029,Aft Lor 28 Geylang
+81049,Aft Lor 34 Geylang
+27179,Aft Lor Danau
+83141,Aft Lor G Telok Kurau
+83299,Aft Lor G Telok Kurau
+83131,Aft Lor H Telok Kurau
+83319,Aft Lor J Telok Kurau
+92201,Aft Lor M Telok Kurau
+83311,Aft Lor Nangka
+15079,Aft Lor Sarhad
+67571,Aft Lor Tanggam
+41159,Aft Lornie Wk
+97099,Aft Loyang Ave
+78099,Aft Loyang Gdns
+98059,Aft Loyang Way
+98199,Aft Loyang Way
+98139,Aft Loyang Way 1
+66061,Aft Lynwood Gr
+40029,Aft Makepeace Rd
+48069,Aft Mandai Ave
+45069,Aft Mandai Est
+48021,Aft Mandai Lake Rd
+45079,Aft Mandai Rd
+48111,Aft Mandai Rd
+42021,Aft Maple Ave
+10321,Aft Margaret Dr
+10461,Aft Margaret Dr
+03339,Aft Marina Gdns Dr
+46131,Aft Marsiling Lane
+48101,Aft Meng Suan Rd
+70231,Aft Merpati Rd
+13021,Aft Min Of Foreign Affairs
+60181,Aft Moonstone Lane
+12139,Aft Mt Sinai Lane
+52039,Aft Muhajirin Mque
+56201,Aft Munshi Abdullah Ave
+32101,Aft Murai Farmway
+31211,Aft Muslim Cemy Path 17
+17129,Aft NUS High Sch
+31011,Aft Nanyang Ave
+53209,Aft Nea Reg Off
+33029,Aft Neo Tiew Rd
+49249,Aft Neo Tiew Rd
+22219,Aft Neythal Rd
+24621,Aft Ocean Tanker
+43021,Aft Old Jurong Rd
+34101,Aft Old Lim Chu Kang Rd
+99071,Aft Old Pier Rd
+99079,Aft Old Pier Rd
+64189,Aft Old Tampines Rd
+28701,Aft Old Toh Tuck Rd
+56079,Aft Old Upp Thomson Rd
+13181,Aft One Tree Hill
+13199,Aft Orchard Blvd
+43459,Aft PIE
+40021,Aft POSBank
+15041,Aft PSA Bldg
+58209,Aft Pakistan Rd
+16081,Aft Palm Green Condo
+20261,Aft Pandan Gdns
+29069,Aft Pandan Rd
+12041,Aft Pandan Valley
+94041,Aft Parbury Ave
+15201,Aft Pasir Panjang Stn
+77031,Aft Pasir Ris Ctrl
+77081,Aft Pasir Ris Dr 3
+77371,Aft Pasir Ris Dr 3
+98031,Aft Pasir Ris Dr 3
+77279,Aft Pasir Ris Ind Dr 1
+77109,Aft Pasir Ris Rd
+77321,Aft Pasir Ris St 53
+77271,Aft Pasir Ris St 72
+77119,Aft Pasir Ris Way
+62049,Aft Paya Lebar Cres
+71011,Aft Paya Lebar Rd
+70301,Aft Paya Lebar St
+50209,Aft Pegu Rd
+11211,Aft Peirce Rd
+29031,Aft Penjuru Pl
+21059,Aft Penjuru Rd
+83099,Aft Perpetual Succour Ch
+44201,Aft Petir Stn
+23281,Aft Pioneer Rd
+23341,Aft Pioneer Rd
+25399,Aft Pioneer Rd
+25449,Aft Pioneer Rd
+22221,Aft Pioneer Rd Nth
+23501,Aft Pioneer Rd Nth
+24431,Aft Pioneer Sector 2
+04029,Aft Prinsep Link
+65219,Aft Punggol Ctrl
+65101,Aft Punggol Dr
+65489,Aft Punggol Dr
+65529,Aft Punggol Field
+65199,Aft Punggol Rd
+65209,Aft Punggol Rd
+67721,Aft Punggol Rd
+82091,Aft Queen Of Peace Ch
+58201,Aft Queen'S Ave
+11021,Aft Queenstown NPC HQ
+70079,Aft Regent Motors
+04311,Aft River Valley Rd
+46139,Aft Riverside Rd
+13041,Aft Rochalie Dr
+62019,Aft Rochdale Rd
+28261,Aft S'pore Science Ctr
+48129,Aft S'pore Zoo
+41151,Aft SICC
+55281,Aft SLE
+56089,Aft SLE
+49121,Aft SMRT Buses Kranji Depot
+47151,Aft Scania S'Pore
+99019,Aft Sch Of Commando
+66459,Aft Seagate
+23179,Aft Second Lok Yang Rd
+68161,Aft Seletar A'Space Lane
+68089,Aft Seletar A'Space Rise
+68119,Aft Seletar Camp G
+67039,Aft Seletar Rd
+57051,Aft Sembawang Air Base
+58019,Aft Sembawang Shop Ctr
+67461,Aft Sengkang East Ave
+67739,Aft Sengkang East Dr
+67659,Aft Sengkang West Rd
+94029,Aft Sennet Rd
+47101,Aft Senoko Ave
+47081,Aft Senoko Cres
+47099,Aft Senoko Cres
+47089,Aft Senoko Dr
+47119,Aft Senoko Way
+63189,Aft Serangoon Gdn Way
+63191,Aft Serangoon Nth Ave 1
+63199,Aft Serangoon Nth Ave 1
+32089,Aft Sg Gedong Camp
+49051,Aft Sg Kadut Eating Hse
+59019,Aft Sg Seletar Bridge
+03219,Aft Shenton Way
+23209,Aft Shimano Pte Ltd
+22401,Aft Shipyard Rd
+23251,Aft Shipyard Rd
+83179,Aft Siglap Dr
+93069,Aft Siglap Rd
+96019,Aft Simei Ave
+80049,Aft Sims Way
+62111,Aft Sommerville Rd
+22281,Aft Soon Lee Rd
+56099,Aft Springleaf Rd
+40229,Aft Stevens Stn
+15221,Aft Sth Buona Vista Rd
+83309,Aft Still Lane
+96341,Aft Sunny Metal & Engrg
+55089,Aft Sunrise Gdns
+62119,Aft Sunshine Lodge
+83271,Aft Swan Lake Ave
+42029,Aft Swiss Club Rd
+64191,Aft TPE
+65439,Aft TPE
+68059,Aft TPE
+75359,Aft TPE
+77339,Aft TPE
+56061,Aft Tagore Dr
+70281,Aft Tai Seng Stn
+60211,Aft Tai Thong Cres
+75371,Aft Tampines Ave 5
+75171,Aft Tampines Ave 9
+75291,Aft Tampines Ave 9
+76551,Aft Tampines Ctrl 3
+74029,Aft Tampines Ind Ave 4
+73039,Aft Tampines Ind Ave 5
+74011,Aft Tampines Ind Ave 5
+11281,Aft Tan Boon Chong Ave
+40239,Aft Tanglin CC
+10479,Aft Tanglin Rd
+29159,Aft Teban Gdns Cres
+20179,Aft Teban Gdns Rd
+14051,Aft Telok Blangah Hts
+14331,Aft Telok Blangah St 32
+82159,Aft Tembeling Rd
+82011,Aft Tg Katong Cplx
+91079,Aft Tg Katong Rd
+22041,Aft Tg Kling Rd
+41139,Aft The Japanese Assn
+18249,Aft The Pasteur
+57029,Aft The Springside
+23109,Aft Third Lok Yang Rd
+10359,Aft Tiong Bahru Rd
+97119,Aft Toh Cl
+28019,Aft Toh Tuck Ave
+28021,Aft Toh Tuck Ave
+42299,Aft Toh Tuck Cres
+28189,Aft Toh Tuck Link
+42209,Aft Toh Tuck Rise
+42229,Aft Toh Tuck Terr
+09159,Aft Tomlinson Rd
+32051,Aft Track 11
+32071,Aft Track 13
+30051,Aft Track 14
+28129,Aft Track 18
+28139,Aft Track 22
+28141,Aft Track 22
+65129,Aft Track 22
+31131,Aft Track 33
+66131,Aft Trinity Meth Ch
+25111,Aft Tuas Ave 10
+26069,Aft Tuas Ave 16
+25219,Aft Tuas Ave 2
+25371,Aft Tuas Ave 4
+24529,Aft Tuas Ave 5
+25129,Aft Tuas Ave 6
+25379,Aft Tuas Ave 6
+25091,Aft Tuas Ave 7
+25121,Aft Tuas Ave 8
+25389,Aft Tuas Ave 8
+26131,Aft Tuas Cres
+24509,Aft Tuas Flyover
+24691,Aft Tuas Rd
+25201,Aft Tuas Rd
+26241,Aft Tuas Sth Ave 2
+26259,Aft Tuas Sth Ave 2
+26261,Aft Tuas Sth Ave 4
+26279,Aft Tuas Sth Ave 4
+26311,Aft Tuas Sth Ave 6
+26461,Aft Tuas Sth Ave 8
+26431,Aft Tuas Sth Ave 9
+25411,Aft Tuas Ter
+26419,Aft Tuas View Circuit
+26399,Aft Tuas View Cres
+25461,Aft Tuas West Ave
+25249,Aft Tuas West Rd
+25451,Aft Tuas West St
+99099,Aft Turnhouse Rd
+13211,Aft Unity St
+96091,Aft Upp Changi Rd
+96099,Aft Upp Changi Rd East
+97141,Aft Upp Changi Rd Nth
+62061,Aft Upp Paya Lebar Rd
+63151,Aft Upp S'Goon Rd
+63019,Aft Upp S'Goon Shop Ctr
+62109,Aft Upp Serangoon Rd
+57149,Aft Upp Thomson Rd
+97149,Aft VICOM
+47039,Aft View Rd
+46019,Aft W'Lands Ctr Rd
+46029,Aft W'Lands Ind Pk D St 2
+46389,Aft W'Lands Ind Pk D St 2
+47051,Aft W'Lands Ind Pk E4
+46729,Aft W'Lands Ind Pk E7
+46801,Aft W'Lands Mart
+45141,Aft W'Lands Rd
+45221,Aft W'Lands Rd
+47019,Aft W'Lands Waterfront Pk
+40251,Aft Wallace Way
+84639,Aft Waterfront Waves
+07569,Aft Waterloo St
+58191,Aft Wellington Rd
+68129,Aft West Camp Rd
+17081,Aft West Coast Highway
+17369,Aft West Coast Link
+27449,Aft Westwood Ave
+18199,Aft Whitchurch Rd
+53069,Aft Windsor Pk Rd
+62121,Aft Wolskel Rd
+46481,Aft Woodlands Ind Pk E6
+61021,Aft Woodleigh Pk
+45011,Aft Yew Tee Flyover
+45019,Aft Yew Tee Flyover
+55241,Aft Yio Chu Kang Rd
+56039,Aft Yio Chu Kang Rd
+66149,Aft Yio Chu Kang Rd
+66479,Aft Yio Chu Kang Rd
+67081,Aft Yio Chu Kang Rd
+59029,Aft Yishun Ave 1
+59479,Aft Yishun Ave 6
+68179,Aft Yishun Ave 8
+21019,Aft Yuan Ching Rd
+21779,Aft Yuan Ching Rd
+13141,Aft Zion Full Gospel Ch
+65549,After Sumang Lane
+97301,Agility
+53351,Ai Tong Sch
+71049,Air Force Museum
+73049,Air Force Sch
+95039,Airfreight Ter Bldg
+95151,Airport Police Stn
+14271,Al-Amin Mque
+11511,Alexandra Hosp
+15051,Alexandra Pt
+63289,Aljunied CC
+70039,Aljunied Pk
+81089,Aljunied Stn
+28671,Alliance Bldg
+92241,Amber Gdn
+21519,Amoy Canning
+53181,Amtech Bldg
+65809,Anchor Green Pr Sch
+11521,Anchorpoint
+55209,Anderson JC
+55151,Ang Mo Kio Comm Hosp
+55009,Ang Mo Kio Depot
+54009,Ang Mo Kio Int
+54229,Ang Mo Kio Pr Sch
+54261,Ang Mo Kio Stn
+54399,Ang Mo Kio Stn
+40069,Anglo-Chinese Sch
+76291,Angsana Pr Sch
+16111,Aries
+04142,Armenian Ch
+30039,Army Logistics Base
+49039,Asia Rattan Trading Co
+25339,Asia Steel Welded Mesh
+25239,Asia-Pacific Brewery
+24249,Asiatic Agricultural Ind
+25191,Asiatic Engrg
+70291,Asiawide Ind Bldg
+43099,Assumption Pathway Sch
+21279,Assyakirin Mque
+65181,Atf Punggol Ctrl
+23101,Auto World Care
+43209,Autobacs
+71131,Automobile Megamart
+21549,Automotive Technology
+42139,Ave Villa
+98301,Avila Gdns
+18099,Ayer Rajah Bus Pk
+20181,Ayer Rajah CC
+18129,Ayer Rajah Ind Est
+19061,Ayer Rajah Telecoms
+71169,Aztech Bldg
+34041,B03 Lim Chu Kang Rd
+33011,B19 Lim Chu Kang Rd
+33019,B20 Lim Chu Kang Rd
+31199,B25 Old Choa Chu Kang Rd
+32069,B26 Lim Chu Kang Rd
+31191,B26 Old Choa Chu Kang Rd
+52061,BCA Academy
+67641,BEF ANCHORVALE ST
+44869,BEF BLK 629A MSCP
+21351,BEF BOON LAY WAY
+43899,BEF DAIRY FARM CRES
+81199,BEF OLD AIRPORT RD
+06049,BEF OUTRAM FLYOVER
+43453,BEF PIE
+68151,BEF SHELL AVIATION
+75411,BEF TAMPINES FIRE STN
+21461,BEF TUKANG INNOVATION DR
+71129,BEF UBI RD 3
+76519,BET BLKS 524B/523D
+58521,BLK 106A
+58529,BLK 108 CP
+58539,BLK 120A
+58531,BLK 129A
+65091,BLK 301A
+67769,BLK 326D
+67699,BLK 334A
+67691,BLK 338A
+44699,BLK 457
+44691,BLK 485
+84551,BLK 51
+76529,BLK 519A
+84561,BLK 53
+65099,BLK 604A
+44861,BLK 636A
+21321,BRC Weld Mesh Fty
+31141,Bahai Cemy
+67131,Bakau Stn/Blk 122F
+50229,Balestier Twrs
+97041,Ballota Pk Condo
+40051,Balmoral Plaza
+29041,Ban Joo
+66521,Ban Teck Han Bldg
+44329,Bangkit Stn
+16201,Barossa Gdns
+62089,Bartley Chr Ch
+62079,Bartley Stn
+15151,Bayanihan Ctr
+42099,Beauty World Stn Exit A
+42091,Beauty World Stn Exit B
+42151,Beauty World Stn Exit C
+25171,Becton Dickinson Med
+94079,Bedok Camp 2
+84351,Bedok Ctrl PO
+84009,Bedok Int
+85069,Bedok Mkt Pl
+84299,Bedok Nth Depot
+75069,Bedok Reform Trg Ctr
+84051,Bedok Sports Cplx
+84039,Bedok Stn Exit A
+84031,Bedok Stn Exit B
+21349,Beecham Pte Ltd
+46671,Bef 888 Plaza
+13099,Bef AA Ctr
+58369,Bef Acacia Home
+46781,Bef Admiralty Pr Sch
+46711,Bef Admiralty Rd West
+71061,Bef Airport Rd
+54039,Bef Al-Muttaqin Mque
+10181,Bef Al-Rabitah Mque
+51119,Bef Andrew Rd
+53091,Bef Ang Mo Kio Ave 1
+56019,Bef Ang Mo Kio Ave 1
+54109,Bef Ang Mo Kio Ave 10
+54051,Bef Ang Mo Kio Ave 5
+55219,Bef Ang Mo Kio Ave 9
+54631,Bef Ang Mo Kio Ind Pk 2A
+54059,Bef Ang Mo Kio Lib
+58139,Bef Assyafaah Mque
+45211,Bef BKE
+46051,Bef BKE
+68099,Bef Baker St
+50191,Bef Balestier Plaza
+01639,Bef Beach Rd
+85109,Bef Bedok Rd
+67011,Bef Begonia Rd
+23301,Bef Benoi Basin
+23031,Bef Benoi Flyover
+23321,Bef Benoi Lane
+23249,Bef Benoi Rd
+23479,Bef Benoi Rd
+24631,Bef Benoi Rd
+23279,Bef Benoi Sector
+83189,Bef Bethesda Frankel Ch
+70061,Bef Bidadari Pk Dr
+52011,Bef Bishan Rd
+78181,Bef Blk 187
+80301,Bef Blk 19
+52529,Bef Blk 221
+65409,Bef Blk 264
+62251,Bef Blk 471B
+80239,Bef Blk 53
+64341,Bef Blk 683
+59691,Bef Blk 935
+21491,Bef Boon Lay Way
+66069,Bef Braddell Flyover
+61041,Bef Braddell Rd
+66019,Bef Braddell Rd
+53331,Bef Bright Hill Tp
+47071,Bef British American Tobacco
+42191,Bef Bt Batok East Ave 6
+28119,Bef Bt Batok Rd
+43771,Bef Bt Batok West Ave 2
+43469,Bef Bt Batok West Ave 5
+44169,Bef Bt Batok West Ave 5
+44171,Bef Bt Batok West Ave 5
+10331,Bef Bt Merah Ctrl
+67451,Bef Buangkok Dr
+64179,Bef Buangkok East Dr
+55381,Bef Bullion Pk
+93169,Bef CP D5
+93161,Bef CP E1
+54499,Bef CTE
+52219,Bef Caldecott Stn
+58021,Bef Canberra Rd
+95149,Bef Cargo Bldg D
+50071,Bef Carlisle Rd
+83229,Bef Carlton Ave
+43091,Bef Cashew Stn
+95011,Bef Changi Airport PTB3
+99161,Bef Changi Beach CP 3
+95161,Bef Changi Ferry Rd
+85071,Bef Changi Fire Stn
+96251,Bef Changi General Hosp
+97331,Bef Changi Prison Cplx
+96351,Bef Changi Sth St 1
+13039,Bef Chatsworth Rd
+44359,Bef Chestnut Ave
+21469,Bef Chia Ping Rd
+21269,Bef Chin Bee Ave
+44091,Bef Choa Chu Kang Mkt
+14159,Bef Chr Community Chapel
+12111,Bef Clementi Rd
+17359,Bef Clementi Rd
+66171,Bef Cooling Cl
+05429,Bef Craig Rd
+99021,Bef Cranwell Rd
+99089,Bef Cranwell Rd
+01339,Bef Crawford Bridge
+41031,Bef Crown Ctr
+44361,Bef Dairy Farm Rd
+70131,Bef Davidson Rd
+10291,Bef Dawson Rd
+64229,Bef Defu Ave 2
+19079,Bef Dover Ct Prep Sch
+42141,Bef Dunearn Rd
+93111,Bef Elite Pk Ave
+42249,Bef Eng Kong Pl
+22319,Bef Enterprise Rd
+22289,Bef Fan Yoong Rd
+67089,Bef Fernvale Lane
+23099,Bef First Lok Yang Rd
+23189,Bef First Lok Yang Rd
+49149,Bef Fishing Ground A
+91049,Bef Fort Rd
+23111,Bef Fourth Lok Yang Rd
+83219,Bef Frankel Ave
+83191,Bef Frankel Dr
+93109,Bef Frankel Pl
+83201,Bef Frankel Terr
+03341,Bef Gdns by the Bay
+70361,Bef Genting Link
+67071,Bef Gerald Dr
+80111,Bef Geylang Rd
+43159,Bef Glendale Pk Condo
+40119,Bef Goldhill Ave
+64159,Bef Greenwich Dr
+24169,Bef Gul Circle
+24239,Bef Gul St 1
+20231,Bef Hasanah Mque
+43119,Bef Hazel Pk Terr
+58459,Bef Heavy Veh Pk
+28151,Bef Hong Kah Circle
+28161,Bef Hong Kah Flyover
+10039,Bef Hosp Dr
+62031,Bef How Sun Rd
+66231,Bef Huddington Ave
+11529,Bef IKEA Ind Bldg
+27169,Bef Jln Bahar
+58071,Bef Jln Basong
+98089,Bef Jln Batalong
+97039,Bef Jln Bena
+45109,Bef Jln Bumbong
+21089,Bef Jln Buroh
+21299,Bef Jln Buroh
+22149,Bef Jln Buroh
+22391,Bef Jln Buroh
+85059,Bef Jln Chempaka Kuning
+85089,Bef Jln Chempaka Kuning
+72031,Bef Jln Damai
+50161,Bef Jln Dusun
+42231,Bef Jln Jurong Kechil
+67579,Bef Jln Kayu
+68011,Bef Jln Kayu
+83381,Bef Jln Kembangan
+83251,Bef Jln Khairuddin
+97101,Bef Jln Mariam
+85081,Bef Jln Pari Burong
+74039,Bef Jln Sam Kong Si
+22099,Bef Jln Samulun
+67069,Bef Jln Selaseh
+21069,Bef Jln Tepong
+21049,Bef Jln Terusan
+53049,Bef Jln Todak
+21499,Bef Jln Tukang
+48049,Bef Jln Ulu Sembawang
+82151,Bef Joo Chiat Pl
+23371,Bef Joo Koon Int
+24599,Bef Joo Koon Way
+28131,Bef Jurong Lodge 1B
+21119,Bef Jurong Pier Rd
+22071,Bef Jurong Pier Rd
+21021,Bef Jurong Port Rd
+21131,Bef Jurong Port Rd
+20069,Bef Jurong Town Hall Rd
+20209,Bef Jurong Town Hall Rd
+28371,Bef Jurong West St 51
+22471,Bef Jurong West St 93
+55071,Bef KLC Intl Inst
+64131,Bef KPE
+64139,Bef KPE
+07361,Bef Kallang Bahru
+60059,Bef Kallang Pl
+07379,Bef Kallang Rd
+92169,Bef Katong PO
+16139,Bef Kent Ridge Ter
+47031,Bef Keramat Rd
+80029,Bef Kg Bugis
+91091,Bef Kg Kayu Rd
+59041,Bef Khatib Stn
+23051,Bef Kian Teck Rd
+23069,Bef Kian Teck Rd
+23169,Bef Kian Teck Rd
+71059,Bef Kim Chuan Rd
+50159,Bef Kim Keat Lane
+82149,Bef Koon Seng Rd
+49089,Bef Kranji Cres
+22271,Bef Kwong Min Rd
+60099,Bef Lavender St
+40091,Bef Lewis Rd
+33051,Bef Lim Chu Kang Lane 3A
+34029,Bef Lim Chu Kang Lane 5
+34039,Bef Lim Chu Kang Lane 6
+31159,Bef Lim Chu Kang Rd
+23139,Bef Lok Yang Way
+83049,Bef Lor 110 Changi
+80089,Bef Lor 18 Geylang
+80091,Bef Lor 23 Geylang
+70349,Bef Lor Bakar Batu
+27171,Bef Lor Danau
+83121,Bef Lor K Telok Kurau
+32109,Bef Lor Serambi
+97091,Bef Loyang Ave
+97129,Bef Loyang Ave
+98051,Bef Loyang Way
+98131,Bef Loyang Way 1
+48061,Bef Mandai Ave
+48029,Bef Mandai Lake Rd
+45071,Bef Mandai Rd
+48119,Bef Mandai Rd
+82171,Bef Mangis Rd
+10469,Bef Margaret Dr
+98311,Bef Mariam Wk
+03331,Bef Marina Gdns Dr
+24611,Bef Marinteknik
+51089,Bef Marymount Convent Sch
+53111,Bef Marymount Lane
+21501,Bef Meiji Seika
+40219,Bef Met YMCA
+12151,Bef Moonbeam Terr
+12021,Bef Moonbeam Wk
+14011,Bef Mt Faber Lodge
+12189,Bef Mt Sinai Dr
+12211,Bef Mt Sinai Wk
+31051,Bef Muslim Cemy Path 1
+31041,Bef Muslim Cemy Path 7
+24461,Bef Nam Leong Co Pte Ltd
+27121,Bef Nanyang Ave
+31019,Bef Nanyang Ave
+98039,Bef New Loyang Link
+84589,Bef New Upp Changi Rd
+31069,Bef Old Choa Chu Kang Rd
+97121,Bef Old Tampines Rd
+28709,Bef Old Toh Tuck Rd
+56071,Bef Old Upp Thomson Rd
+13189,Bef One Tree Hill
+13191,Bef Orchard Blvd
+09022,Bef Orchard Stn Exit B
+43451,Bef PIE
+15049,Bef PSA Bldg
+20269,Bef Pandan Gdns
+16079,Bef Pasir Panjang PO
+15209,Bef Pasir Panjang Stn
+77099,Bef Pasir Ris Ave
+77039,Bef Pasir Ris Ctrl
+77089,Bef Pasir Ris Dr 3
+77379,Bef Pasir Ris Dr 3
+77101,Bef Pasir Ris Rd
+77329,Bef Pasir Ris St 53
+77091,Bef Pasir Ris Way
+77111,Bef Pasir Ris Way
+44229,Bef Pending Stn
+26129,Bef Penguin Int'l Ltd
+28551,Bef Penjuru Cl
+29029,Bef Penjuru Cl
+21051,Bef Penjuru Rd
+29039,Bef Penjuru Wk
+22031,Bef Pioneer Circus
+23349,Bef Pioneer Rd
+25391,Bef Pioneer Rd
+25441,Bef Pioneer Rd
+22229,Bef Pioneer Rd Nth
+24421,Bef Pioneer Sector 1
+65111,Bef Punggol 17th Ave
+65189,Bef Punggol Ctrl
+65109,Bef Punggol Dr
+65481,Bef Punggol Dr
+65191,Bef Punggol Rd
+67729,Bef Punggol Rd
+73019,Bef RSAF Roundabout
+18269,Bef Reuters
+13049,Bef Rochalie Dr
+83171,Bef Roseburn Ave
+07241,Bef S'Goon Rd
+99181,Bef S'pore Aviation Ac
+62231,Bef S'pore Girls' Home
+48121,Bef S'pore Zoo
+59709,Bef SAFRA Yishun
+41141,Bef SICC
+56081,Bef SLE
+47141,Bef Sc Auto
+99011,Bef Sch Of Commando
+66461,Bef Seagate
+14139,Bef Seah Im Rd
+22179,Bef Secura
+93129,Bef Sekolah Indonesia
+68169,Bef Seletar A'Space Lane
+68081,Bef Seletar A'Space Rise
+68111,Bef Seletar Camp G
+56029,Bef Sembawang Hill FC
+58161,Bef Sembawang Shipyard G 3
+58151,Bef Sembawang Stn
+67469,Bef Sengkang East Ave
+67731,Bef Sengkang East Dr
+67711,Bef Sengkang Fire Stn
+67651,Bef Sengkang West Rd
+94021,Bef Sennett Rd
+47091,Bef Senoko Cres
+47199,Bef Senoko Dr
+47111,Bef Senoko Way
+28449,Bef Seventh-Day Advent Ch
+49139,Bef Sg Kadut Way
+59011,Bef Sg Seletar Bridge
+56289,Bef Shangri-La Wk
+03211,Bef Shenton Way
+23419,Bef Shipyard Cres
+22409,Bef Shipyard Rd
+23259,Bef Shipyard Rd
+29099,Bef Sia Huat
+60219,Bef Siemens Ctr
+83231,Bef Siglap Dr
+83079,Bef Siglap Plain
+93061,Bef Siglap Rd
+07529,Bef Sim Lim Twr
+96011,Bef Simei Ave
+80269,Bef Sims Ave
+22299,Bef Soon Lee Rd
+57039,Bef Spiritual Grace Presby Ch
+56091,Bef Springleaf Rd
+63181,Bef St. Helier's Ave
+92301,Bef St. Patrick's Rd
+15229,Bef Sth Buona Vista Rd
+83169,Bef Still Rd
+01229,Bef Sultan Mque
+43811,Bef Summerhill
+64181,Bef TPE
+64199,Bef TPE
+68051,Bef TPE
+75351,Bef TPE
+56069,Bef Tagore Dr
+56059,Bef Tagore Rd
+07231,Bef Tai Hoe Hotel
+63179,Bef Tai Seng Chr Ch
+75379,Bef Tampines Ave 5
+75179,Bef Tampines Ave 9
+75299,Bef Tampines Ave 9
+76559,Bef Tampines Ctrl 3
+74021,Bef Tampines Ind Ave 4
+73031,Bef Tampines Ind Ave 5
+74019,Bef Tampines Ind Ave 5
+75361,Bef Tampines Ind Ave 5
+76199,Bef Tampines Reg Lib
+10471,Bef Tanglin Rd
+20251,Bef Teban Gdns Rd
+14059,Bef Telok Blangah Hts
+14339,Bef Telok Blangah St 32
+02101,Bef Temasek Ave
+91071,Bef Tg Katong Rd
+22049,Bef Tg Kling Rd
+90011,Bef Tg Rhu View
+05239,Bef The Pinnacle@Duxton
+28031,Bef The Synergy
+56209,Bef Thomson Hills Dr
+53051,Bef Thomson Plaza
+53041,Bef Thomson Ridge
+10351,Bef Tiong Bahru Rd
+97111,Bef Toh Cl
+28029,Bef Toh Tuck Ave
+28181,Bef Toh Tuck Link
+42201,Bef Toh Tuck Rise
+09121,Bef Tomlinson Rd
+83281,Bef Tosca St
+31139,Bef Track 33
+21311,Bef Tractor Rd
+96041,Bef Tropicana Condo
+26121,Bef Tuas Amenity Ctr
+25119,Bef Tuas Ave 10
+26011,Bef Tuas Ave 11
+26109,Bef Tuas Ave 11
+26021,Bef Tuas Ave 13
+26099,Bef Tuas Ave 13
+26089,Bef Tuas Ave 20
+24521,Bef Tuas Ave 5
+24501,Bef Tuas Flyover
+26079,Bef Tuas Loop
+24699,Bef Tuas Rd
+25209,Bef Tuas Rd
+26249,Bef Tuas Sth Ave 2
+26251,Bef Tuas Sth Ave 2
+26269,Bef Tuas Sth Ave 4
+26389,Bef Tuas Sth Ave 5
+26451,Bef Tuas Sth Ave 5
+26299,Bef Tuas Sth Ave 6
+26441,Bef Tuas Sth Ave 7
+26429,Bef Tuas Sth Ave 9
+26321,Bef Tuas Sth St 2
+25469,Bef Tuas West Ave
+25259,Bef Tuas West Dr
+99091,Bef Turnhouse Rd
+13029,Bef Tyersall Ave
+62069,Bef Upp Paya Lebar Rd
+62101,Bef Upp Serangoon Rd
+57141,Bef Upp Thomson Rd
+97159,Bef Vicom
+46011,Bef W'Lands Ctr Rd
+46021,Bef W'Lands Ind Pk D St 2
+47059,Bef W'Lands Ind Pk E4
+46721,Bef W'Lands Ind Pk E7
+45149,Bef W'Lands Rd
+45229,Bef W'Lands Rd
+47011,Bef W'Lands Waterfront Pk
+40259,Bef Wallace Way
+91069,Bef Walton Rd
+07561,Bef Waterloo St
+68121,Bef West Camp Rd
+16241,Bef West Coast Pk
+18171,Bef Weyhill Cl
+18191,Bef Whitchurch Rd
+16249,Bef Wholesale Ctr
+91099,Bef Wilkinson Rd
+53061,Bef Windsor Pk Rd
+46351,Bef Woodgrove Condo
+44061,Bef Yew Tee Flyover
+55249,Bef Yio Chu Kang Rd
+56031,Bef Yio Chu Kang Rd
+66141,Bef Yio Chu Kang Rd
+66471,Bef Yio Chu Kang Rd
+59021,Bef Yishun Ave 1
+68171,Bef Yishun Ave 8
+59671,Bef Yishun Stn
+28089,Bef Yuhua CC
+27509,Bef Yunnan Cres
+13159,Bef Zion Full Gospel Ch
+65541,Before Sumang Lane
+23449,Benoi Pl
+25199,Bestofire and Thermal
+44271,Bet Blks 13/14
+61089,Bet Blks 138/144
+44219,Bet Blks 139/140
+84219,Bet Blks 139/140
+66319,Bet Blks 142/148
+54209,Bet Blks 152/155
+65279,Bet Blks 187/188
+63231,Bet Blks 210/211
+96171,Bet Blks 227/228
+78121,Bet Blks 232/233
+27451,Bet Blks 272D/271A
+45239,Bet Blks 306/307
+17211,Bet Blks 315/318
+59621,Bet Blks 318A/318B
+58371,Bet Blks 325/326
+52109,Bet Blks 33/34
+59641,Bet Blks 333C/333D
+59451,Bet Blks 349/350
+58321,Bet Blks 357/359
+59601,Bet Blks 391/392
+59591,Bet Blks 405/406
+58429,Bet Blks 415/416
+44491,Bet Blks 416/417
+44349,Bet Blks 443A/443B
+59639,Bet Blks 445/449
+78241,Bet Blks 453/454
+20129,Bet Blks 50/51
+44671,Bet Blks 502/503
+21711,Bet Blks 523/525
+43801,Bet Blks 536/537
+64579,Bet Blks 544/546
+75131,Bet Blks 701/702
+84459,Bet Blks 705/706
+75261,Bet Blks 710/713
+92059,Bet Blks 72/74
+27441,Bet Blks 757/758
+77311,Bet Blks 771/772
+44599,Bet Blks 801B/801C
+27399,Bet Blks 859/860
+64481,Bet Blks 930/931
+91061,Bet Hse No. 767/767A
+28051,Big Box
+53009,Bishan Int
+53381,Bishan Nth Shop Mall
+54539,Bishan Pk
+53349,Bishan Pk Sec Sch
+53269,Bishan Stadium
+53231,Bishan Stn
+10139,Blk 1
+10149,Blk 1
+14249,Blk 1
+52361,Blk 1
+60241,Blk 1
+63249,Blk 1
+14269,Blk 10
+46201,Blk 10
+10659,Blk 1003
+52029,Blk 1004
+46551,Blk 101
+57119,Blk 101
+61069,Blk 101
+66339,Blk 101
+67169,Blk 101
+76079,Blk 101
+81229,Blk 1015
+52209,Blk 101C CP
+43381,Blk 102
+52401,Blk 102
+81099,Blk 102
+83341,Blk 102
+71171,Blk 1022
+65079,Blk 102C
+61011,Blk 103
+10501,Blk 104
+78061,Blk 104
+10189,Blk 104A CP
+58511,Blk 104C
+14029,Blk 105
+28071,Blk 105
+52411,Blk 105
+14191,Blk 105 CP
+63281,Blk 105 Mkt/FC
+46291,Blk 106
+63099,Blk 106
+96151,Blk 106
+50349,Blk 107
+44411,Blk 108
+78171,Blk 108
+12061,Blk 109
+14381,Blk 109
+43371,Blk 109
+84221,Blk 109
+84529,Blk 109
+11381,Blk 10A
+14259,Blk 11
+14201,Blk 110
+54189,Blk 110
+10071,Blk 111
+65029,Blk 111
+84229,Blk 111
+28081,Blk 112
+66309,Blk 112
+44121,Blk 113
+14471,Blk 114
+28279,Blk 114
+52451,Blk 114
+57129,Blk 114
+53221,Blk 115
+63299,Blk 115
+77051,Blk 115
+21631,Blk 115/Opp Japanese Gdn
+10349,Blk 116
+12071,Blk 116
+21599,Blk 117
+52169,Blk 117
+67501,Blk 117C
+14199,Blk 118
+28269,Blk 118
+59271,Blk 118
+10089,Blk 119
+67141,Blk 119D
+46189,Blk 12
+46199,Blk 120
+61101,Blk 120
+96141,Blk 120
+10129,Blk 121
+52201,Blk 121
+59121,Blk 121
+61079,Blk 121
+72069,Blk 121
+67511,Blk 121E
+50331,Blk 122
+61009,Blk 122
+72061,Blk 122
+67539,Blk 122C
+28439,Blk 124
+65039,Blk 124
+84249,Blk 124
+53251,Blk 125
+70019,Blk 125
+76329,Blk 125
+66329,Blk 126
+10121,Blk 126 CP
+65049,Blk 126A
+44211,Blk 127
+52159,Blk 128
+66321,Blk 128
+67119,Blk 128
+10371,Blk 129
+54231,Blk 129
+11351,Blk 13
+96131,Blk 130
+28301,Blk 131
+52151,Blk 131
+53409,Blk 131
+63201,Blk 133
+72071,Blk 133
+28431,Blk 134
+81031,Blk 134
+46071,Blk 137
+59131,Blk 137
+67129,Blk 137
+63211,Blk 138
+21761,Blk 138B
+52191,Blk 138B
+60249,Blk 14
+70161,Blk 14
+82029,Blk 14 Mkt/FC
+10061,Blk 140
+43531,Blk 140
+84499,Blk 140
+76071,Blk 141
+66311,Blk 141A
+67121,Blk 142A
+59149,Blk 145
+43329,Blk 146
+46589,Blk 146
+96269,Blk 146
+52051,Blk 147
+76069,Blk 147
+61061,Blk 148
+96139,Blk 148
+10051,Blk 149
+98011,Blk 149A
+11199,Blk 15
+46249,Blk 15
+46901,Blk 15
+60251,Blk 15
+21551,Blk 151
+54459,Blk 151
+59159,Blk 151
+66109,Blk 151
+84701,Blk 151
+96181,Blk 151
+66301,Blk 152
+11599,Blk 153
+46579,Blk 154
+59091,Blk 154
+43361,Blk 154A
+98091,Blk 156
+67671,Blk 156A CP
+11589,Blk 157
+44279,Blk 157
+11579,Blk 158
+21561,Blk 158
+62219,Blk 158
+67531,Blk 158C
+05631,Blk 16
+60029,Blk 16
+67521,Blk 160
+10651,Blk 161
+21189,Blk 161
+62059,Blk 161
+65269,Blk 162B
+11609,Blk 163
+52131,Blk 163
+54199,Blk 163
+84681,Blk 163
+11029,Blk 166
+11561,Blk 166
+96189,Blk 166
+43351,Blk 168
+53281,Blk 169
+83111,Blk 17
+54191,Blk 170
+44199,Blk 171
+84691,Blk 171
+63109,Blk 172
+84661,Blk 172
+46531,Blk 173
+44249,Blk 174
+59261,Blk 174
+21421,Blk 176
+52239,Blk 177
+46569,Blk 178
+65249,Blk 178
+52429,Blk 17A
+10141,Blk 18
+42161,Blk 18
+46179,Blk 18
+46311,Blk 18
+44739,Blk 180
+55111,Blk 180
+84281,Blk 180
+44259,Blk 183
+44909,Blk 184
+21429,Blk 185
+43379,Blk 185
+21419,Blk 188
+11039,Blk 19
+52049,Blk 19
+92221,Blk 19
+43691,Blk 190
+65069,Blk 190C
+21409,Blk 191
+65241,Blk 196C
+78051,Blk 197
+19011,Blk 19A CP
+06161,Blk 2
+27219,Blk 2
+46209,Blk 2
+49119,Blk 2
+52351,Blk 2
+21689,Blk 200
+67331,Blk 200B
+10079,Blk 201
+17371,Blk 201
+67271,Blk 201 CP
+67619,Blk 201C
+44381,Blk 202
+52441,Blk 202
+53399,Blk 202
+20109,Blk 203
+21231,Blk 203
+28069,Blk 203
+46149,Blk 203
+59689,Blk 203
+67209,Blk 203
+67261,Blk 203B
+44119,Blk 204
+78211,Blk 204
+67349,Blk 204 CP
+67611,Blk 204C
+21451,Blk 206
+44479,Blk 206
+46159,Blk 206
+66379,Blk 206
+76091,Blk 206
+67201,Blk 206A
+21441,Blk 207
+28319,Blk 207
+54011,Blk 207
+21459,Blk 209
+28311,Blk 209
+54239,Blk 209
+63141,Blk 209
+63241,Blk 21
+21431,Blk 210
+28079,Blk 210
+53249,Blk 210
+78059,Blk 210
+52539,Blk 210 Mkt/FC
+46151,Blk 212
+21249,Blk 213
+76181,Blk 216
+78161,Blk 216
+43739,Blk 217
+44371,Blk 219
+52059,Blk 219
+81179,Blk 22
+44489,Blk 220
+54611,Blk 220
+59099,Blk 220
+84191,Blk 220 CP
+84041,Blk 221A
+44269,Blk 223
+44481,Blk 223
+54621,Blk 223
+96291,Blk 223
+67191,Blk 223D
+44451,Blk 224
+96191,Blk 224
+65539,Blk 224A
+43701,Blk 225
+67171,Blk 225A
+65531,Blk 226A
+52389,Blk 227
+59231,Blk 227
+65551,Blk 227A
+65031,Blk 227D
+28289,Blk 228
+28331,Blk 229
+43171,Blk 229
+76229,Blk 229
+53199,Blk 22A CP
+46111,Blk 23
+52311,Blk 23
+53171,Blk 23
+66041,Blk 230
+78151,Blk 230
+76401,Blk 230B
+76219,Blk 230E
+43179,Blk 231
+52399,Blk 231
+65041,Blk 231
+78221,Blk 231A CP
+63269,Blk 232
+66049,Blk 233
+76209,Blk 233
+96261,Blk 233
+44471,Blk 234
+67109,Blk 235
+59241,Blk 236
+52369,Blk 237
+76151,Blk 237
+66369,Blk 238
+28321,Blk 239
+44331,Blk 239
+44441,Blk 239
+63271,Blk 239
+84641,Blk 24
+43429,Blk 240
+67181,Blk 240
+28621,Blk 241
+59179,Blk 241
+63089,Blk 241
+43439,Blk 242
+78209,Blk 242
+53379,Blk 245
+59189,Blk 245
+28329,Blk 246
+54061,Blk 246
+56261,Blk 248
+63079,Blk 248
+76169,Blk 248
+67241,Blk 248A
+14279,Blk 25
+44421,Blk 25
+52319,Blk 25
+53189,Blk 25
+63069,Blk 25
+59199,Blk 250
+67101,Blk 250A
+28339,Blk 252
+28299,Blk 253
+43169,Blk 254
+53169,Blk 254
+96159,Blk 254
+54169,Blk 255
+53371,Blk 257
+59249,Blk 257
+66059,Blk 257A
+43449,Blk 258
+54181,Blk 258
+76409,Blk 259
+65499,Blk 259 CP
+67249,Blk 259C
+10379,Blk 25B
+44131,Blk 26
+53159,Blk 260
+66371,Blk 261
+67411,Blk 261
+21379,Blk 263
+28629,Blk 266
+76171,Blk 266
+43221,Blk 267
+65339,Blk 268C
+98099,Blk 269A
+14291,Blk 27
+52331,Blk 27
+84049,Blk 27
+44261,Blk 270
+27099,Blk 271 CP
+43161,Blk 272
+59209,Blk 272
+65349,Blk 272C
+27459,Blk 273B
+98021,Blk 275
+27469,Blk 276B
+44459,Blk 277
+14319,Blk 28
+44521,Blk 280
+43189,Blk 283
+76301,Blk 283
+28641,Blk 284
+76099,Blk 285
+28649,Blk 286A
+67591,Blk 286B
+43191,Blk 288C
+28639,Blk 288E
+44511,Blk 289
+59211,Blk 289
+43619,Blk 289E
+52129,Blk 29
+43611,Blk 290H
+59239,Blk 291
+43149,Blk 291A
+67439,Blk 291A
+43509,Blk 291E
+45451,Blk 293
+44569,Blk 295
+N4411,Blk 296
+44081,Blk 296A
+44571,Blk 297D
+N4401,Blk 297D
+43699,Blk 298
+65229,Blk 298
+65061,Blk 298A
+06071,Blk 2B
+10021,Blk 3
+12129,Blk 3
+96101,Blk 3012
+84431,Blk 3014
+71161,Blk 3019
+67279,Blk 301D
+64019,Blk 302
+71139,Blk 302
+76109,Blk 302
+71151,Blk 3021
+71141,Blk 3023
+71149,Blk 3024
+71159,Blk 3026
+28291,Blk 303
+46591,Blk 303
+58391,Blk 303
+67291,Blk 303B
+17379,Blk 304
+67301,Blk 305D
+28481,Blk 306
+43471,Blk 306
+67369,Blk 306 CP
+66039,Blk 307
+76419,Blk 307A
+17201,Blk 308
+64241,Blk 308
+58249,Blk 309
+59171,Blk 309
+65801,Blk 309D
+54071,Blk 310
+65469,Blk 310B
+58101,Blk 311
+71099,Blk 311
+67321,Blk 311A
+65461,Blk 312 CP
+67371,Blk 313 CP
+67361,Blk 313B
+53299,Blk 314
+59381,Blk 314
+43481,Blk 315
+65449,Blk 315B
+28469,Blk 316
+64231,Blk 316
+17189,Blk 317
+58291,Blk 317
+67389,Blk 317B
+71101,Blk 318
+43721,Blk 319
+53131,Blk 319
+66361,Blk 319
+67581,Blk 319A
+46141,Blk 32
+84021,Blk 32
+46539,Blk 320
+67351,Blk 321 CP
+54247,Blk 322
+59359,Blk 322
+72011,Blk 322
+65451,Blk 322 CP
+76459,Blk 323
+67449,Blk 323B
+43841,Blk 324
+54248,Blk 324
+64301,Blk 325
+67399,Blk 325 CP
+66411,Blk 326
+67381,Blk 326 CP
+64249,Blk 327
+58299,Blk 328
+17169,Blk 329
+21679,Blk 329
+66419,Blk 330
+21671,Blk 331
+43491,Blk 331
+54091,Blk 331
+76429,Blk 331
+54311,Blk 332
+67391,Blk 333B
+17241,Blk 334
+21629,Blk 334
+43831,Blk 334
+17229,Blk 335
+46621,Blk 335
+58271,Blk 335
+58221,Blk 339 CP
+52289,Blk 34
+92231,Blk 34
+59391,Blk 342B
+17111,Blk 343
+71111,Blk 343
+76449,Blk 343
+64311,Blk 344
+54331,Blk 346
+28461,Blk 347
+43581,Blk 347
+46549,Blk 347
+59651,Blk 348B
+20169,Blk 35
+52301,Blk 35
+28359,Blk 350
+64321,Blk 350
+76439,Blk 351
+58111,Blk 351 CP
+17101,Blk 352
+44461,Blk 352
+58421,Blk 353
+21621,Blk 354
+54321,Blk 354
+58311,Blk 354 CP
+17249,Blk 355
+64059,Blk 355
+59411,Blk 356
+21601,Blk 357
+58319,Blk 357C
+59401,Blk 358
+58229,Blk 358A CP
+70181,Blk 36
+14489,Blk 36 Mkt/FC
+17159,Blk 365
+21611,Blk 367
+46339,Blk 370
+76249,Blk 370
+17219,Blk 376
+17221,Blk 377
+11449,Blk 37B
+81171,Blk 39
+76239,Blk 390/Opp Tampines JC
+82221,Blk 3A
+80311,Blk 3B
+10519,Blk 4
+99131,Blk 4
+14379,Blk 40
+84089,Blk 40
+44341,Blk 401A CP
+28561,Blk 402
+43679,Blk 402
+44519,Blk 402
+46491,Blk 402
+62129,Blk 403
+84211,Blk 403
+67281,Blk 403A
+58411,Blk 404A CP
+58341,Blk 405
+78089,Blk 405
+43669,Blk 406
+46371,Blk 406
+20191,Blk 407
+53341,Blk 407
+17259,Blk 408
+20149,Blk 408
+44609,Blk 408
+46379,Blk 409
+62171,Blk 409
+54371,Blk 409A
+14309,Blk 41
+20211,Blk 41
+27069,Blk 41
+17151,Blk 410
+20199,Blk 410
+44529,Blk 410
+20159,Blk 411
+64429,Blk 412
+44601,Blk 413
+46369,Blk 413
+59419,Blk 413
+44469,Blk 414
+82033,Blk 414
+84329,Blk 414
+28571,Blk 416
+82032,Blk 416
+84339,Blk 416
+76399,Blk 417
+76391,Blk 418
+43499,Blk 419
+59469,Blk 419
+50081,Blk 41A
+11151,Blk 42
+84541,Blk 42
+54329,Blk 420
+62179,Blk 421
+64421,Blk 421
+28509,Blk 422
+54339,Blk 422
+76201,Blk 423
+58121,Blk 424A CP
+28519,Blk 425
+46361,Blk 425
+77059,Blk 425
+17149,Blk 426
+44501,Blk 426
+62169,Blk 426
+54279,Blk 427
+84319,Blk 428
+78079,Blk 429
+44499,Blk 429A CP
+11189,Blk 43
+76361,Blk 430
+59471,Blk 430B
+20019,Blk 431
+45231,Blk 432
+67569,Blk 432A
+59581,Blk 432C
+64039,Blk 434
+64031,Blk 436
+43789,Blk 436A
+64571,Blk 438
+10449,Blk 44
+60139,Blk 44
+28529,Blk 441
+44509,Blk 442
+76389,Blk 442
+78069,Blk 442
+44339,Blk 442D
+54381,Blk 443
+43759,Blk 443D
+78071,Blk 446
+68029,Blk 448A
+76211,Blk 449
+80229,Blk 45
+84369,Blk 45
+92239,Blk 45
+54289,Blk 452
+28409,Blk 454
+53361,Blk 454
+59579,Blk 456
+28521,Blk 457
+44629,Blk 457
+28399,Blk 458
+64021,Blk 458
+76371,Blk 459
+11389,Blk 46
+76311,Blk 460/Opp Tampines JC
+01219,Blk 461
+28511,Blk 463
+44071,Blk 464
+76341,Blk 464
+54389,Blk 465
+64051,Blk 465A
+78081,Blk 467
+58381,Blk 469B
+67551,Blk 471A
+58329,Blk 474
+54379,Blk 475
+64409,Blk 477A
+58349,Blk 478
+78111,Blk 479
+10389,Blk 48
+58419,Blk 482A CP
+44559,Blk 483
+58351,Blk 483
+76351,Blk 484
+78229,Blk 485
+76251,Blk 487B
+44581,Blk 489A
+76261,Blk 489B
+80249,Blk 49 Mkt/FC
+28501,Blk 490
+44591,Blk 490B
+28581,Blk 491
+58409,Blk 491
+76279,Blk 491C
+76359,Blk 493B
+76369,Blk 496F
+76241,Blk 497D
+99139,Blk 5
+10409,Blk 50
+11459,Blk 50
+14359,Blk 50
+52299,Blk 50
+84109,Blk 50
+77191,Blk 500A
+28391,Blk 501
+53229,Blk 501
+28401,Blk 502
+54359,Blk 502
+64349,Blk 502
+77131,Blk 502
+54301,Blk 5022
+54511,Blk 5028
+58119,Blk 502A
+43421,Blk 503
+54349,Blk 504
+54521,Blk 5046
+66439,Blk 504A CP
+59761,Blk 504C
+54599,Blk 5056
+59589,Blk 505C
+20011,Blk 506
+44619,Blk 506
+84521,Blk 506
+58499,Blk 506A
+54441,Blk 507
+64331,Blk 508
+58129,Blk 508 CP
+84449,Blk 509
+50089,Blk 51
+10231,Blk 51 CP
+43541,Blk 510
+84421,Blk 510
+46331,Blk 511
+45249,Blk 511A
+17079,Blk 512
+64399,Blk 512
+84419,Blk 512
+59731,Blk 512A
+17071,Blk 513
+43809,Blk 514
+28381,Blk 515
+46649,Blk 515
+77019,Blk 515
+44611,Blk 516
+66101,Blk 516
+84321,Blk 516
+28421,Blk 517
+17339,Blk 518
+77141,Blk 519
+47589,Blk 519A CP
+10419,Blk 52
+52359,Blk 52
+84311,Blk 521
+54401,Blk 522
+64389,Blk 522
+45259,Blk 523
+28411,Blk 526
+84411,Blk 526
+54411,Blk 527
+92229,Blk 53
+45319,Blk 530
+66429,Blk 530
+43609,Blk 531
+66539,Blk 531
+44661,Blk 532
+45469,Blk 532
+46969,Blk 532
+54571,Blk 532
+64369,Blk 532
+84391,Blk 534
+64361,Blk 535
+28531,Blk 536
+46951,Blk 536A
+64439,Blk 537
+66421,Blk 537
+44659,Blk 537A CP
+28539,Blk 538
+54479,Blk 538
+66529,Blk 538
+11139,Blk 53A CP
+10429,Blk 54
+14041,Blk 54
+20249,Blk 54
+60159,Blk 54
+45461,Blk 540
+54579,Blk 540
+46981,Blk 541
+77041,Blk 541
+44649,Blk 541A CP
+45269,Blk 544
+84381,Blk 544
+66509,Blk 546
+84371,Blk 546
+45311,Blk 547
+84361,Blk 547
+44709,Blk 547C
+44701,Blk 548B
+54439,Blk 549
+06051,Blk 55
+10439,Blk 55
+18081,Blk 55
+27011,Blk 55
+84069,Blk 55
+46651,Blk 550
+84409,Blk 550
+28541,Blk 551
+45261,Blk 551
+47511,Blk 554
+66331,Blk 554
+54589,Blk 555
+77361,Blk 555
+47579,Blk 556
+67629,Blk 557
+52279,Blk 56
+45271,Blk 560
+54429,Blk 561
+77351,Blk 562
+45279,Blk 563
+54291,Blk 564
+77359,Blk 564
+64621,Blk 565
+64431,Blk 568
+77349,Blk 569
+92079,Blk 57
+54281,Blk 570
+77029,Blk 571
+54581,Blk 574
+64561,Blk 574
+64461,Blk 579
+11441,Blk 58
+77139,Blk 582
+54271,Blk 586
+58331,Blk 589D
+14349,Blk 59
+52291,Blk 59
+58509,Blk 590A
+58041,Blk 590C
+58501,Blk 592A
+58051,Blk 592C
+44289,Blk 6
+17049,Blk 601
+44641,Blk 602
+59361,Blk 602
+64339,Blk 602
+44251,Blk 604
+55129,Blk 604
+45341,Blk 604A
+22519,Blk 608
+59059,Blk 608
+63379,Blk 608
+84511,Blk 608
+46859,Blk 608A
+46689,Blk 609
+72079,Blk 609
+17121,Blk 610
+44799,Blk 610
+55131,Blk 612
+78049,Blk 612
+77189,Blk 613
+63331,Blk 615
+44651,Blk 617
+55119,Blk 617
+47571,Blk 618
+45389,Blk 619
+47561,Blk 620
+45331,Blk 621
+22249,Blk 622
+55149,Blk 622
+22239,Blk 624
+59421,Blk 624
+45339,Blk 625
+77211,Blk 626
+63321,Blk 627
+43419,Blk 628
+44809,Blk 628
+46869,Blk 628A
+84491,Blk 629
+47551,Blk 630
+59431,Blk 630
+63399,Blk 632
+44059,Blk 632 CP
+77071,Blk 633
+45351,Blk 634
+63311,Blk 634
+46879,Blk 637
+71091,Blk 637
+77181,Blk 638
+22231,Blk 639
+47541,Blk 639
+63391,Blk 639
+10421,Blk 63B
+77249,Blk 640
+22361,Blk 641
+55139,Blk 641
+22459,Blk 643
+54451,Blk 643
+77239,Blk 643
+43709,Blk 644
+46871,Blk 644
+55199,Blk 645
+72021,Blk 646
+59369,Blk 647
+54461,Blk 649
+65261,Blk 649
+21581,Blk 65
+84059,Blk 65
+44821,Blk 651
+77221,Blk 651
+22469,Blk 653B
+59281,Blk 654
+22541,Blk 655
+22551,Blk 657
+45391,Blk 657
+22511,Blk 658C
+60031,Blk 66
+22561,Blk 660
+72041,Blk 660A CP
+N4541,Blk 661
+65379,Blk 661A
+22501,Blk 662A
+22491,Blk 662D
+46851,Blk 664
+22509,Blk 664C
+64479,Blk 665
+22251,Blk 665A
+46769,Blk 666
+59291,Blk 666
+N4559,Blk 666
+22259,Blk 668D
+N4569,Blk 669
+22441,Blk 669 CP
+14329,Blk 67
+64411,Blk 670
+22591,Blk 670A
+65399,Blk 670A
+59299,Blk 671 CP
+65391,Blk 672A
+59711,Blk 672C
+N4591,Blk 673A
+22341,Blk 673C
+N4579,Blk 675
+59289,Blk 676 CP
+22411,Blk 676B
+22599,Blk 678D
+63371,Blk 679
+52281,Blk 68
+60229,Blk 68
+47591,Blk 680
+21371,Blk 680C
+45401,Blk 681
+64419,Blk 681
+47641,Blk 681A
+65371,Blk 682A
+22489,Blk 683A
+47599,Blk 683A
+47651,Blk 684B
+47659,Blk 685A
+22449,Blk 685B
+64609,Blk 687
+22481,Blk 691A CP
+21361,Blk 695
+12121,Blk 7
+60191,Blk 7
+53191,Blk 7 Ind Est
+54241,Blk 700B
+17061,Blk 701
+27421,Blk 701
+59111,Blk 701
+46409,Blk 701A CP
+45299,Blk 702
+84469,Blk 703
+22369,Blk 704
+17329,Blk 705
+27309,Blk 705
+46761,Blk 706
+45301,Blk 708
+63349,Blk 708
+18061,Blk 71
+84071,Blk 71
+27361,Blk 710
+27429,Blk 711
+46821,Blk 713
+57089,Blk 713
+77251,Blk 713
+84479,Blk 713
+27351,Blk 715
+17319,Blk 716
+84629,Blk 716
+22359,Blk 717
+77261,Blk 717
+10459,Blk 72
+11451,Blk 72
+75271,Blk 721
+46791,Blk 722
+59551,Blk 722
+17279,Blk 723
+46811,Blk 726
+17041,Blk 726 Clementi West Mkt
+27341,Blk 729
+10489,Blk 73
+52269,Blk 73
+60221,Blk 73
+84669,Blk 73
+17269,Blk 730
+75141,Blk 730
+59301,Blk 731
+75339,Blk 734
+22349,Blk 734 CP
+77289,Blk 738
+77281,Blk 740
+59141,Blk 741
+77161,Blk 741
+75281,Blk 742A
+27349,Blk 745
+84471,Blk 745
+77331,Blk 747A
+46831,Blk 747A CP
+27381,Blk 749
+77291,Blk 753
+45309,Blk 754
+27379,Blk 755
+46469,Blk 759
+59311,Blk 760
+27431,Blk 762
+59061,Blk 763
+45369,Blk 765
+70171,Blk 77
+59331,Blk 773
+46479,Blk 774
+59081,Blk 774
+59339,Blk 776
+77301,Blk 778
+10191,Blk 78
+46799,Blk 786A CP
+47661,Blk 788E
+10239,Blk 79
+70221,Blk 79 FC
+45359,Blk 790
+59051,Blk 790
+47601,Blk 793
+59321,Blk 794
+59561,Blk 798
+01329,Blk 8
+06039,Blk 8
+11179,Blk 8
+44281,Blk 8
+44181,Blk 802B
+44189,Blk 803
+46279,Blk 803
+46261,Blk 808
+84241,Blk 81
+44871,Blk 810 CP
+46441,Blk 816
+59721,Blk 816
+27359,Blk 817
+75079,Blk 819
+50991,Blk 82
+80291,Blk 82
+27409,Blk 821
+46281,Blk 825
+27419,Blk 827
+75089,Blk 827
+64559,Blk 830A
+64391,Blk 831
+75081,Blk 831
+27369,Blk 834
+64521,Blk 834
+75201,Blk 835
+64551,Blk 836
+27329,Blk 840
+46431,Blk 840
+27411,Blk 844A CP
+59429,Blk 846
+52199,Blk 84B
+14399,Blk 85
+18271,Blk 85
+84231,Blk 85
+46391,Blk 853
+75161,Blk 855
+46429,Blk 856
+27391,Blk 857
+59439,Blk 858
+27439,Blk 861
+75139,Blk 863
+46401,Blk 864
+75149,Blk 867A
+46411,Blk 869
+59501,Blk 871
+46459,Blk 872
+59481,Blk 873
+75159,Blk 874
+75111,Blk 874A
+46449,Blk 875
+84259,Blk 88
+46439,Blk 880
+75101,Blk 880
+75209,Blk 882A
+75109,Blk 888
+75219,Blk 889
+46289,Blk 891C CP
+46631,Blk 892C CP
+46641,Blk 894C
+75099,Blk 897
+46681,Blk 899A
+11409,Blk 9
+44439,Blk 9
+70211,Blk 90
+66499,Blk 911
+64611,Blk 913
+64471,Blk 917
+27531,Blk 918
+64601,Blk 919
+11439,Blk 92
+27141,Blk 920
+27159,Blk 924
+27131,Blk 932
+27139,Blk 934
+76061,Blk 938
+06081,Blk 94
+64509,Blk 941A
+64519,Blk 943
+76111,Blk 945
+64489,Blk 946A
+27321,Blk 949
+84269,Blk 95
+27279,Blk 953
+64119,Blk 953
+27271,Blk 962
+66489,Blk 969
+11071,Blk 97
+27511,Blk 974
+27301,Blk 978
+66541,Blk 980C
+66551,Blk 984
+27521,Blk 986 CP
+64129,Blk 988B
+84251,Blk 99
+20309,Blk L Pandan Light Ind Pk
+18311,Blk S12
+18309,Blk S17
+20319,Blk T Pandan Light Ind Pk
+05029,Boat Quay
+60121,Boon Keng Stn/Blk 102
+60199,Boon Keng Stn/Blk 22
+21439,Boon Lay CC
+22009,Boon Lay Int
+21449,Boon Lay Shop Ctr
+53319,Bosch
+41021,Botanic Gdns Stn
+52179,Braddell Stn/Blk 106
+52171,Braddell Stn/Blk 107
+52161,Braddell Stn/Blk 111
+52381,Braddell Tech Bldg
+51139,Braddell View
+01019,Bras Basah Cplx
+09141,British Council
+13201,British High Comm
+07111,Broadway Hotel
+43391,Bt Batok CC
+43521,Bt Batok Driving Ctr
+44159,Bt Batok Fire Stn
+43681,Bt Batok Home For The Aged
+43009,Bt Batok Int
+43401,Bt Batok Polyclinic
+43511,Bt Batok Swim Cplx
+43569,Bt Gombak Stadium
+43579,Bt Gombak Stn
+10009,Bt Merah Int
+10091,Bt Merah Town Ctr
+44639,Bt Panjang Plaza
+43131,Bt Panjang Pr Sch
+44851,Bt Panjang Stn
+44029,Bt Panjang Stn Exit A/Lrt
+44021,Bt Panjang Stn Exit B
+45009,Bt Panjang Temp Bus Pk
+43011,Bt Regency
+43599,Bt View Sec Sch
+43741,Bt View Sec Sch
+67609,Buangkok Stn Exit A
+67601,Buangkok Stn Exit B
+01119,Bugis Junction
+01059,Bugis Stn
+01113,Bugis Stn
+01541,Bugis Stn Exit D
+96249,Builders Ctr
+55261,Bullion Pk Condo
+11191,Buona Vista Stn
+11361,Buona Vista Stn Exit C
+11369,Buona Vista Stn Exit D
+11379,Buona Vista Ter
+42319,Burgundy Hill
+11161,C'Wealth Stn Exit A/D
+11169,C'Wealth Stn Exit B/C
+20259,C'wealth Sec Sch
+82099,CDAC Bldg
+96239,CEVA Freight
+96429,CHANGI LODGE 2
+96439,CHANGI NAVAL BASE
+92089,CHIJ Katong Convent
+92061,CHIJ Katong Convent (Pr)
+92211,CHIJ Katong Convent (Sec)
+95041,CIAS Cargo Ters
+81101,CISCO Ctr
+21559,CISCO Recall
+67759,COMPASSVALE INT
+27041,CP 7
+91111,CP B1
+93179,CP D3
+80171,CP F
+11201,CSC Dempsey Clubhse
+21151,CWT Distripark
+93159,Cable Ski Pk
+52559,Caldecott Stn
+29059,Caltex S'pore
+94089,Calvary Ably Of God Ch
+24279,Cameron Iron Works
+04111,Capitol Bldg
+66031,Cardiff Residence
+14131,Caribbean at Keppel Bay
+98309,Carissa Pk
+20081,Carrier S'pore
+23011,Carrier Transicold Pte Ltd
+78271,Casa Pasir Ris
+83011,Casa Sarina
+84151,Casafina
+43129,Cashew Pk Condo
+43109,Cashew Stn
+55171,Castle Green
+04151,Cath Of The Good Shepherd
+51099,Catholic JC
+44299,Cck Polyclinic
+70119,Cencon Bldg
+10361,Cendex Ctr
+22061,Ceva Logistics
+43199,Ch Of St. Mary
+67079,Ch Of St. Vincent De Paul
+84011,Chai Chee Ind Pk
+40059,Chancery Ct
+95029,Changi Airport PTB1
+95129,Changi Airport PTB2
+95109,Changi Airport PTB3
+97061,Changi Baptist Ch
+99171,Changi Beach CP 2
+95071,Changi Beach CP 4
+95081,Changi Beach CP 5
+97009,Changi Business Pk Ter
+97209,Changi Chapel Museum
+96381,Changi City Pt
+96059,Changi Ct
+96289,Changi General Hosp
+99111,Changi Golf Club
+99049,Changi Golf Course
+97049,Changi Prison
+99129,Changi Village Hotel
+99009,Changi Village Ter
+97059,Changi Women's Prison
+40201,Chelsea Gdn Condo
+24391,Chem-Solv Technologies
+30091,Chengtai Nursery
+67111,Chij St. Joseph'S Convent
+05049,Chinatown Pt
+31129,Chinese Cemy
+21659,Chinese Gdn
+28341,Chinese Gdn Stn
+41061,Chinese High Sch
+40079,Chinese Intl Sch
+44009,Choa Chu Kang Int
+31009,Choa Chu Kang Rd End
+84501,Christ Ch
+92151,Christ Meth Ch
+47169,Chuan Lim Construction
+66121,Chuan Terr
+60021,Chubb S'pore
+25331,Chugoku Marine Paints
+59371,Chung Cheng High Sch
+52251,Chung Hwa Free Clinic
+70141,Citimac Ind Cplx
+70269,Citipoint Ind Cplx
+04167,City Hall Stn Exit B
+82109,City Plaza
+40111,City Twrs
+53321,CityCab
+76541,Citylife@ Tampines
+31031,Civil Defence Academy
+21531,Clariant S'pore
+04211,Clarke Quay
+04239,Clarke Quay Stn
+04222,Clarke Quay Stn Exit E
+17131,Clementi Flyover
+17009,Clementi Int
+17141,Clementi Stadium
+17171,Clementi Stn
+17179,Clementi Stn
+13179,Cliveden At Grange
+29129,Clp Intl
+11291,Cold Storage Jelita
+71079,Comfort Driving Ctr
+71029,Comfort Test Ctr
+52069,Comfortdelgro Corp Ltd
+29119,Comfortdelgro Engrg
+47179,Comfortdelgro Engrg
+67251,Compassvale Stn Exit A
+67259,Compassvale Stn Exit B
+98161,Composite Tech
+16189,Computer Ctr
+08138,Concorde Hotel S'pore
+23151,Containers Printers
+65179,Coral Edge Stn Exit A
+65171,Coral Edge Stn Exit B
+41041,Coronation Plaza
+21179,Corporation Pl
+27471,Corporation Pr Sch
+01029,Cosmic Insurance Bldg
+85021,Country Pk
+55251,Countryside Est
+55361,Countryside Gdn P/G
+54049,Courts Ang Mo Kio
+65159,Cove Stn Exit A
+65151,Cove Stn Exit B
+93071,Crescendo Bldg
+10329,Crescent Girls' Sch
+25229,Crown Beverage Cans S'pore
+21109,Ctrl Fish Proc Fty
+49141,Ctrl Granite Ind
+10151,Ctrl Green Condo
+16181,Ctrl Lib
+06189,Ctrl Sq
+52419,Curtin S'pore
+05641,Customs Port Br HQ
+20051,Cycle & Carriage
+70071,Cycle & Carriage
+92279,D'Ecosia
+96231,DB Schenker
+96321,DBS Asia Hub
+95179,DHL
+96329,DHL
+49041,DHdeco Pte Ltd
+24259,DNV GL Laboratory
+15189,DNV Technology Ctr
+45051,Da Di Glass
+66341,Daikin S'pore
+49151,Daiya Engrg
+81181,Dakota Stn Exit A/Blk 99
+81189,Dakota Stn Exit B/Blk 60
+65309,Damai Stn Exit A
+65301,Damai Stn Exit B
+26049,Damen Shipyard
+49181,Dapolite Ind
+75129,Darul Ghufran Mque
+59259,Darul Makmur Mque
+09169,Delfi Orchard
+10261,Delta Sports Hall
+10199,Delta Swim Cplx
+08031,Dhoby Ghaut Stn
+08057,Dhoby Ghaut Stn
+57061,Dieppe Barracks
+19031,Dover Stn
+19039,Dover Stn
+78109,Downtown East
+03529,Downtown Stn
+43769,Dulwich Coll/Blk 445
+24539,Dundee Marine
+90061,Dunman High Sch
+76271,Dunman Sec Sch
+76349,Dunman Sec Sch
+82121,Dunman View
+24369,Dyna-Mac Engrg Svcs
+11339,Dynasty Lodge
+92309,East Coast Apts
+76469,East Spring Sec Sch
+76281,East View Pr Sch
+93139,Eastern Lagoon II
+85019,Eastwood Ctr
+49159,Econ Group
+76461,Eden Condo
+97161,Edwards Lifesciences
+77079,Elias Mall
+17311,Emerson Process
+07351,Eminent Plaza
+98209,Encompass Digital Media
+45449,Eng Hua Furniture Mfg Pte Ltd
+40179,Env Bldg
+02111,Esplanade Bridge
+91041,EtonHouse Pre-Sch
+82009,Eunos Int
+72019,Eunos Mans
+83101,Eunos Stn
+82061,Eunos Stn/ Int
+71081,Eunos Technolink
+45161,Eurokars Ctr
+59409,Evangel Family Ch
+94011,Evergreen Gdn
+46419,Evergreen Pr Sch
+46421,Evergreen Sec Sch
+85031,Excelsior Gdns
+95189,Expeditors
+96029,Expo Halls 1/2/3
+96039,Expo Halls 4/5/6
+23269,Exxon Mobil
+53089,Faber Gdn
+18111,Fairfield Meth Pr Sch
+11239,Fairlodge
+44771,Fajar Stn
+09219,Far East Plaza
+50251,Farrer Pk Stn Exit A
+50279,Farrer Pk Stn Exit D
+50351,Farrer Pk Tennis Ctr
+11101,Farrer Rd Mkt
+11119,Farrer Rd Stn Exit A
+11111,Farrer Rd Stn Exit B
+84349,Fengshan Pr Sch
+67499,Fernvale Pr Sch
+67481,Fernvale Stn/Blk 439A
+52371,First Toa Payoh Pr Sch
+53079,Flame Tree Pk
+83249,Flamingo Valley
+85079,Flextronic
+82181,Flora East
+57021,Forest Hills Condo
+14069,Former Railway Stn
+91081,Fort Gdns
+07518,Fortune Ctr
+26211,Framo S'pore Pte Ltd
+29081,Franklin Offshore
+07551,Fu Lu Shou Cplx
+46611,Fuchun Sec Sch
+47131,Fuji Oil S'Pore
+84129,Fujitec S'pore Ltd
+03011,Fullerton Sq
+98141,GE Aircraft Engines
+24381,GE Keppel Energy Svcs
+46161,GES S'pore
+21481,GRUNDFOS
+24441,GSK
+16121,Galen
+62099,Gambir Ridge
+10241,Gan Eng Seng Sec Sch
+10221,Ganges Ctr
+11341,Garlick Ville
+29071,Gas Svc Intl
+03371,Gdns by the Bay
+27389,Gek Poh Shop Ctr
+28229,German Ctr
+81209,Geylang Meth Pr Sch
+81211,Geylang Polyclinic
+80319,Geylang West CC
+11009,Ghim Moh Ter
+22021,Givaudan
+46719,Givaudan S'pore
+63049,Glad Tidings Ch
+43271,Glendale Pk Condo
+46049,Globalfoundries
+46059,Globalfoundries/Aft Bke
+16029,Gloria Man
+42259,Goh & Goh Bldg
+66091,Golden Hill Est
+66401,Golden Hts
+01429,Golden Mile Cplx
+74049,Golden Pagoda Tp
+42221,Good Luck Gdn
+99101,Govt Chalets
+96081,Grace Independent Ch
+64109,Gracehaven S Army
+13171,Gramercy Pk
+06129,Grand Copthorne Hotel
+04149,Grand Pk City Hall
+81139,Grandlink Sq
+13169,Grange 80 Condo
+09131,Grange Residences
+11219,Great Eastern Mans
+65429,Greendale Pr Sch
+78141,Greenview Sec Sch
+83351,Grosvenor View
+53401,Guangyang Sec Sch
+24411,Gul Camp
+70109,Gulab Bldg
+70089,HDB CP
+50199,HMI Balestier Hosp
+31089,HQ 5th SIB Camp I
+24559,HQ 6 Div
+27281,Hall 1
+27199,Hall 11
+27031,Hall 12
+27021,Hall 15
+27311,Hall 2
+27261,Hall 4
+27241,Hall 7
+27209,Hall 8
+14009,HarbourFront Int
+14129,Harbourfront Stn Exit A
+14121,Harbourfront Stn Exit B
+15169,Harbourside Ind Bldg 2
+25351,Hart Engrg Pte Ltd
+16019,Haw Par Villa Stn
+16229,Haw Par Villa Stn
+45021,Heavy Veh Pk
+66241,Hemsley Ave
+16069,Heng Mui Keng Terr
+12149,Henry Pk
+26031,Hiap Seng Engrg Ltd
+24671,Hiap Teck Metal Co
+04229,High St Ctr
+42211,Highgate Pk
+63159,Highland Ctr
+43251,Hillbrooks
+43309,Hillbrooks
+43268,Hillington Green Condo
+43249,Hillview Apts
+43819,Hillview Green
+43289,Hillview Hse
+43267,Hillview Hts
+43061,Hillview Stn
+22151,Hitachi
+28679,Hitachi Elevator Bldg
+07329,Hoa Nam Bldg
+67541,Hockey Stadium
+23509,Hoe Keng Motor
+06141,Holiday Inn Atrium
+11419,Holland V Stn Exit A
+11401,Holland V Stn Exit C
+11261,Holland Village
+30049,Home Team Academy
+43649,HomeTeamNS
+98229,Honey Well
+96401,Honeywell Bldg
+24339,Hong Hang Bldg
+20021,Hong Leong Shop Ctr
+05059,Hong Lim Pk
+05129,Hong Lim Pk
+56259,Horizon Gdns
+65411,Horizon Pr Sch
+01012,Hotel Grand Pacific
+06151,Hotel Miramar
+50069,Hotel Royal
+64491,Hougang 1
+64081,Hougang 1/Opp Blk 931A
+64009,Hougang Ctrl Int
+64541,Hougang Ctrl Int
+64441,Hougang G. Shop Mall
+64529,Hougang Polyclinic
+64091,Hougang Pr Sch
+63221,Hougang St 21 FC
+63359,Hougang Swim Cplx
+42309,Hse No. 45
+11311,Hse No. 532
+11301,Hse No. 578
+11309,Hse No. 589
+42049,Hua Guan Gdn
+93041,Hua Xin Ct
+83361,Hua Yu Mans
+03222,Hub Synergy Pt
+43041,Hume Pk Condo
+21479,Hup Leck Heavy Equipment
+28659,IMM Bldg
+14211,ISS Intl Sch
+96119,ITE Coll East Adm Blk
+96079,ITE Coll East Tec Blk
+70201,ITE MacPherson Campus 1
+18211,Infinite Studios
+46221,Innova JC
+58439,Innova JC
+58461,Innova Pr Sch
+27251,Innovation Ctr
+16101,Inst Of Micro-Electronics
+28309,Intl Business Pk
+03223,Intl Plaza
+54481,Ite Coll Ctrl
+24199,JB Ind Pte Ltd
+47711,JB Sentral Bus Ter
+52229,Jackson Sq
+52271,Jackson Sq
+16059,Jamiyah Halfway Hse
+21639,Japanese Gdn/Opp Blk 115
+25369,Jas Metal Coatings
+59309,Jiemin Pr Sch
+31021,Jln Bahar Power Stn
+68031,Jln Kayu Shophouse
+46211,Johor Bahru Checkpt
+46219,Johor Bahru Checkpt
+82049,Joo Chiat Cplx
+82179,Joo Chiat Ct
+24009,Joo Koon Int
+23499,Joo Koon Stn Exit A
+23491,Joo Koon Stn Exit B
+46891,Jordon Food Ind
+21071,Jurong Abattoir
+22011,Jurong Bird Pk
+23049,Jurong Camp
+28249,Jurong East Lib
+28061,Jurong East Stn/Int
+28009,Jurong East Temp Int
+28669,Jurong East Warehse
+21699,Jurong Fire Stn
+21541,Jurong Futsal Ctr
+24689,Jurong Insp Ctr
+21099,Jurong Island Checkpt
+21169,Jurong JC
+28361,Jurong Lake
+28499,Jurong Polyclinic
+21149,Jurong Port Workshops
+21579,Jurong Sec Sch
+21751,Jurong Sec Sch
+22331,Jurong Shipyard
+23451,Jurong Shipyard
+21191,Jurong Stadium
+28231,Jurong Town Hall
+22539,Jurong West Pr Sch
+22419,Jurong West Sub-Stn
+27149,Juying Pr Sch
+47189,K.U.S. Holdings
+40101,KK Women & Child Hosp
+40279,KK Women & Child Hosp
+66599,KLA Tencor
+65329,Kadaloor Stn Exit A
+65321,Kadaloor Stn Exit B
+72051,Kaki Bt Ind Est
+60069,Kallang Basin Swim Cplx
+80181,Kallang Squash Ctr
+80031,Kallang Stn
+80101,Kallang Stn/Opp Blk 2C
+67159,Kangkar Stn Exit A
+67151,Kangkar Stn Exit B
+92131,Katong Omega Apt
+91059,Katong Pk Twrs
+92101,Katong Shop Ctr
+30029,Keat Hong Camp
+25501,Kee Wee Hup Kee
+83062,Kembangan Stn
+83321,Kembangan Stn
+43181,Keming Pr Sch
+17031,Kent Ridge Sec Sch
+15131,Kent Ridge Stn
+18331,Kent Ridge Stn Exit A/NUH
+15139,Kent Ridge Stn Exit B
+16009,Kent Ridge Ter
+50301,Kentish Green
+50261,Kentish Lodge
+14109,Keppel DP Blk 517
+14231,Keppel DP Blk 519
+23231,Keppel Logistics
+23369,Keppel Logistics
+23399,Keppel Offshore & Marine
+23311,Keppel Shipyard
+24349,Keppel Shipyard
+24549,Keppel Shipyard
+14071,Keppel Workshop
+94061,Kew Green Condo
+84309,Kg Chai Chee CC
+83331,Kg Kembangan CC
+82229,Kg Ubi CC
+47021,Khalsa Crescent Drug Rehab Ctr
+57079,Khatib Camp
+59549,Khatib Camp
+59341,Khoo Teck Puat Hosp
+49019,Kim Hock Corp Pte Ltd
+42061,King Albert Pk
+42051,King Albert Pk Stn
+60071,Kolam Ayer Ind Est
+81151,Kong Hwa Sch
+63229,Kovan Sports Ctr
+63031,Kovan Stn Exit B
+63039,Kovan Stn Exit C
+46031,Kranji Lodge 1
+45479,Kranji Pr Sch
+49199,Kranji Reservoir Pk B
+45139,Kranji Stn
+45119,Kranji War Memorial
+49109,Kranji Wtr Reclam Plt
+98121,Krislite Bldg
+53279,Kuo Chuan Presby Sch
+60101,Kwong Wai Shiu Hosp
+25061,Kyocera Chemical
+64149,LP 137
+48039,LP 159
+48031,LP 162
+73021,LP 223R12
+15109,LP 30
+40261,LP 52
+40269,LP 57
+55289,LP 94
+29049,LTH Logistics
+15141,Labrador Pk Stn
+15149,Labrador Pk Stn/PSA Bldg
+93049,Lagoon View
+96241,Laguna Natl C. Club
+93039,Laguna Pk
+21219,Lakepoint Condo
+21649,Lakeside Apt
+28091,Lakeside Stn
+01559,Landmark Village Hotel
+46239,Larkin Ter
+01319,Lavender Stn Exit A/ICA
+01311,Lavender Stn Exit B
+67471,Layar Stn Exit B
+67479,Layar Stn Exit B/Blk 417A
+70271,Le Crescendo
+11539,Lea Hin Hardware Fty
+27211,Lee Wee Nam Lib
+40071,Leng Kwang Baptist Ch
+55279,Lentor Flyover
+23129,Leroy-Somer
+11229,Les Jardins De Holland
+47129,Lian Aik Siong Machinery
+47109,Lian Beng Engrg
+04331,Liang Ct
+24019,Liang Huat Ind Cplx
+11221,Lien Twrs
+78251,Lighthouse
+52211,Lighthouse Sch
+18301,Lim Seng Tjoe Bldg (LT 27)
+84149,Lion Home For Elders
+49129,Lip Guan Ind
+40019,Little India Stn
+97069,Lloyd Leas Work Rel Camp
+12201,Logishub @ Clementi
+49229,Long Kuan Hung Crocodile Farm
+80009,Lor 1 Geylang Ter
+66391,Lor Chuan Stn Exit A
+44539,Lot 1 Shoppers' Mall
+98231,Loyang Ind Est
+98101,Loyang Pt
+98119,Loyang Pt
+98049,Loyang Valley
+98071,Loyang Way/Soxal
+41111,Lutheran Twrs
+24011,M.C. Packaging Pte Ltd
+25181,MAN Diesel
+04019,MANULIFE CTR
+23131,MES Logistic Hub
+43719,MINDEF CP
+60079,MOM Svcs Ctr
+60179,MOM Svcs Ctr
+26209,MSD
+70149,MacPherson Green Condo
+70241,MacPherson Pr Sch
+70191,MacPherson Sec Sch
+70371,Macpherson Stn Exit A
+70259,Macpherson Stn Exit B
+70251,Macpherson Stn Exit C
+51071,Macritchie Reservoir
+71109,Maha Bodhi Sch
+12081,Maju Camp
+85041,Man Fatt Lam Tp
+48051,Mandai Agrotech Pk
+45189,Mandai CD Trg Village
+48019,Mandai Camp 2
+48071,Mandai Crematorium
+48149,Mandai Crematorium & Columbarium
+45199,Mandai Police Trg Camp
+93029,Mandarin Gdns
+03241,Mapletree Anson
+15159,Mapletree Business City
+25329,Mapletree Logistics
+23211,Mapletree Logistics Hub
+82139,Maranatha Hall
+03369,Marina Barrage
+03421,Marina Bay Cruise Ctr
+03391,Marina Bay Financial Ctr
+03509,Marina Bay Sands Hotel
+03511,Marina Bay Sands MICE
+03501,Marina Bay Sands Theatre
+03539,Marina Bay Stn
+02099,Marina Ctr Ter
+03419,Marina Sth Pier
+92289,Marine Cove
+05521,Maritime Hse
+22039,Markono Holdings
+92171,Marshall Lane
+46119,Marsiling CC
+46129,Marsiling Lane Mkt/Fc
+46511,Marsiling Pr Sch
+46521,Marsiling Stn
+53121,Marymount Stn
+53139,Marymount View
+05269,Maxwell Rd FC
+54211,Mayflower Sec Sch
+44859,Maysprings Condo
+24029,Mazak S'pore
+56049,Meadows @ Peirce
+51051,MediaCorp
+18201,Mediacorp Campus
+71221,Meiban Ind Bldg
+10399,Melati Blk 2
+96129,Melville Pk
+95181,Menlo Worldwide
+96069,Mera Terr P/G
+25151,Mercedes-Benz Logistics
+77169,Meridian JC
+77231,Meridian JC
+65169,Meridian Stn Exit A
+65161,Meridian Stn Exit B
+24021,Meritor Heavy Veh Systems
+24651,Metall-Treat Ind
+96121,Metta Welfare Assn
+25519,Michelman
+43311,Midview Bldg
+43111,Min Of Defence
+83059,Mjd Kassim
+55169,Mkt/FC
+23409,Mobil Marine Ter
+96179,Modena Condo/Opp Blk 228
+23481,Molex
+64359,Montfort Sch
+12179,Montview
+80279,Mountbatten Stn Exit B
+51069,Mt Alvernia Hosp
+26409,Multico
+45159,Multistates Trading
+54320,Mustafar
+13063,Mutiara Crest
+13062,Mutiara View
+55039,NCS Hub
+27051,NIE Lib
+56199,NPB Serangoon Depot
+17239,NTUC Fairprice
+27501,NTUC Health Nursing Home
+04179,NTUC Income Ctr
+18071,NUH
+18221,NUH
+41011,NUS Bt Timah Campus
+16149,NUS Fac Of Architecture
+16199,NUS Fac Of Design & Env
+16159,NUS Fac Of Engrg
+17191,NUS High Sch
+16169,NUS Raffles Hall
+92141,Nafa Arts Kindergarten
+67359,Nan Chiau High Sch
+20101,Nan Hua Pr Sch
+54351,Nanyang Poly
+55329,Nanyang Poly
+41079,Natl JC
+15099,Natl Leadership Inst
+22421,Natl Oxygen Pte Ltd
+50121,Natl Skin Ctr
+80219,Natl Stadium
+09059,Natl Youth Council
+22089,Natsteel
+64011,Naung Ct
+59441,Naval Base Pr Sch
+59329,Naval Base Sec Sch
+01549,Near Bali Lane
+95159,Near SATS Flight Kitchen
+57031,Nee Soon Driclad Ctr
+57041,Nee Soon HQ 22 SIB
+93019,Neptune Ct
+05039,New Bridge Ctr
+10589,New Bridge Rd Ter
+66021,New Tech Pk
+19051,New Town Sec Sch
+40031,Newton FC
+40129,Newton Life Ch
+40181,Newton Stn Exit A
+40189,Newton Stn Exit B
+40041,Newton Stn Exit C
+28059,Ng Teng Fong General Hosp
+12101,Ngee Ann Poly
+76411,Ngee Ann Sec Sch
+80169,Nicoll Highway Stn
+23091,Nippon
+23019,Nippon Paint
+25079,Nissin Tpt
+18041,Normanton Pk
+50231,Northlight Sch
+44541,Northvale Condo
+50041,Novena Lodge
+50038,Novena Stn
+50037,Novena Stn Exit B
+01039,Nth Bridge Commercial Cplx
+58361,Nth Link Bldg
+67139,Nth Spring Pr Sch
+47069,Nth Tech
+16161,Nus Museums
+05319,OCBC Ctr
+58519,OPP BLK 104B
+67761,OPP BLK 326D
+76521,OPP BLK 519A
+84571,OPP BLK 55
+43991,OPP BLK 635A
+96421,OPP CHANGI LODGE 2
+96431,OPP CHANGI NAVAL BASE
+21489,OPP GRUNDFOS
+75391,OPP SILTRONIC
+65569,OPP WATERWAY PR SCH
+03019,OUE Bayfront
+65319,Oasis Stn Exit A
+65311,Oasis Stn Exit B/Blk 617D
+46881,Old Chang Kee Bldg
+04223,Old Hill St Police Stn
+51021,Old Police Academy
+51101,Old Police Academy
+52139,Oleander Twrs
+92099,One Amber
+03059,One Raffles Quay
+18051,One-North Stn
+18159,One-North Stn/Galaxis
+83261,Opera Est Pr Sch
+58309,Opp 3M Bldg
+46679,Opp 888 Plaza
+46691,Opp 888 Plaza
+19081,Opp ACS Boarding Sch
+54501,Opp AMK Ind Pk 2
+55309,Opp AMK Police Div HQ
+44899,Opp APSN
+03217,Opp AXA Twr
+19071,Opp Acs Independent
+46789,Opp Admiralty Pr Sch
+47671,Opp Admiralty Sec Sch
+46771,Opp Admiralty Stn
+59279,Opp Ahmad Ibrahim Sec Sch
+53359,Opp Ai Tong Sch
+71041,Opp Air Force Museum
+54031,Opp Al-Muttaqin Mque
+15059,Opp Alexandra Pt
+70031,Opp Aljunied Pk
+81081,Opp Aljunied Stn
+32031,Opp Ama Keng Rd
+92249,Opp Amber Gdn
+21511,Opp Amoy Canning
+55201,Opp Anderson JC
+51111,Opp Andrew Rd
+55159,Opp Ang Mo Kio Comm Hosp
+54221,Opp Ang Mo Kio Pr Sch
+54269,Opp Ang Mo Kio Stn
+54089,Opp Ang Mo Kio Swim Cplx
+20139,Opp Angliss Bldg
+18149,Opp Anglo-Chinese JC
+30031,Opp Army Logistics Base
+24379,Opp Asia Ind Gases
+25231,Opp Asia-Pacific Brewery
+70299,Opp Asiawide Ind Bldg
+43081,Opp Assumption Eng Sch
+21271,Opp Assyakirin Mque
+58199,Opp Auckland Rd
+43201,Opp Autobacs
+20189,Opp Ayer Rajah CC
+18121,Opp Ayer Rajah Ind Est
+19069,Opp Ayer Rajah Telecoms
+21329,Opp BRC Weld Mesh Fty
+31149,Opp Bahai Cemy
+50211,Opp Balestier Pt
+50221,Opp Balestier Twrs
+44321,Opp Bangkit Stn
+16209,Opp Barossa Gdns
+62081,Opp Bartley Chr Ch
+62071,Opp Bartley Stn
+84209,Opp Baywater
+42109,Opp Beauty World Ctr
+42159,Opp Beauty World Stn
+94071,Opp Bedok Camp 2
+84359,Opp Bedok Ctrl PO
+85061,Opp Bedok Mkt Pl
+75061,Opp Bedok Reform Trg Ctr
+84581,Opp Bedok Sth NPC
+21341,Opp Beecham Pte Ltd
+60141,Opp Bendemeer Pr Sch
+23441,Opp Benoi Pl
+62041,Opp Bethany Presby Ch
+53389,Opp Bishan Nth Shop Mall
+54531,Opp Bishan Pk
+53261,Opp Bishan Stadium
+53239,Opp Bishan Stn
+11049,Opp Blessed Sacrament Ch
+14241,Opp Blk 1
+62141,Opp Blk 1
+52021,Opp Blk 1004
+46559,Opp Blk 101
+57111,Opp Blk 101
+61019,Opp Blk 101
+67161,Opp Blk 101
+81221,Opp Blk 1015
+43389,Opp Blk 102
+52409,Opp Blk 102
+71179,Opp Blk 1022
+65071,Opp Blk 103A
+81091,Opp Blk 105
+46299,Opp Blk 106
+63091,Opp Blk 106
+14389,Opp Blk 109
+12069,Opp Blk 109A
+14281,Opp Blk 11
+65021,Opp Blk 110
+44129,Opp Blk 113
+14219,Opp Blk 114
+28271,Opp Blk 114
+63291,Opp Blk 115
+11429,Opp Blk 115B
+57121,Opp Blk 115B
+10341,Opp Blk 116
+12079,Opp Blk 116
+21591,Opp Blk 117
+67509,Opp Blk 119A
+46181,Opp Blk 12
+10081,Opp Blk 120
+43399,Opp Blk 120
+46191,Opp Blk 120
+59129,Opp Blk 121
+67519,Opp Blk 121E
+53259,Opp Blk 125
+70011,Opp Blk 125
+43409,Opp Blk 127
+06031,Opp Blk 13
+11359,Opp Blk 13
+21669,Opp Blk 134D
+28211,Opp Blk 135
+46079,Opp Blk 137
+21769,Opp Blk 138B
+63219,Opp Blk 139
+10069,Opp Blk 140
+43539,Opp Blk 140
+43321,Opp Blk 144
+46519,Opp Blk 144
+46581,Opp Blk 146
+10059,Opp Blk 149
+98019,Opp Blk 149A
+46241,Opp Blk 15
+84709,Opp Blk 150
+46571,Opp Blk 154
+54201,Opp Blk 155
+84679,Opp Blk 156
+67529,Opp Blk 157A
+21569,Opp Blk 158
+83119,Opp Blk 16
+21181,Opp Blk 161
+63101,Opp Blk 169
+44191,Opp Blk 171
+59269,Opp Blk 174
+52231,Opp Blk 177
+46561,Opp Blk 178
+67661,Opp Blk 178A
+46319,Opp Blk 18
+44731,Opp Blk 180
+84289,Opp Blk 180
+44401,Opp Blk 183
+21411,Opp Blk 188
+65271,Opp Blk 188
+42169,Opp Blk 19
+46171,Opp Blk 19
+52089,Opp Blk 195
+65081,Opp Blk 199C
+19019,Opp Blk 19A CP
+46088,Opp Blk 1A
+10131,Opp Blk 2
+46911,Opp Blk 20
+21681,Opp Blk 200
+67339,Opp Blk 200B
+44389,Opp Blk 201
+59161,Opp Blk 201
+65201,Opp Blk 201A
+21239,Opp Blk 203
+44111,Opp Blk 203
+53391,Opp Blk 203
+67269,Opp Blk 203A
+78219,Opp Blk 204
+67341,Opp Blk 204 CP
+11259,Opp Blk 21
+44399,Opp Blk 210
+63239,Opp Blk 210
+21241,Opp Blk 213
+76189,Opp Blk 216
+78169,Opp Blk 216
+43731,Opp Blk 217
+53241,Opp Blk 217
+44379,Opp Blk 219
+46921,Opp Blk 22
+54619,Opp Blk 220
+84199,Opp Blk 220 CP
+54629,Opp Blk 223
+67199,Opp Blk 223D
+96199,Opp Blk 224
+67179,Opp Blk 225A
+76221,Opp Blk 230
+78159,Opp Blk 230
+52391,Opp Blk 231
+63261,Opp Blk 232
+78129,Opp Blk 233
+76159,Opp Blk 237
+84649,Opp Blk 24
+63081,Opp Blk 241
+67189,Opp Blk 241
+43431,Opp Blk 242
+78201,Opp Blk 242
+59181,Opp Blk 245
+54069,Opp Blk 246
+56269,Opp Blk 248
+63071,Opp Blk 248
+76161,Opp Blk 248
+63061,Opp Blk 25
+44311,Opp Blk 253
+53161,Opp Blk 254
+54161,Opp Blk 255
+66051,Opp Blk 257
+43441,Opp Blk 258
+65491,Opp Blk 259 CP
+44139,Opp Blk 26
+52339,Opp Blk 26
+67419,Opp Blk 261
+53151,Opp Blk 263A CP
+65401,Opp Blk 264A
+43229,Opp Blk 266
+76179,Opp Blk 266
+65331,Opp Blk 268D
+14299,Opp Blk 27
+44301,Opp Blk 271
+27091,Opp Blk 271 CP
+65341,Opp Blk 272C
+98029,Opp Blk 275
+27461,Opp Blk 276B
+10111,Opp Blk 28
+59219,Opp Blk 288
+28631,Opp Blk 288D
+43141,Opp Blk 291A
+67431,Opp Blk 291A
+43501,Opp Blk 291E
+65221,Opp Blk 293
+67599,Opp Blk 293D
+44561,Opp Blk 295
+65089,Opp Blk 296
+44089,Opp Blk 296A
+96109,Opp Blk 3012
+84439,Opp Blk 3014
+58399,Opp Blk 303
+67299,Opp Blk 303B
+43479,Opp Blk 305
+67309,Opp Blk 305 CP
+67329,Opp Blk 310B
+28471,Opp Blk 311
+58109,Opp Blk 311
+67379,Opp Blk 313 CP
+59389,Opp Blk 314
+43489,Opp Blk 315
+54079,Opp Blk 315
+65441,Opp Blk 315B
+64239,Opp Blk 316
+17181,Opp Blk 317
+84029,Opp Blk 32
+64309,Opp Blk 321
+59351,Opp Blk 322
+65459,Opp Blk 322 CP
+58379,Opp Blk 325
+17161,Opp Blk 329
+76421,Opp Blk 331
+05241,Opp Blk 333
+54099,Opp Blk 333
+59649,Opp Blk 333C
+43839,Opp Blk 336
+58279,Opp Blk 336A CP
+17119,Opp Blk 343
+71119,Opp Blk 343
+64319,Opp Blk 344
+43589,Opp Blk 347
+46541,Opp Blk 347
+52309,Opp Blk 35
+28351,Opp Blk 350
+17109,Opp Blk 352
+10599,Opp Blk 36
+21609,Opp Blk 364
+59399,Opp Blk 367
+01349,Opp Blk 4
+70041,Opp Blk 4
+84081,Opp Blk 40
+46499,Opp Blk 402
+54369,Opp Blk 4025
+67289,Opp Blk 405C
+17251,Opp Blk 408
+20141,Opp Blk 408
+20219,Opp Blk 41
+27061,Opp Blk 41
+20151,Opp Blk 411
+84331,Opp Blk 416
+59461,Opp Blk 419
+84549,Opp Blk 42
+16891,Opp Blk 420A
+11181,Opp Blk 43
+67561,Opp Blk 432A
+43781,Opp Blk 437A
+10441,Opp Blk 44
+43751,Opp Blk 443D
+59631,Opp Blk 445
+68021,Opp Blk 448A
+53369,Opp Blk 454
+64029,Opp Blk 458
+01211,Opp Blk 461
+28611,Opp Blk 461
+44079,Opp Blk 464
+58389,Opp Blk 469B
+20171,Opp Blk 47
+67559,Opp Blk 471A
+62271,Opp Blk 475B
+64401,Opp Blk 477A
+78119,Opp Blk 479
+10381,Opp Blk 48
+28591,Opp Blk 481
+78231,Opp Blk 482
+58359,Opp Blk 484A CP
+44551,Opp Blk 486
+76259,Opp Blk 487B
+44589,Opp Blk 489A
+76269,Opp Blk 489A
+84101,Opp Blk 49
+58401,Opp Blk 491
+52439,Opp Blk 5
+77199,Opp Blk 500A
+44679,Opp Blk 502
+54309,Opp Blk 5022
+54519,Opp Blk 5023
+54341,Opp Blk 504
+54529,Opp Blk 5043
+54591,Opp Blk 5060
+66431,Opp Blk 506A
+46979,Opp Blk 507
+54449,Opp Blk 507
+58491,Opp Blk 507A
+20121,Opp Blk 51
+20241,Opp Blk 51
+45241,Opp Blk 511A
+59739,Opp Blk 512A
+28389,Opp Blk 515
+77011,Opp Blk 515
+17331,Opp Blk 518
+47581,Opp Blk 521
+64381,Opp Blk 521
+54409,Opp Blk 522
+54419,Opp Blk 527
+21719,Opp Blk 529
+10411,Opp Blk 53
+80231,Opp Blk 53
+84569,Opp Blk 53
+66531,Opp Blk 531
+43601,Opp Blk 532
+44669,Opp Blk 532
+54471,Opp Blk 538
+46989,Opp Blk 540
+84379,Opp Blk 546
+10431,Opp Blk 55
+14049,Opp Blk 55
+46659,Opp Blk 550
+84401,Opp Blk 550
+77369,Opp Blk 555
+67621,Opp Blk 558
+81169,Opp Blk 56
+54299,Opp Blk 565
+64629,Opp Blk 565
+77341,Opp Blk 569
+92071,Opp Blk 57
+77021,Opp Blk 571
+47521,Opp Blk 575
+64469,Opp Blk 579
+47501,Opp Blk 583
+46999,Opp Blk 589
+58339,Opp Blk 589D
+14341,Opp Blk 59
+58049,Opp Blk 590C
+58059,Opp Blk 592C
+77209,Opp Blk 601
+55121,Opp Blk 604
+45349,Opp Blk 604A
+63339,Opp Blk 615
+47569,Opp Blk 620
+22241,Opp Blk 622
+55141,Opp Blk 622
+46861,Opp Blk 624B
+77219,Opp Blk 626
+63329,Opp Blk 627
+43411,Opp Blk 628
+44801,Opp Blk 628
+47559,Opp Blk 630
+44051,Opp Blk 632 CP
+63319,Opp Blk 634
+47549,Opp Blk 639
+77241,Opp Blk 640
+22451,Opp Blk 643
+72029,Opp Blk 646
+54469,Opp Blk 649
+21589,Opp Blk 65
+52119,Opp Blk 65
+44829,Opp Blk 650
+22461,Opp Blk 653B
+22549,Opp Blk 655 CP
+22559,Opp Blk 657 CP
+60039,Opp Blk 66
+22569,Opp Blk 660 CP
+72049,Opp Blk 660A CP
+45439,Opp Blk 661
+22499,Opp Blk 662C
+45421,Opp Blk 666
+45411,Opp Blk 670
+59719,Opp Blk 672C
+47649,Opp Blk 681B
+21369,Opp Blk 695
+17069,Opp Blk 701
+84461,Opp Blk 701
+59119,Opp Blk 701A
+45291,Opp Blk 704
+63341,Opp Blk 709
+10451,Opp Blk 71
+18069,Opp Blk 71
+57081,Opp Blk 713
+77259,Opp Blk 713
+84621,Opp Blk 716
+22351,Opp Blk 717
+77269,Opp Blk 717
+92051,Opp Blk 72
+75279,Opp Blk 721
+59559,Opp Blk 722
+10481,Opp Blk 73
+52261,Opp Blk 73
+46841,Opp Blk 739A CP
+27371,Opp Blk 755
+59069,Opp Blk 757
+46461,Opp Blk 757A CP
+84201,Opp Blk 761
+45361,Opp Blk 765
+46471,Opp Blk 773
+59089,Opp Blk 774
+77309,Opp Blk 778
+47609,Opp Blk 793
+59569,Opp Blk 798
+11171,Opp Blk 7B
+46271,Opp Blk 802
+44879,Opp Blk 810 CP
+59729,Opp Blk 816
+44889,Opp Blk 816A
+75071,Opp Blk 819
+80299,Opp Blk 82
+14391,Opp Blk 85
+18279,Opp Blk 85
+84239,Opp Blk 85
+75169,Opp Blk 853
+59509,Opp Blk 871
+75151,Opp Blk 871A
+46451,Opp Blk 872
+46639,Opp Blk 892C CP
+46661,Opp Blk 896B
+66491,Opp Blk 910
+64619,Opp Blk 913
+27539,Opp Blk 918
+59699,Opp Blk 935
+76119,Opp Blk 945
+11079,Opp Blk 95
+64111,Opp Blk 953
+66481,Opp Blk 968
+27519,Opp Blk 974
+66549,Opp Blk 980C
+27529,Opp Blk 987A
+52031,Opp Blk 998
+44449,Opp Blks 237/239
+20161,Opp Blks 34/35
+84559,Opp Blks 50/51
+84451,Opp Blks 705/706
+75269,Opp Blks 710/713
+75289,Opp Blks 741/742
+77319,Opp Blks 771/772
+66211,Opp Bloxhome Dr
+60119,Opp Boon Keng Stn
+22571,Opp Boon Lay Stn
+53311,Opp Bosch
+41029,Opp Botanic Gdns Stn
+51131,Opp Braddell View
+53339,Opp Bright Hill Tp
+47079,Opp British American Tobacco
+09149,Opp British Council
+13209,Opp British High Comm
+66201,Opp Brockhampton Dr
+43529,Opp Bt Batok Driving Ctr
+44151,Opp Bt Batok Fire Stn
+43331,Opp Bt Batok Presby Ch
+43519,Opp Bt Batok Swim Cplx
+43561,Opp Bt Gombak Stadium
+43571,Opp Bt Gombak Stn
+10099,Opp Bt Merah Town Ctr
+44631,Opp Bt Panjang Plaza
+43139,Opp Bt Panjang Pr Sch
+42089,Opp Bt Timah Plaza
+43591,Opp Bt View Sec Sch
+43749,Opp Bt View Sec Sch
+01112,Opp Bugis Junction
+55269,Opp Bullion Pk Condo
+42311,Opp Burgundy Hill
+07517,Opp Burlington Sq
+22051,Opp Buroh St
+92219,Opp CHIJ Katong Convent
+81109,Opp CISCO Ctr
+92191,Opp CP C3
+93181,Opp CP C4
+93171,Opp CP D3
+80179,Opp CP F
+93151,Opp Cable Ski Pk
+52241,Opp Caldecott Stn
+29051,Opp Caltex S'pore
+24451,Opp Cambridge Ind Trust
+70021,Opp Canossa Convent Pr
+50079,Opp Carlisle Rd
+20089,Opp Carrier S'pore
+84159,Opp Casafina/Temasek JC
+55179,Opp Castle Green
+26289,Opp Caterpillar
+51091,Opp Catholic JC
+44291,Opp Cck Polyclinic
+70111,Opp Cencon Bldg
+10369,Opp Cendex Ctr
+76139,Opp Century Sq
+22069,Opp Ceva Logistics
+84019,Opp Chai Chee Ind Pk
+95079,Opp Changi Beach CP 4
+95089,Opp Changi Beach CP 5
+97201,Opp Changi Chapel Museum
+96389,Opp Changi City Pt
+96051,Opp Changi Ct
+96281,Opp Changi General Hosp
+99119,Opp Changi Golf Club
+97051,Opp Changi Women's Prison
+13031,Opp Chatsworth Rd
+30099,Opp Chengtai Nursery
+83239,Opp Cheviot Hill
+93081,Opp Chiang Ct
+31121,Opp Chinese Cemy
+31079,Opp Chinese Cemy Path 11
+21651,Opp Chinese Gdn
+28349,Opp Chinese Gdn Stn
+44099,Opp Choa Chu Kang Mkt
+44531,Opp Choa Chu Kang Stn
+59201,Opp Chongfu Pr Sch
+14151,Opp Chr Community Chapel
+54319,Opp Christ The King Ch
+59379,Opp Chung Cheng High Sch
+52259,Opp Chung Hwa Free Clinic
+82231,Opp City Plaza
+53329,Opp CityCab
+76549,Opp Citylife@ Tampines
+31039,Opp Civil Defence Academy
+04219,Opp Clarke Quay
+29121,Opp Clp Intl
+11299,Opp Cold Storage Jelita
+71071,Opp Comfort Driving Ctr
+71021,Opp Comfort Test Ctr
+44621,Opp Concord Pr Sch
+41049,Opp Coronation Plaza
+21171,Opp Corporation Pl
+27479,Opp Corporation Pr Sch
+90079,Opp Costa Rhu Condo
+55259,Opp Countryside Est
+54041,Opp Courts Ang Mo Kio
+66161,Opp Crowhurst Dr
+49031,Opp Crown Alliance Industries
+15199,Opp Currency Hse
+05649,Opp Customs Port Br HQ
+20059,Opp Cycle & Carriage
+92271,Opp D'Ecosia
+95191,Opp DB Schenker
+18261,Opp DSO Natl Laboratories
+45059,Opp Da Di Glass
+66349,Opp Daikin S'pore
+43071,Opp Dairy Farm Rd
+75121,Opp Darul Ghufran Mque
+59251,Opp Darul Makmur Mque
+67021,Opp Dedap Rd
+64221,Opp Defu Ave 2
+10269,Opp Delta Sports Hall
+57069,Opp Dieppe Barracks
+78091,Opp Downtown East
+78101,Opp Downtown East
+43761,Opp Dulwich Coll
+43671,Opp Dunearn Sec Sch
+90069,Opp Dunman High Sch
+58069,Opp Durban Rd
+11331,Opp Dynasty Gdn II
+52479,Opp EASB
+23429,Opp EMAS Marine Base
+13071,Opp ERC Inst
+24581,Opp ESAB
+76289,Opp East View Pr Sch
+93131,Opp Eastern Lagoon II
+97169,Opp Edwards Lifesciences
+07359,Opp Eminent Plaza
+45441,Opp Eng Hua Furniture Mfg Pte Ltd
+98061,Opp Engine Test Facility
+40171,Opp Env Bldg
+83109,Opp Eunos Stn
+71089,Opp Eunos Technolink
+45169,Opp Eurokars Ctr
+94019,Opp Evergreen Ave
+85039,Opp Excelsior Gdns
+96021,Opp Expo Halls 1/2/3
+96031,Opp Expo Halls 4/5/6
+23261,Opp Exxon Mobil
+53081,Opp Faber Gdn
+23519,Opp FairPrice Hub
+05271,Opp Fairfield Meth Ch
+18119,Opp Fairfield Meth Pr Sch
+44779,Opp Fajar Stn
+50259,Opp Farrer Pk Stn
+84341,Opp Fengshan Pr Sch
+67491,Opp Fernvale Pr Sch
+67489,Opp Fernvale Stn
+53071,Opp Flame Tree Pk
+29139,Opp Foh Foh Pte Ltd
+14061,Opp Former Railway Stn
+91089,Opp Fort Gdns
+22431,Opp Four Leaves
+09111,Opp Four Seasons Hotel
+46619,Opp Fuchun Sec Sch
+55351,Opp Fudu Wk P/G
+05651,Opp Fuji Xerox Twrs
+03151,Opp GB Bldg
+24389,Opp GE Keppel Energy Svcs
+18021,Opp GEMPLUS
+25169,Opp Galmon S'pore
+62091,Opp Gambir Ridge
+10249,Opp Gan Eng Seng Sec Sch
+11349,Opp Garlick Ville
+20271,Opp German Ctr
+81201,Opp Geylang Meth Sec Sch
+81219,Opp Geylang Polyclinic
+22029,Opp Givaudan
+63041,Opp Glad Tidings Ch
+43151,Opp Glendale Pk Condo
+96271,Opp Global Logistics Ctr
+46041,Opp Globalfoundries
+16021,Opp Gloria Man
+66099,Opp Golden Hill Est
+66409,Opp Golden Hts
+01421,Opp Golden Mile Cplx
+74041,Opp Golden Pagoda Tp
+93089,Opp Goodwill Ct
+71031,Opp Gordon Warehse Bldg
+99109,Opp Govt Chalets
+96089,Opp Grace Independent Ch
+66111,Opp Grace Wk
+64101,Opp Gracehaven S Army
+54259,Opp Grandeur 8
+81131,Opp Grandlink Sq
+21529,Opp Grandluxe
+13119,Opp Great World City
+13121,Opp Great World City
+78149,Opp Greenview Sec Sch
+53419,Opp Guangyang Pr Sch
+23359,Opp Gul Ave
+23229,Opp Gul Way
+70101,Opp Gulab Bldg
+70081,Opp HDB CP
+75369,Opp HNS Micro Siltronic
+31081,Opp HQ 5th SIB Camp I
+30081,Opp Hai Inn See Tp
+27291,Opp Hall 6
+25359,Opp Hart Engrg Pte Ltd
+10229,Opp Harvest Mans
+08011,Opp Haw Par Glass Twr
+16011,Opp Haw Par Villa Stn
+16221,Opp Haw Par Villa Stn
+45029,Opp Heavy Veh Pk
+26151,Opp Hempel
+16061,Opp Heng Mui Keng Terr
+12141,Opp Henry Pk
+24679,Opp Hiap Teck Metal Co
+04251,Opp High St Ctr
+42219,Opp Highgate Pk
+43259,Opp Hillbrooks
+43301,Opp Hillbrooks
+43241,Opp Hillview Apts
+43261,Opp Hillview Hts
+43069,Opp Hillview Stn
+22159,Opp Hitachi
+67549,Opp Hockey Stadium
+24401,Opp Hoe Huat Engrg
+06149,Opp Holiday Inn Atrium
+11089,Opp Holland Hill Lodge
+11269,Opp Holland Village
+30041,Opp Home Team Academy
+43641,Opp HomeTeamNS
+24331,Opp Hong Hang Bldg
+24179,Opp Hong Hock Hardware
+20029,Opp Hong Leong Shop Ctr
+05131,Opp Hong Lim Cplx
+05199,Opp Hong Lim Cplx
+05023,Opp Hong Lim Pk
+83031,Opp Hong San Si Tp
+44109,Opp Hong San Terr
+56251,Opp Horizon Gdns
+65419,Opp Horizon Pr Sch
+06159,Opp Hotel Miramar
+50061,Opp Hotel Royal
+64549,Opp Hougang Ctrl Int
+64449,Opp Hougang G. Shop Mall
+63351,Opp Hougang Swim Cplx
+42301,Opp Hse No. 19
+11319,Opp Hse No. 516
+59459,Opp Huamin Pr Sch
+43049,Opp Hume Pk Condo
+28651,Opp IMM Bldg
+96111,Opp ITE Coll East Adm Blk
+96071,Opp ITE Coll East Tec Blk
+46229,Opp Innova JC
+28221,Opp Intl Business Pk
+54489,Opp Ite Coll Ctrl
+23331,Opp JP Nelson
+52221,Opp Jackson Sq
+44721,Opp Jelapang Stn
+31029,Opp Jln Bahar Power Stn
+33039,Opp Jln Bahtera
+31171,Opp Jln Berseri
+45091,Opp Jln Bumbong
+58081,Opp Jln Janggus
+57131,Opp Jln Kemuning
+70129,Opp Jln Muhibbah
+21301,Opp Jln Pesawat
+68049,Opp Jln Tari Lilin
+23379,Opp Joo Koon Int
+21079,Opp Jurong Abattoir
+22019,Opp Jurong Bird Pk
+23041,Opp Jurong Camp
+28241,Opp Jurong East Lib
+28661,Opp Jurong East Warehse
+21691,Opp Jurong Fire Stn
+24681,Opp Jurong Insp Ctr
+21161,Opp Jurong JC
+28369,Opp Jurong Lake
+28149,Opp Jurong Lodge 1B
+28491,Opp Jurong Polyclinic
+21571,Opp Jurong Sec Sch
+21759,Opp Jurong Sec Sch
+21199,Opp Jurong Stadium
+28239,Opp Jurong Town Hall
+22531,Opp Jurong West Pr Sch
+40109,Opp KK Women & Child Hosp
+40271,Opp KK Women & Child Hosp
+21539,Opp Kaily Packaging
+72059,Opp Kaki Bt Ind Est
+60051,Opp Kallang Pl
+80189,Opp Kallang Squash Ctr
+80109,Opp Kallang Stn/Blk 2C
+92139,Opp Katong Omega Apt
+92109,Opp Katong Shop Ctr
+30021,Opp Keat Hong Camp
+25509,Opp Kee Wee Hup Kee
+83329,Opp Kembangan Stn
+17039,Opp Kent Ridge Sec Sch
+18339,Opp Kent Ridge Stn Exit A
+16131,Opp Kent Ridge Ter
+14101,Opp Keppel DP Blk 517
+14239,Opp Keppel DP Blk 519
+23239,Opp Keppel Logistics
+23361,Opp Keppel Logistics
+24341,Opp Keppel Shipyard
+24541,Opp Keppel Shipyard
+24289,Opp Keppel T&T
+94069,Opp Kew Green Condo
+84301,Opp Kg Chai Chee CC
+81231,Opp Kh Plaza
+47029,Opp Khalsa Crescent Drug Rehab Ctr
+57071,Opp Khatib Camp
+59541,Opp Khatib Camp
+59049,Opp Khatib Stn
+59349,Opp Khoo Teck Puat Hosp
+49011,Opp Kim Hock Corp Pte Ltd
+42059,Opp King Albert Pk Stn
+66251,Opp Kingswear Ave
+81159,Opp Kong Hwa Sch
+46039,Opp Kranji Lodge 1
+45251,Opp Kranji Sec Sch
+45131,Opp Kranji Stn
+45111,Opp Kranji War Memorial
+49091,Opp Kranji Wtr Reclam Plt
+98129,Opp Krislite Bldg
+53271,Opp Kuo Chuan Presby Sch
+25069,Opp Kyocera Chemical
+32041,Opp LP 160
+32061,Opp LP 173
+73029,Opp LP 223R10
+15101,Opp LP 31
+93031,Opp Laguna Pk
+21211,Opp Lakepoint Condo
+21641,Opp Lakeside Apt
+28099,Opp Lakeside Stn
+11531,Opp Lea Hin Hardware Fty
+23121,Opp Leroy-Somer
+47121,Opp Lian Aik Siong Machinery
+04339,Opp Liang Ct
+78259,Opp Lighthouse
+31061,Opp Lim Chu Kang Camp II
+33041,Opp Lim Chu Kang Lane 3
+34011,Opp Lim Chu Kang Lane 4
+34021,Opp Lim Chu Kang Lane 5
+84141,Opp Lion Home For Elders
+40011,Opp Little India Stn
+12209,Opp Logishub @ Clementi
+44241,Opp Lompang Rd
+80039,Opp Lor 1 Geylang Ter
+81069,Opp Lor 39 Geylang
+66399,Opp Lor Chuan Stn Exit B
+15071,Opp Lor Sarhad
+98239,Opp Loyang Ind Est
+98109,Opp Loyang Pt
+98111,Opp Loyang Pt
+78279,Opp Loyang Townhse
+98041,Opp Loyang Valley
+98151,Opp Loyang Way 4
+98181,Opp Loyang Way 6
+98079,Opp Loyang Way/Soxal
+41119,Opp Lutheran Twrs
+03218,Opp MAS Bldg
+26201,Opp MSD
+70379,Opp Macpherson Stn Exit A
+51079,Opp Macritchie Reservoir
+12089,Opp Maju Camp
+85049,Opp Man Fatt Lam Tp
+48059,Opp Mandai Agrotech Pk
+45181,Opp Mandai CD Trg Village
+48011,Opp Mandai Camp 2
+48079,Opp Mandai Crematorium
+48141,Opp Mandai Crematorium & Columbarium
+45061,Opp Mandai Est
+45191,Opp Mandai Police Trg Camp
+93021,Opp Mandarin Gdns
+93199,Opp Mandarin Gdns
+09037,Opp Mandarin Orchard
+99031,Opp Maranatha B-P Ch
+82131,Opp Maranatha Hall
+03519,Opp Marina Bay Sands MICE
+03411,Opp Marina Sth Pier
+24619,Opp Marinteknik
+05519,Opp Maritime Hse
+46121,Opp Marsiling Lane Mkt/Fc
+46529,Opp Marsiling Stn
+51081,Opp Marymount Convent Sch
+53129,Opp Marymount Stn
+54219,Opp Mayflower Sec Sch
+56041,Opp Meadows @ Peirce
+51059,Opp MediaCorp
+71229,Opp Meiban Ind Bldg
+21509,Opp Meiji Seika
+10391,Opp Melati Blk 2
+48109,Opp Meng Suan Rd
+96061,Opp Mera Terr P/G
+40211,Opp Met YMCA
+25511,Opp Michelman
+43319,Opp Midview Bldg
+80069,Opp Mohd Salleh Mque
+13101,Opp Mohd Sultan Rd
+23489,Opp Molex
+64351,Opp Montfort Sch
+12029,Opp Moonbeam Wk
+10219,Opp Motor Image
+80271,Opp Mountbatten Stn
+14019,Opp Mt Faber Lodge
+45151,Opp Multistates Trading
+55031,Opp NCS Hub
+52099,Opp NKF
+56191,Opp NPB Serangoon Depot
+18079,Opp NUH
+18239,Opp NUH
+16191,Opp NUS Fac Of Architect
+16991,Opp Nan Hua High Sch
+27129,Opp Nanyang Ave
+55321,Opp Nanyang Poly
+41071,Opp Natl JC
+15091,Opp Natl Leadership Inst
+22429,Opp Natl Oxygen Pte Ltd
+80211,Opp Natl Stadium
+22081,Opp Natsteel
+59449,Opp Naval Base Pr Sch
+53201,Opp Nea Reg Off
+57049,Opp Nee Soon HQ 22 SIB
+33021,Opp Neo Tiew Rd
+93011,Opp Neptune Ct
+10011,Opp New Bridge Rd Ter
+40039,Opp Newton FC
+40121,Opp Newton Life Ch
+40049,Opp Newton Stn Exit C
+09011,Opp Ngee Ann City
+12109,Opp Ngee Ann Poly
+80161,Opp Nicoll Highway Stn
+25071,Opp Nissin Tpt
+18049,Opp Normanton Pk
+59571,Opp Northbrooks Sec Sch
+59191,Opp Northland Sec Sch
+44549,Opp Northvale Condo
+50031,Opp Novena Ch
+50049,Opp Novena Lodge
+49239,Opp Nyee Phoe Group
+46941,Opp Nylect Engrg
+05009,Opp OCBC Ctr
+11019,Opp OG Fty
+24629,Opp Ocean Tanker
+51029,Opp Old Police Academy
+51109,Opp Old Police Academy
+92091,Opp One Amber
+18059,Opp One-North Stn
+18151,Opp One-North Stn/Galaxis
+83269,Opp Opera Est Pr Sch
+09023,Opp Orchard Stn/ION
+59741,Opp Orchid Country Club
+49101,Opp Ordinance Supply Base
+70261,Opp Orion @ Paya Lebar
+76059,Opp Our Tampines Hub
+06011,Opp Outram Pk Stn
+92261,Opp P/G @ Big Splash
+29109,Opp PPL Shipyard
+18109,Opp PSB Science Pk Bldg
+49219,Opp PUB Quarter
+66071,Opp PUB Recreation Club
+27189,Opp PUB Sub-Stn
+10119,Opp Pacific Tech Ctr
+84131,Opp Panasonic
+12049,Opp Pandan Valley
+12039,Opp Pandan Valley Condo
+28459,Opp Parc Oasis
+50011,Opp Parish Of Christ Ch
+92251,Opp Parkland Green
+43621,Opp Parkview Apts
+83159,Opp Parkway East Hosp
+92041,Opp Parkway Parade
+24041,Opp Pasir Laba Camp
+16071,Opp Pasir Panjang PO
+78139,Opp Pasir Ris Pr Sch
+77171,Opp Pasir Ris Town Pk
+15211,Opp Pasir View Pk
+71181,Opp Paya Lebar Air Base
+63309,Opp Paya Lebar Girls' Sch
+70309,Opp Paya Lebar St
+71209,Opp Paya Ubi Ind Pk
+05019,Opp Pearl's Ctr
+90029,Opp Pebble Bay
+11209,Opp Peirce Rd
+44221,Opp Pending Stn
+66151,Opp Penshurst Pl
+83081,Opp Perpetual Succour Ch
+44209,Opp Petir Stn
+52149,Opp Philips S'pore
+44149,Opp Phoenix Stn
+12059,Opp Pine Gr Condo
+01521,Opp Plaza Parkroyal
+45201,Opp Police Tactical Trg Camp
+66221,Opp Portchester Ave
+21331,Opp Premier Milk Pte Ltd
+07571,Opp Prime Ctr
+43349,Opp Princess E Pr Sch
+46309,Opp Progen Bldg
+24609,Opp Progress Galvanizing
+50189,Opp Public Man
+65119,Opp Punggol 17th Ave
+64371,Opp Punggol CC
+64071,Opp Punggol Pk
+65389,Opp Punggol Sec Sch
+65289,Opp Punggol Sec/Blk 195E
+65359,Opp Punggol View Pr Sch
+11031,Opp Queen's Cl
+11541,Opp Queens
+11489,Opp Queenstown Lib
+11051,Opp Queenstown Polyclinic
+11491,Opp Queenstown Pr Sch
+11061,Opp Queensway Sec Sch
+11519,Opp Queensway Shop Ctr
+40199,Opp Raffles Girls' Sch
+01619,Opp Raffles Hotel
+53211,Opp Raffles Inst
+53309,Opp Raffles Inst
+25421,Opp Raffles Marina
+10201,Opp Redhill Stn
+17051,Opp Regent Pk
+11321,Opp Regent Villa
+18251,Opp Reuters
+62159,Opp Rindu Terr
+78261,Opp Ripple Bay
+77069,Opp Ris Grandeur
+21399,Opp River Valley High Sch
+67239,Opp Rivervale Pr Sch
+07589,Opp Rochor Ctr
+07539,Opp Rochor Stn
+68109,Opp Rolls Royce Pte Ltd
+92111,Opp Roxy Sq
+63361,Opp S'Goon Sports Cplx
+66381,Opp S'Goon Stn Exit F
+21229,Opp S'Pore A'Space Mfg
+41129,Opp S'Pore Bible Coll
+62261,Opp S'goon Sec Sch
+13011,Opp S'pore Botanic Gdns
+02029,Opp S'pore Cricket Club
+23081,Opp S'pore Discovery Ctr
+25471,Opp S'pore Epson Ind
+96221,Opp S'pore Expo
+62239,Opp S'pore Girls' Home
+80191,Opp S'pore Indoor Stadium
+50241,Opp S'pore Khalsa Assn
+51039,Opp S'pore Polo Club
+19099,Opp S'pore Poly
+60019,Opp S'pore Post
+66081,Opp S'pore Power Trg Inst
+28259,Opp S'pore Science Ctr
+16031,Opp S'pore Science Pk II
+90051,Opp S'pore Swim Club
+24351,Opp S'pore Takada Ind
+23191,Opp S'pore Tpt Pte Ltd
+45121,Opp S'pore Turf Club
+56021,Opp S'wang Hill FC
+80141,Opp S.A. Deaf
+95099,Opp SAF Ferry Ter
+75051,Opp SAFRA Tampines
+59701,Opp SAFRA Yishun
+23071,Opp SAFTI Military Inst
+97171,Opp SATS Catering
+43219,Opp SBS Transit West District
+84599,Opp SBST Bedok Bus Pk
+55231,Opp SBST East District
+62249,Opp SBST Hougang Depot
+48099,Opp SCDF Nee Soon Camp
+95069,Opp SIA Hangar
+98171,Opp SIA Supplies Ctr
+41149,Opp SICC
+12099,Opp SIM HQ
+10289,Opp SIS Bldg
+16091,Opp SIT Dover
+51041,Opp SLF Cplx
+25101,Opp SMC Mfg
+23439,Opp SML Shipyard Ltd
+55221,Opp SMRT Buses AMK Depot
+28101,Opp SMRT Ulu Pandan Depot
+18019,Opp SP Jain
+19029,Opp SP SMA
+21129,Opp SPC Svc Stn
+10109,Opp SPRING S'pore Bldg
+55051,Opp ST Electronics
+97019,Opp Salvation Army
+22329,Opp Sam Mccoy Engrg
+29011,Opp Sanmina-SCI
+91051,Opp Santa Fe Mans
+19041,Opp Sch Of Science & Tech
+64169,Opp Schenker
+15119,Opp Sci Pk 2/The Galen
+15129,Opp Sci Pk 2/The Gemini
+46749,Opp Seagate
+66519,Opp Seagate
+55021,Opp Seasons Pk
+22171,Opp Secura S'pore
+93121,Opp Sekolah Indonesia
+97079,Opp Selarang Camp
+97089,Opp Selarang Pk Drug Reh.
+68141,Opp Seletar Airport
+67051,Opp Seletar Hills Est
+57059,Opp Sembawang Air Base
+58179,Opp Sembawang Corp Industries
+58189,Opp Sembawang Drug Rehab Ctr
+58099,Opp Sembawang Pk
+58289,Opp Sembawang Sec Sch
+58149,Opp Sembawang Shipyard G 8
+58011,Opp Sembawang Shop Ctr
+58219,Opp Sembawang Stn
+67719,Opp Sengkang Fire Stn
+67401,Opp Sengkang Stn/Blk 260A
+66291,Opp Serangoon Gdn Circus
+63059,Opp Serangoon JC
+64061,Opp Serangoon Sec Sch
+63169,Opp Serangoon Swim Cplx
+55101,Opp Serenity Pk
+49029,Opp Sg Kadut St 2
+01621,Opp Shaw Twrs
+04329,Opp Shell HSE
+23201,Opp Shimano Pte Ltd
+49171,Opp Shingda Construction
+53021,Opp Shunfu Est
+29091,Opp Sia Huat
+93091,Opp Siglap Sth CC
+21259,Opp Sime Darby
+21209,Opp Sime Rengo Packaging Ltd
+96209,Opp Simei Green Condo
+96161,Opp Simei Stn
+68069,Opp Sing-China Bldg
+42019,Opp Sixth Ave Stn
+09038,Opp Somerset Stn
+22199,Opp Soon Lee Depot
+05629,Opp Southpoint
+75031,Opp Springfield Sec Sch
+57011,Opp Springleaf Nature Pk
+93079,Opp Springvale
+05189,Opp Sri Mariamman Tp
+60089,Opp St. Andrew'S Village
+76121,Opp St. Hilda's Sec Sch
+01411,Opp St. John HQ
+21389,Opp St. Joseph's Home
+41109,Opp St. Margaret's Sec Sch
+56249,Opp St. Nicholas Girls'
+14221,Opp St. Teresa's Ch
+14039,Opp St. Theresa's Convent
+53019,Opp St. Theresa's Home
+13089,Opp St. Thomas Wk
+01129,Opp Stamford Pr Sch
+06171,Opp State Ct
+40089,Opp Stevens Stn
+40221,Opp Stevens Stn
+47821,Opp Sumitomo Bakelite S'pore
+58259,Opp Sun Plaza
+55081,Opp Sunrise Gdns
+47809,Opp Sunshine Bakery
+80151,Opp Suntec City
+02159,Opp Suntec Convention Ctr
+25439,Opp Super Continental
+25491,Opp Super Continental
+43821,Opp Symphony Hts
+56051,Opp Tagore Rd
+70289,Opp Tai Seng Stn
+76339,Opp Tampines Changkat Cc
+75319,Opp Tampines Dormitory
+76191,Opp Tampines Reg Lib
+76149,Opp Tampines Stn/Int
+11289,Opp Tan Boon Chong Ave
+41069,Opp Tan Kah Kee Stn
+50129,Opp Tan Tock Seng Hosp
+51011,Opp Tan Tong Meng Twr
+20299,Opp Tanglin Sec Sch
+18181,Opp Tanglin Trust Sch
+10271,Opp Tanglin View
+23469,Opp Tanoto Shipyard
+54651,Opp Techplace 2
+31161,Opp Teen Challenge
+14491,Opp Telok Blangah Mkt/FC
+14169,Opp Telok Blangah Stn
+84119,Opp Temasek JC
+75231,Opp Temasek Poly
+75221,Opp Temasek Poly East G
+75241,Opp Temasek Poly West G
+94051,Opp Temasek Sec Sch
+44049,Opp Ten Mile Junction Stn
+30019,Opp Tengah Air Base
+01231,Opp Textile Ctr
+82111,Opp Tg Katong Cplx
+82071,Opp Tg Katong Girls' Sch
+82059,Opp Tg Katong Rd Sth P/G
+14089,Opp Tg Pagar DP Blk F5
+90039,Opp Tg Ria Condo
+55011,Opp The Calrose
+75341,Opp The Clearwater Condo
+11471,Opp The Fisherman Ch
+01511,Opp The Gateway
+67041,Opp The Greenwich
+63029,Opp The Helping Hand
+42181,Opp The Hillford
+43029,Opp The Hillside
+92121,Opp The Holy Family Ch
+76081,Opp The Holy Trinity Ch
+20039,Opp The Infiniti
+28201,Opp The JTC Summit
+41131,Opp The Japanese Assn
+20281,Opp The Japanese Sec Sch
+44011,Opp The Linear
+16041,Opp The Longhouse
+64049,Opp The Midtown
+62221,Opp The Minton
+42039,Opp The Nexus
+03071,Opp The Ogilvy Ctr
+43231,Opp The Petals Condo
+43051,Opp The Rail Mall
+02171,Opp The Ritz-Carlton
+65011,Opp The Rivervale
+18289,Opp The Rutherford
+59751,Opp The Shaughnessy
+94039,Opp The Summit
+28049,Opp The Synergy
+04249,Opp The Treasury
+55341,Opp Thomson Gr
+50059,Opp Thomson Med Ctr
+53059,Opp Thomson Plaza
+10171,Opp Tiong Bahru Pk
+10161,Opp Tiong Bahru Plaza
+52489,Opp Toa Payoh Polyclinic
+52329,Opp Toa Payoh Stadium
+52181,Opp Toa Payoh Stn
+52509,Opp Toa Payoh Swim Cplx
+28689,Opp Toh Guan Ctr
+42291,Opp Toh Tuck Cres
+54609,Opp Townsville Pr Sch
+24139,Opp Toyo Ink
+32059,Opp Track 11
+32079,Opp Track 13
+30059,Opp Track 14
+28121,Opp Track 18
+65121,Opp Track 22
+21319,Opp Tractor Rd
+70091,Opp Traffic Police
+52079,Opp Trellis Twrs
+70279,Opp Trinity @ Paya Lebar
+66139,Opp Trinity Meth Ch
+75251,Opp Tropica Condo
+96049,Opp Tropicana Condo
+26119,Opp Trussco Pte Ltd
+24519,Opp Tuas Fire Stn
+25419,Opp Tuas Ter
+25459,Opp Tuas West St
+11099,Opp Tulip Gdn
+55041,Opp Ue Bizhub Ctrl
+28699,Opp Uni-Tech Ctr
+77129,Opp Unit 104
+50029,Opp United Sq
+18319,Opp University Hall
+18321,Opp University Health Ctr
+63011,Opp Upp S'Goon Shop Ctr
+48081,Opp Upp Seletar Reservoir
+13051,Opp Valley Pt
+23141,Opp Varco
+17011,Opp Varsity Pk
+07419,Opp Veerasamy Rd
+93189,Opp Victoria JC
+12199,Opp Village Twr
+14119,Opp VivoCity
+47041,Opp W'Lands Auto Hub
+46329,Opp W'Lands Civic Ctr
+46381,Opp W'Lands Ind Pk D St 1
+46809,Opp W'Lands Mart
+46931,Opp W'Lands Spectrum 1
+47819,Opp W'Lands Sunny Food
+46501,Opp W'Lands Town Gdn
+02119,Opp War Memorial Pk
+17029,Opp Waseda S Snr High Sch
+49071,Opp Wason Wood Ind
+84611,Opp Waterfront Isle
+84601,Opp Waterfront Key
+84631,Opp Waterfront Waves
+58481,Opp Wellington Pr Sch
+17389,Opp West Bay Resort Condo
+17361,Opp West Coast Link
+17299,Opp West Coast Pk
+17301,Opp West Coast View
+44819,Opp West Spring Sec Sch
+27101,Opp Westwood Sec Sch
+18179,Opp Weyhill Cl
+16219,Opp Wharves Bldg
+53141,Opp Whitley Sec Sch
+16239,Opp Wholesale Ctr
+47539,Opp Woodgrove Sec Sch
+61029,Opp Woodleigh Pk
+47619,Opp Woodsvale Condo
+63389,Opp Xinmin Pr Sch
+26221,Opp YLS Steel
+43639,Opp YWMA Kindergarten
+14171,Opp Yeo's Bldg
+24129,Opp Yeow San Pte Ltd
+46739,Opp Yew Huat Scaffolding Work
+45371,Opp Yew Mei Green Condo
+45039,Opp Yew Tee Ind Est
+45049,Opp Yew Tee Ind Est Blk 1
+45329,Opp Yew Tee Stn
+55311,Opp Yio Chu Kang Stadium
+55181,Opp Yio Chu Kang Stn
+59611,Opp Yishun Community Hosp
+59221,Opp Yishun Ind Pk A
+59661,Opp Yishun Polyclinic
+59109,Opp Yishun Pr Sch
+59529,Opp Yishun Sapphire
+59031,Opp Yishun Sports Hall
+59073,Opp Yishun Stn
+68131,Opp Youth Flying Club
+96311,Opp Yusen Logistics
+16179,Opp Yusof Ishak Hse
+63279,Opp Yuying Sec Sch
+44239,Opp Zhenghua Pr Sch
+50179,Opp Zhongshan Mall
+65559,Opposite Blk 227A
+25099,Opto-Pharm
+08137,Orchard Plaza
+09048,Orchard Stn/Lucky Plaza
+09047,Orchard Stn/Tang Plaza
+59749,Orchid Country Club
+59499,Orchid Pk Condo
+76051,Our Tampines Hub
+06029,Outram Pk Stn
+10018,Outram Pk Stn Exit F/SGH
+05069,Outram Pk Stn Exit H
+21521,PB Packaging Systems
+23389,PEC Ltd
+29101,PPL Shipyard
+15181,PSB S'pore
+18241,PSB Science Pk Annex
+18101,PSB Science Pk Bldg
+49211,PUB Quarter
+66079,PUB Recreation Club
+27181,PUB Sub-Stn
+26059,Pan Ocean Shipyard
+02089,Pan Pacific Hotel
+20341,Pan Tech Ind Cplx
+84139,Panasonic
+24499,Panasonic Ind Devices
+12169,Pandan Valley
+12031,Pandan Valley Condo
+28281,Parc Oasis
+28451,Parc Oasis
+50019,Parish Of Christ Ch
+01139,Parkview Sq
+83151,Parkway East Hosp
+92049,Parkway Parade
+24049,Pasir Laba Camp
+15161,Pasir Panjang Ctr
+15191,Pasir Panjang Stn/Fc
+77009,Pasir Ris Int
+78131,Pasir Ris Pr Sch
+77049,Pasir Ris Town Pk
+77179,Pasir Ris Town Pk
+15219,Pasir View Pk
+71189,Paya Lebar Air Base
+62149,Paya Lebar Camp
+62029,Paya Lebar Gdns
+63301,Paya Lebar Girls' Sch
+81111,Paya Lebar Stn Exit B
+81119,Paya Lebar Stn Exit C
+81129,Paya Lebar Stn Exit D
+71201,Paya Ubi Ind Pk
+07011,Peace Ctr
+05012,Pearl's Ctr
+90021,Pebble Bay
+52341,Pei Chun Public Sch
+42071,Pei Hwa Presby Pr Sch
+05013,People's Pk Cplx
+05022,People's Pk Ctr
+52141,Philips S'pore
+44141,Phoenix Stn
+12051,Pine Gr Condo
+22189,Pioneer Junction
+27401,Pioneer Sec Sch
+22521,Pioneer Stn Exit A
+22529,Pioneer Stn Exit B
+90019,Pk Shore Condo
+01529,Plaza Parkroyal
+49061,Poh Cheong Concrete Products
+75329,Poi Ching Pr Sch
+34009,Police Coast Guard
+12119,Police KINS Trg Camp
+95131,Police Pass Off
+95139,Police Pass Off
+45209,Police Tactical Trg Camp
+10211,Porsche Ctr S'pore
+61099,Potong Pasir CC
+60269,Potong Pasir Stn Exit B
+60261,Potong Pasir Stn Exit C
+98219,Pratt & Whitney Canada
+24219,Precision Products
+96331,Premier
+21339,Premier Milk Pte Ltd
+43341,Princess E Pr Sch
+46301,Progen Bldg
+24601,Progress Galvanizing
+95171,Prologis
+02161,Promenade Stn
+02169,Promenade Stn Exit B
+03021,Prudential Twr
+64379,Punggol CC
+64079,Punggol Pk
+65139,Punggol Rd End
+65381,Punggol Sec Sch
+65281,Punggol Sec/Blk 601B
+65251,Punggol Stn
+65259,Punggol Stn
+65009,Punggol Temp Int
+65351,Punggol View Pr Sch
+01109,Queen St Ter
+11131,Queens Condo
+11481,Queenstown Lib
+11059,Queenstown Polyclinic
+11499,Queenstown Pr Sch
+11141,Queenstown Stn Exit A/D
+11149,Queenstown Stn Exit B/C
+11069,Queensway Sec Sch
+11469,Queensway Sec Sch
+25341,ROCKWOOL
+26331,RS Components
+25221,Raffles Country Club
+40191,Raffles Girls' Sch
+01611,Raffles Hotel
+02049,Raffles Hotel
+53219,Raffles Inst
+53301,Raffles Inst
+25429,Raffles Marina
+03031,Raffles Pl Stn Exit F
+40231,Raffles Town Club
+67211,Ranggung Stn Exit A
+67219,Ranggung Stn Exit B
+62039,Raya Gdn
+10209,Redhill Stn
+45399,Regent Gr Condo
+43549,Regent Hts
+17059,Regent Pk
+11329,Regent Villa
+64499,Regentville
+08069,Rendezvous Hotel S'pore
+46269,Republic Poly
+14519,Resorts World Sentosa
+50111,Revival Ctr Ch
+26171,Richee Engrg
+62151,Rindu Terr
+64329,Rio Vista
+78269,Ripple Bay
+77061,Ris Grandeur
+06169,River Pl Condo
+21391,River Valley High Sch
+46251,Riverside Sec Sch
+67231,Rivervale Pr Sch
+65239,Riviera Stn Exit A
+65231,Riviera Stn Exit B
+07531,Rochor Stn
+68101,Rolls Royce Pte Ltd
+46341,Rosewood
+92119,Roxy Sq
+09212,Royal Plaza On Scotts
+09179,Royal Thai Embassy
+67229,Rumbia Stn Exit A
+67221,Rumbia Stn Exit B/Blk 153
+66261,S'Goon Gdns Country Club
+66009,S'Goon Int
+62139,S'Goon Stn Exit A/Blk 413
+66351,S'Goon Stn Exit B
+66359,S'Goon Stn Exit C/Blk 201
+62189,S'Goon Stn Exit D/Blk 416
+66389,S'Goon Stn Exit F
+62131,S'Goon Stn Exit H
+41121,S'Pore Bible Coll
+48131,S'Pore Zoo
+99189,S'pore Aviation Ac
+13019,S'pore Botanic Gdns
+23089,S'pore Discovery Ctr
+25479,S'pore Epson Ind
+96229,S'pore Expo
+20329,S'pore Food Ind
+20131,S'pore Food Industries Bldg
+50239,S'pore Indian Assn
+80199,S'pore Indoor Stadium
+50249,S'pore Khalsa Assn
+51031,S'pore Polo Club
+19091,S'pore Poly
+18089,S'pore Post
+22181,S'pore Post
+60011,S'pore Post
+66089,S'pore Power Trg Inst
+28251,S'pore Science Ctr
+16039,S'pore Science Pk II
+58449,S'pore Sports Sch
+90059,S'pore Swim Club
+24359,S'pore Takada Ind
+23199,S'pore Tpt Pte Ltd
+45129,S'pore Turf Club
+80149,S.A. Deaf
+95091,SAF Ferry Ter
+75059,SAFRA Tampines
+23079,SAFTI Military Inst
+95049,SATS Cargo Ter
+97179,SATS Catering
+97189,SATS Maintenance Ctr 2
+43211,SBS Transit West District
+84591,SBST Bedok Bus Pk
+55239,SBST East District
+62241,SBST Hougang Depot
+48091,SCDF Nee Soon Camp
+95061,SIA Hangar
+12091,SIM HQ
+10281,SIS Bldg
+16099,SIT Dover
+23171,SKK (S) Pte Ltd
+51049,SLF Cplx
+25109,SMC Mfg
+55229,SMRT Buses AMK Depot
+28109,SMRT Ulu Pandan Depot
+04121,SMU
+24301,SNL Logistics Pte Ltd
+18011,SP Jain
+19021,SP SMA
+21121,SPC Svc Stn
+10101,SPRING S'pore Bldg
+73041,ST Aero
+55059,ST Electronics
+23291,ST Marine
+60209,San Ritz
+29019,Sanmina-SCI
+27221,Sch Of CEE
+27231,Sch Of Comm And Info
+19049,Sch Of Science & Tech
+08079,Sch of the Arts
+64161,Schenker
+15111,Sci Pk 2/The Galen
+15121,Sci Pk 2/The Gemini
+18131,Science Pk
+46741,Seagate
+47629,Seagate
+97181,Seamap
+55029,Seasons Pk
+02051,Seating Gallery
+26369,See Hup Seng
+97071,Selarang Camp
+97081,Selarang Pk Drug Reh.
+07021,Selegie Ctr
+68149,Seletar Airport
+67059,Seletar Hills Est
+58141,Sembawang Camp
+58171,Sembawang Corp Industries
+58181,Sembawang Drug Rehab Ctr
+58009,Sembawang Int
+58241,Sembawang Int
+58091,Sembawang Pk
+58281,Sembawang Sec Sch
+58211,Sembawang Stn
+24571,Seng Heng Engrg
+67441,Sengkang Community Hub
+67009,Sengkang Int
+67409,Sengkang Stn
+29149,Senkee Logistics Hub
+66271,Serangoon Gdn Circus
+63051,Serangoon JC
+64069,Serangoon Sec Sch
+63369,Serangoon Sports Cplx
+63149,Serangoon Stadium
+63161,Serangoon Swim Cplx
+55109,Serenity Pk
+28441,Seventh-Day Advent Ch
+25179,Sew-Eurodrive
+49209,Sg Buloh Wetland Reserve
+32081,Sg Gedong Camp
+49021,Sg Kadut St 2
+50201,Shaw Plaza
+01629,Shaw Twrs
+04321,Shell HSE
+03239,Shenton Way Ter
+10401,Shriro Hse
+53029,Shunfu Est
+53291,Shunfu Mart
+46169,Si Ling Sec Sch
+84079,Siglap Cc/Opp Blk 71
+93149,Siglap Link
+93099,Siglap Sth CC
+42171,Signature Pk Condo
+49049,Sim Hup Co
+21251,Sime Darby
+21201,Sime Rengo Packaging Ltd
+96201,Simei Green Condo
+96299,Simei Green Condo
+96149,Simei Stn
+96169,Simei Stn
+80289,Sims Pl Ter
+81051,Sims Ville
+53179,Sin Ming Plaza
+21159,Sin Soon Huat
+24269,Sing Huat Hardware
+54641,Sing Ind Cplx
+68061,Sing-China Bldg
+42011,Sixth Ave Ctr
+41081,Sixth Ave Stn
+42129,Sixth Ave Ville
+26141,Smarty
+08121,Somerset Stn
+65141,Soo Teck Stn
+65149,Soo Teck Stn
+25189,Soon Heng Glass
+22609,Soon Lee Bus Pk
+22191,Soon Lee Depot
+42119,Southaven II
+01341,Southbank
+11109,Spanish Village
+75039,Springfield Sec Sch
+57019,Springleaf Nature Pk
+45171,Sri Arasakesari Sivan Tp
+45179,Sri Arasakesari Sivan Tp
+07211,Sri Srinivasa Perumal Tp
+07221,Sri Vadapathira K Tp
+60081,St. Andrew'S Village
+65059,St. Anne's Ch
+84261,St. Anthony's Cano Sch
+43659,St. Anthony's Pr Sch
+66029,St. Gabriel's Pr Sch
+99039,St. George Chapel
+76129,St. Hilda's Sec Sch
+01419,St. John HQ
+50119,St. Joseph Inst Jnr
+01013,St. Joseph's Ch
+21381,St. Joseph's Home
+40249,St. Joseph's Inst
+41101,St. Margaret's Sec Sch
+60161,St. Michael's Pl
+52499,St. Michael's Ter
+56241,St. Nicholas Girls'
+92149,St. Patrick's Green
+92081,St. Patrick's Sec Sch
+92159,St. Patrick's Sec Sch
+14229,St. Teresa's Ch
+14031,St. Theresa's Convent
+53011,St. Theresa's Home
+13081,St. Thomas Wk
+62161,St.Gabriel's Sec Sch
+04143,Stamford Ct
+01121,Stamford Pr Sch
+23029,Stamford Tyre
+96371,Standard Chartered Bank
+40081,Stevens Stn
+01239,Sultan Plaza
+47829,Sumitomo Bakelite S'pore
+66119,Summer Pl
+58251,Sun Plaza
+47801,Sunshine Bakery
+44689,Sunshine Pl
+80159,Suntec City
+02151,Suntec Convention Ctr
+02149,Suntec Twr Three
+02141,Suntec Twr Two
+25431,Super Continental
+25499,Super Continental
+02181,Supreme Ct
+29089,Swanson Plastics
+43829,Symphony Hts
+75381,T5@TAMPINES
+67741,THANGGAM STN
+75409,THE SANTORINI
+76511,THE TAMPINES TRILLIANT
+24189,Tai Sin Electric Cables
+75019,Tampines Concourse Int
+75311,Tampines Dormitory
+76101,Tampines East CC
+75009,Tampines Int
+76231,Tampines JC/Opp Blk 390
+76319,Tampines JC/Opp Blk 454
+76141,Tampines Stn/Int
+49131,Tan Chiang Bros Marble
+41051,Tan Kah Kee Stn
+96219,Tanah Merah Ferry Ter
+85099,Tanah Merah Stn Exit A
+85091,Tanah Merah Stn Exit B
+20291,Tanglin Sec Sch
+18189,Tanglin Trust Sch
+10279,Tanglin View
+70341,Tannery Blk
+23461,Tanoto Shipyard
+92069,Tao Nan Sch
+20201,Teban Gdn PO
+54659,Techplace 2
+54081,Teck Ghee Ct
+31169,Teen Challenge
+07031,Tekka Ctr
+16119,Teletech Pk
+03041,Telok Ayer Stn Exit A
+14499,Telok Blangah Mkt/FC
+14161,Telok Blangah Stn
+84111,Temasek JC
+75239,Temasek Poly
+75229,Temasek Poly East G
+75249,Temasek Poly West G
+94059,Temasek Sec Sch
+18029,Tempco Mfg
+44041,Ten Mile Junction Stn
+30011,Tengah Air Base
+16141,Tentera Diraja Mque
+82119,Tg Katong Cplx
+91101,Tg Katong Flyover
+82079,Tg Katong Girls' Sch
+82051,Tg Katong Rd Sth P/G
+82129,Tg Katong Sec Sch
+14081,Tg Pagar DP Blk F5
+05411,Tg Pagar Plaza
+90031,Tg Ria Condo
+16109,The Alpha
+05419,The Amara
+06131,The Boys' Brigade HQ
+83063,The Buddhist Union
+55019,The Calrose
+75349,The Clearwater Condo
+16051,The Crystal Tabernacle Ch
+02061,The Esplanade
+11479,The Fisherman Ch
+01519,The Gateway
+67049,The Greenwich
+63021,The Helping Hand
+42189,The Hillford
+92129,The Holy Family Ch
+76089,The Holy Trinity Ch
+20031,The Infiniti
+14369,The Interlace
+16151,The Japanese Pr Sch
+97011,The Japanese Sch
+20289,The Japanese Sec Sch
+44019,The Linear
+64041,The Midtown
+62229,The Minton
+42041,The Nexus
+14021,The Pearl @ Mt Faber
+43239,The Petals Condo
+40209,The Pines
+43059,The Rail Mall
+09191,The Regent S'pore
+65019,The Rivervale
+18281,The Rutherford
+03381,The Sail
+59759,The Shaughnessy
+94031,The Summit
+81149,The Sunny Spring Condo
+28041,The Synergy
+84061,The Tanamera Condo
+42031,The Tessarina
+13139,The Trillium
+46629,The Woodgrove
+53039,Thomson CC
+51019,Thomson Flyover
+55349,Thomson Gr
+50051,Thomson Med Ctr
+45041,Thong Huat Bros Pte Ltd
+09213,Thong Teck Bldg
+17321,Tien Wah Press Bldg
+25349,Times Printers
+10179,Tiong Bahru Pk
+10169,Tiong Bahru Plaza
+11551,Tiong Ghee Tp
+52009,Toa Payoh Int
+52449,Toa Payoh Police Ctr
+52481,Toa Payoh Polyclinic
+52321,Toa Payoh Stadium
+52189,Toa Payoh Stn
+52501,Toa Payoh Swim Cplx
+28681,Toh Guan Ctr
+63209,Toho Green
+49169,Tong Seng Concrete Ltd
+54601,Townsville Pr Sch
+25161,Toyochem Ink
+70099,Traffic Police
+29111,Transerve
+52071,Trellis Twrs
+75259,Tropica Condo
+49069,Tropical Furniture Ltd
+23219,Tru-Marine
+26111,Tru-Marine
+25269,Tuas Checkpt
+24511,Tuas Fire Stn
+26349,Tuas Technology Pk
+25009,Tuas Ter
+11091,Tulip Gdn
+65431,Twin Waterfalls
+13109,UE Sq
+03129,UIC Bldg
+76131,UOB Tampines Ctr
+71211,Ubi 55
+71219,Ubi Techpark
+55049,Ue Bizhub Ctrl
+52349,United Medicare Ctr
+50021,United Sq
+18329,University Health Ctr
+19059,University Town
+94009,Upp East Coast Ter
+48089,Upp Seletar Reservoir
+24531,Utracon Corp
+13069,Valley Pk Condo
+13059,Valley Pt
+23149,Varco
+17019,Varsity Pk
+20331,Vejoil Pte Ltd
+81141,Versailles Condo
+93201,Victoria Sch
+14141,VivoCity
+11081,Viz Holland
+24641,W Atelier
+47049,W'Lands Auto Hub
+46101,W'Lands Checkpt
+46109,W'Lands Checkpt
+46321,W'Lands Civic Ctr
+46669,W'Lands Pr Sch
+47811,W'Lands Sunny Food
+46008,W'Lands Temp Int
+46009,W'Lands Temp Int
+46091,W'Lands Town Gdn
+46509,W'Lands Town Gdn
+46069,W'Lands Train Checkpt
+65561,WATERWAY PR SCH
+25381,WYN2000 Logistics Ctr
+98149,Wacker Chemicals
+28691,Wang-Fu Ind Pte Ltd
+17021,Waseda S Snr High Sch
+49079,Wason Wood Ind
+84619,Waterfront Isle
+84609,Waterfront Key
+65521,Waterwoods
+58489,Wellington Pr Sch
+17381,West Bay Resort Condo
+17289,West Coast CC
+17291,West Coast Pk
+17309,West Coast View
+27331,West Grove Pr Sch
+44811,West Spring Sec Sch
+44791,West View Pr Sch
+16049,Westvale
+27109,Westwood Sec Sch
+16211,Wharves Bldg
+53149,Whitley Sec Sch
+16231,Wholesale Ctr
+63131,Wing Tai Bldg
+08111,Winsland Hse
+62021,Wisma AUPE
+46971,Woodgrove Pr Sch
+61039,Woodleigh Stn Exit A
+61031,Woodleigh Stn Exit B
+47611,Woodsvale Condo
+47681,Woodsvale Condo
+63381,Xinmin Pr Sch
+25321,YCH Distripark
+08041,YMCA
+43631,YWMA Kindergarten
+25361,Yan San Metals Pte Ltd
+14179,Yeo's Bldg
+46731,Yew Huat Scaffolding Work
+45379,Yew Mei Green Condo
+45031,Yew Tee Ind Est
+45321,Yew Tee Stn
+80071,Yi Xiu Fty Bldg
+66511,Yio Chu Kang Amenity Ctr
+55509,Yio Chu Kang Int
+55319,Yio Chu Kang Stadium
+55189,Yio Chu Kang Stn
+59619,Yishun Community Hosp
+34059,Yishun Dairy Farm
+59229,Yishun Ind Pk A
+59319,Yishun JC
+59669,Yishun Polyclinic
+59101,Yishun Pr Sch
+59521,Yishun Sapphire
+59511,Yishun Sec Sch
+59039,Yishun Sports Hall
+59079,Yishun Stn
+59072,Yishun Stn Exit E
+59009,Yishun Temp Int
+26379,Yong Nam
+68139,Youth Flying Club
+21661,Yuan Ching Sec Sch
+28601,Yuhua Sec Sch
+96319,Yusen Logistics
+16171,Yusof Ishak Hse
+43629,Yusof Ishak Sec Sch
+44231,Zhenghua Pr Sch
+50171,Zhongshan Mall
+53289,Zion Bible Presby Ch
+97311,Zuellig Pharma
+81161,Blk 56

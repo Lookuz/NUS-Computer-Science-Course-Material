@@ -1,0 +1,233 @@
+ 1.010 C0 arrives
+ 1.010 C0 served by S0 (Q: -)
+ 1.100 C1 arrives
+ 1.100 C1 served by S1 (Q: -)
+ 1.450 C2 arrives
+ 1.450 C2 served by S2 (Q: -)
+ 1.500 C3 arrives
+ 1.500 C3 served by S3 (Q: -)
+ 1.580 C4 arrives
+ 1.580 C4 waits for S0 (Q: -)
+ 1.670 C5 arrives
+ 1.670 C5 waits for S1 (Q: -)
+ 1.830 C6 arrives
+ 1.830 C6 waits for S2 (Q: -)
+ 2.010 C0 done served by S0 (Q: C4)
+ 2.010 C4 served by S0 (Q: -)
+ 2.100 C1 done served by S1 (Q: C5)
+ 2.100 C5 served by S1 (Q: -)
+ 2.270 C7 arrives
+ 2.270 C7 waits for S0 (Q: -)
+ 2.440 C8 arrives
+ 2.440 C8 waits for S1 (Q: -)
+ 2.450 C2 done served by S2 (Q: C6)
+ 2.450 C6 served by S2 (Q: -)
+ 2.500 C3 done served by S3 (Q: -)
+ 2.680 C9 arrives
+ 2.680 C9 served by S3 (Q: -)
+ 2.980 C10 arrives
+ 2.980 C10 waits for S2 (Q: -)
+ 3.010 C4 done served by S0 (Q: C7)
+ 3.010 C7 served by S0 (Q: -)
+ 3.100 C5 done served by S1 (Q: C8)
+ 3.100 C8 served by S1 (Q: -)
+ 3.290 C11 arrives
+ 3.290 C11 waits for S0 (Q: -)
+ 3.330 C12 arrives
+ 3.330 C12 waits for S1 (Q: -)
+ 3.450 C6 done served by S2 (Q: C10)
+ 3.450 C10 served by S2 (Q: -)
+ 3.500 C13 arrives
+ 3.500 C13 waits for S2 (Q: -)
+ 3.680 C9 done served by S3 (Q: -)
+ 3.850 C14 arrives
+ 3.850 C14 served by S3 (Q: -)
+ 3.950 C15 arrives
+ 3.950 C15 waits for S3 (Q: -)
+ 4.000 C16 arrives
+ 4.000 C16 leaves
+ 4.010 C7 done served by S0 (Q: C11)
+ 4.010 C11 served by S0 (Q: -)
+ 4.100 C8 done served by S1 (Q: C12)
+ 4.100 C12 served by S1 (Q: -)
+ 4.110 C17 arrives
+ 4.110 C17 waits for S0 (Q: -)
+ 4.150 C18 arrives
+ 4.150 C18 waits for S1 (Q: -)
+ 4.160 C19 arrives
+ 4.160 C19 leaves
+ 4.380 C20 arrives
+ 4.380 C20 leaves
+ 4.450 C10 done served by S2 (Q: C13)
+ 4.450 C13 served by S2 (Q: -)
+ 4.460 C21 arrives
+ 4.460 C21 waits for S2 (Q: -)
+ 4.570 C22 arrives
+ 4.570 C22 leaves
+ 4.600 C23 arrives
+ 4.600 C23 leaves
+ 4.630 C24 arrives
+ 4.630 C24 leaves
+ 4.640 C25 arrives
+ 4.640 C25 leaves
+ 4.720 C26 arrives
+ 4.720 C26 leaves
+ 4.770 C27 arrives
+ 4.770 C27 leaves
+ 4.850 C14 done served by S3 (Q: C15)
+ 4.850 C15 served by S3 (Q: -)
+ 4.910 C28 arrives
+ 4.910 C28 waits for S3 (Q: -)
+ 4.930 C29 arrives
+ 4.930 C29 leaves
+ 4.940 C30 arrives
+ 4.940 C30 leaves
+ 4.980 C31 arrives
+ 4.980 C31 leaves
+ 5.000 C32 arrives
+ 5.000 C32 leaves
+ 5.010 C11 done served by S0 (Q: C17)
+ 5.010 C17 served by S0 (Q: -)
+ 5.070 C33 arrives
+ 5.070 C33 waits for S0 (Q: -)
+ 5.100 C12 done served by S1 (Q: C18)
+ 5.100 C18 served by S1 (Q: -)
+ 5.150 C34 arrives
+ 5.150 C34 waits for S1 (Q: -)
+ 5.170 C35 arrives
+ 5.170 C35 leaves
+ 5.210 C36 arrives
+ 5.210 C36 leaves
+ 5.220 C37 arrives
+ 5.220 C37 leaves
+ 5.300 C38 arrives
+ 5.300 C38 leaves
+ 5.350 C39 arrives
+ 5.350 C39 leaves
+ 5.440 C40 arrives
+ 5.440 C40 leaves
+ 5.450 C13 done served by S2 (Q: C21)
+ 5.450 C21 served by S2 (Q: -)
+ 5.500 C41 arrives
+ 5.500 C41 waits for S2 (Q: -)
+ 5.530 C42 arrives
+ 5.530 C42 leaves
+ 5.610 C43 arrives
+ 5.610 C43 leaves
+ 5.630 C44 arrives
+ 5.630 C44 leaves
+ 5.720 C45 arrives
+ 5.720 C45 leaves
+ 5.780 C46 arrives
+ 5.780 C46 leaves
+ 5.810 C47 arrives
+ 5.810 C47 leaves
+ 5.850 C15 done served by S3 (Q: C28)
+ 5.850 C28 served by S3 (Q: -)
+ 5.890 C48 arrives
+ 5.890 C48 waits for S3 (Q: -)
+ 5.920 C49 arrives
+ 5.920 C49 leaves
+ 5.930 C50 arrives
+ 5.930 C50 leaves
+ 5.950 C51 arrives
+ 5.950 C51 leaves
+ 6.010 C17 done served by S0 (Q: C33)
+ 6.010 C33 served by S0 (Q: -)
+ 6.010 C52 arrives
+ 6.010 C52 waits for S0 (Q: -)
+ 6.020 C53 arrives
+ 6.020 C53 leaves
+ 6.060 C54 arrives
+ 6.060 C54 leaves
+ 6.100 C18 done served by S1 (Q: C34)
+ 6.100 C34 served by S1 (Q: -)
+ 6.100 C55 arrives
+ 6.100 C55 waits for S1 (Q: -)
+ 6.190 C56 arrives
+ 6.190 C56 leaves
+ 6.280 C57 arrives
+ 6.280 C57 leaves
+ 6.310 C58 arrives
+ 6.310 C58 leaves
+ 6.320 C59 arrives
+ 6.320 C59 leaves
+ 6.330 C60 arrives
+ 6.330 C60 leaves
+ 6.450 C21 done served by S2 (Q: C41)
+ 6.450 C41 served by S2 (Q: -)
+ 6.480 C61 arrives
+ 6.480 C61 waits for S2 (Q: -)
+ 6.500 C62 arrives
+ 6.500 C62 leaves
+ 6.630 C63 arrives
+ 6.630 C63 leaves
+ 6.770 C64 arrives
+ 6.770 C64 leaves
+ 6.780 C65 arrives
+ 6.780 C65 leaves
+ 6.850 C28 done served by S3 (Q: C48)
+ 6.850 C48 served by S3 (Q: -)
+ 6.970 C66 arrives
+ 6.970 C66 waits for S3 (Q: -)
+ 7.010 C33 done served by S0 (Q: C52)
+ 7.010 C52 served by S0 (Q: -)
+ 7.100 C34 done served by S1 (Q: C55)
+ 7.100 C55 served by S1 (Q: -)
+ 7.160 C67 arrives
+ 7.160 C67 waits for S0 (Q: -)
+ 7.180 C68 arrives
+ 7.180 C68 waits for S1 (Q: -)
+ 7.450 C41 done served by S2 (Q: C61)
+ 7.450 C61 served by S2 (Q: -)
+ 7.770 C69 arrives
+ 7.770 C69 waits for S2 (Q: -)
+ 7.850 C48 done served by S3 (Q: C66)
+ 7.850 C66 served by S3 (Q: -)
+ 8.010 C52 done served by S0 (Q: C67)
+ 8.010 C67 served by S0 (Q: -)
+ 8.100 C55 done served by S1 (Q: C68)
+ 8.100 C68 served by S1 (Q: -)
+ 8.290 C70 arrives
+ 8.290 C70 waits for S0 (Q: -)
+ 8.450 C61 done served by S2 (Q: C69)
+ 8.450 C69 served by S2 (Q: -)
+ 8.500 C71 arrives
+ 8.500 C71 waits for S1 (Q: -)
+ 8.540 C72 arrives
+ 8.540 C72 waits for S2 (Q: -)
+ 8.610 C73 arrives
+ 8.610 C73 waits for S3 (Q: -)
+ 8.840 C74 arrives
+ 8.840 C74 leaves
+ 8.850 C66 done served by S3 (Q: C73)
+ 8.850 C73 served by S3 (Q: -)
+ 9.010 C67 done served by S0 (Q: C70)
+ 9.010 C70 served by S0 (Q: -)
+ 9.100 C68 done served by S1 (Q: C71)
+ 9.100 C71 served by S1 (Q: -)
+ 9.140 C75 arrives
+ 9.140 C75 waits for S0 (Q: -)
+ 9.340 C76 arrives
+ 9.340 C76 waits for S1 (Q: -)
+ 9.390 C77 arrives
+ 9.390 C77 waits for S3 (Q: -)
+ 9.450 C69 done served by S2 (Q: C72)
+ 9.450 C72 served by S2 (Q: -)
+ 9.570 C78 arrives
+ 9.570 C78 waits for S2 (Q: -)
+ 9.580 C79 arrives
+ 9.580 C79 leaves
+ 9.850 C73 done served by S3 (Q: C77)
+ 9.850 C77 served by S3 (Q: -)
+10.010 C70 done served by S0 (Q: C75)
+10.010 C75 served by S0 (Q: -)
+10.100 C71 done served by S1 (Q: C76)
+10.100 C76 served by S1 (Q: -)
+10.450 C72 done served by S2 (Q: C78)
+10.450 C78 served by S2 (Q: -)
+10.850 C77 done served by S3 (Q: -)
+11.010 C75 done served by S0 (Q: -)
+11.100 C76 done served by S1 (Q: -)
+11.450 C78 done served by S2 (Q: -)
+0.667 39 41

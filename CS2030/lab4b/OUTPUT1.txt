@@ -1,0 +1,4 @@
+ 0.500 C0 arrives
+ 0.500 C0 served by S0 (Q: -)
+ 1.500 C0 done served by S0 (Q: -)
+0.000 1 0

@@ -1,0 +1,30 @@
+ 0.500 C0 arrives
+ 0.500 C0 served by S0 (Q: -)
+ 0.600 C1 arrives
+ 0.600 C1 served by S1 (Q: -)
+ 0.700 C2 arrives
+ 0.700 C2 served by S2 (Q: -)
+ 0.800 C3 arrives
+ 0.800 C3 waits for S0 (Q: -)
+ 0.900 C4 arrives
+ 0.900 C4 waits for S1 (Q: -)
+ 1.000 C5 arrives
+ 1.000 C5 waits for S2 (Q: -)
+ 1.100 C6 arrives
+ 1.100 C6 leaves
+ 1.200 C7 arrives
+ 1.200 C7 leaves
+ 1.300 C8 arrives
+ 1.300 C8 leaves
+ 1.400 C9 arrives
+ 1.400 C9 leaves
+ 1.500 C0 done served by S0 (Q: C3)
+ 1.500 C3 served by S0 (Q: -)
+ 1.600 C1 done served by S1 (Q: C4)
+ 1.600 C4 served by S1 (Q: -)
+ 1.700 C2 done served by S2 (Q: C5)
+ 1.700 C5 served by S2 (Q: -)
+ 2.500 C3 done served by S0 (Q: -)
+ 2.600 C4 done served by S1 (Q: -)
+ 2.700 C5 done served by S2 (Q: -)
+0.350 6 4

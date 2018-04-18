@@ -1,0 +1,203 @@
+java LabSix 17009 NUS
+
+Search for: 17009 Clementi Int <-> NUS:
+From 17009 Clementi Int
+- Take 156 to:
+  - 41011 NUS Bt Timah Campus
+- Take 96 to:
+  - 16169 NUS Raffles Hall
+  - 16199 NUS Fac Of Design & Env
+  - 16149 NUS Fac Of Architecture
+  - 16159 NUS Fac Of Engrg
+- Take 196 to:
+  - 17191 NUS High Sch
+
+Took 17393ms
+
+java LabSix 15131 Stn
+
+Search for: 15131 Kent Ridge Stn <-> Stn:
+From 15131 Kent Ridge Stn
+- Take 200 to:
+  - 16011 Opp Haw Par Villa Stn
+  - 15131 Kent Ridge Stn
+  - 11361 Buona Vista Stn Exit C
+  - 16019 Haw Par Villa Stn
+  - 15139 Kent Ridge Stn Exit B
+  - 11369 Buona Vista Stn Exit D
+- Take 92 to:
+  - 15131 Kent Ridge Stn
+  - 11361 Buona Vista Stn Exit C
+  - 15139 Kent Ridge Stn Exit B
+  - 11369 Buona Vista Stn Exit D
+
+Took 4967ms
+
+java LabSix 08031 Int
+
+Search for: 08031 Dhoby Ghaut Stn <-> Int:
+From 08031 Dhoby Ghaut Stn
+- Take 174e to:
+  - 22009 Boon Lay Int
+- Take 77 to:
+  - 43009 Bt Batok Int
+- Take 14 to:
+  - 84009 Bedok Int
+  - 17009 Clementi Int
+- Take 16 to:
+  - 84009 Bedok Int
+  - 10009 Bt Merah Int
+- Take 190 to:
+  - 44009 Choa Chu Kang Int
+- Take 971E to:
+  - 03223 Intl Plaza
+- Take 171 to:
+  - 59009 Yishun Temp Int
+  - 40079 Chinese Intl Sch
+- Take 162 to:
+  - 55509 Yio Chu Kang Int
+- Take 174 to:
+  - 22009 Boon Lay Int
+- Take 175 to:
+  - 14211 ISS Intl Sch
+  - 14369 The Interlace
+  - 17009 Clementi Int
+- Take 167 to:
+  - 10009 Bt Merah Int
+  - 58009 Sembawang Int
+  - 05629 Opp Southpoint
+  - 03223 Intl Plaza
+- Take 124 to:
+  - 14009 HarbourFront Int
+- Take 700A to:
+  - 40079 Chinese Intl Sch
+- Take 162M to:
+  - 55509 Yio Chu Kang Int
+- Take 7 to:
+  - 84009 Bedok Int
+  - 82061 Eunos Stn/ Int
+  - 17009 Clementi Int
+- Take 106 to:
+  - 43009 Bt Batok Int
+- Take 128 to:
+  - 54391 Aft Ang Mo Kio Int
+- Take 700 to:
+  - 40079 Chinese Intl Sch
+  - 03223 Intl Plaza
+- Take 65 to:
+  - 75009 Tampines Int
+  - 14009 HarbourFront Int
+
+Took 32514ms
+
+java LabSix 08031 Orchard
+
+Search for: 08031 Dhoby Ghaut Stn <-> Orchard:
+From 08031 Dhoby Ghaut Stn
+- Take 174e to:
+  - 09169 Delfi Orchard
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09022 Bef Orchard Stn Exit B
+- Take 190 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 971E to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+- Take 171 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 174 to:
+  - 09037 Opp Mandarin Orchard
+  - 09169 Delfi Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09022 Bef Orchard Stn Exit B
+- Take 175 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 13199 Aft Orchard Blvd
+  - 09022 Bef Orchard Stn Exit B
+  - 13191 Bef Orchard Blvd
+- Take 111 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 09169 Delfi Orchard
+  - 09022 Bef Orchard Stn Exit B
+- Take 972 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 162M to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 77 to:
+  - 09169 Delfi Orchard
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09022 Bef Orchard Stn Exit B
+- Take 14e to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 14 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 13199 Aft Orchard Blvd
+  - 09022 Bef Orchard Stn Exit B
+  - 13191 Bef Orchard Blvd
+- Take 36 to:
+  - 09169 Delfi Orchard
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09022 Bef Orchard Stn Exit B
+- Take 16 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 13199 Aft Orchard Blvd
+  - 09022 Bef Orchard Stn Exit B
+  - 13191 Bef Orchard Blvd
+- Take 162 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 167 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 124 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 700A to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 7 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 09169 Delfi Orchard
+  - 09022 Bef Orchard Stn Exit B
+- Take 106 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 09169 Delfi Orchard
+  - 09022 Bef Orchard Stn Exit B
+- Take 128 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 700 to:
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09023 Opp Orchard Stn/ION
+- Take 36A to:
+  - 09022 Bef Orchard Stn Exit B
+- Take 36B to:
+  - 09169 Delfi Orchard
+  - 09037 Opp Mandarin Orchard
+  - 09047 Orchard Stn/Tang Plaza
+  - 09022 Bef Orchard Stn Exit B
+- Take 65 to:
+  - 09048 Orchard Stn/Lucky Plaza
+  - 13199 Aft Orchard Blvd
+  - 09022 Bef Orchard Stn Exit B
+  - 13191 Bef Orchard Blvd
+
+Took 34805ms
