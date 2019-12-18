@@ -1,0 +1,350 @@
+%
+% This is a borrowed LaTeX template file for lecture notes for CS267,
+% Applications of Parallel Computing, UCBerkeley EECS Department.
+% Now being used for CMU's 10725 Fall 2012 Optimization course
+% taught by Geoff Gordon and Ryan Tibshirani.  When preparing 
+% LaTeX notes for this class, please use this template.
+%
+% To familiarize yourself with this template, the body contains
+% some examples of its use.  Look them over.  Then you can
+% run LaTeX on this file.  After you have LaTeXed this file then
+% you can look over the result either by printing it out with
+% dvips or using xdvi. "pdflatex template.tex" should also work.
+%
+
+\documentclass{article}
+\usepackage{algorithmicx}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\setlength{\oddsidemargin}{0.25 in}
+\setlength{\evensidemargin}{-0.25 in}
+\setlength{\topmargin}{-0.6 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8.5 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\setlength{\parskip}{0.1 in}
+
+%
+% ADD PACKAGES here:
+%
+
+\usepackage{amsmath,amsfonts,graphicx}
+
+%
+% The following commands set up the lecnum (lecture number)
+% counter and make various numbering schemes work relative
+% to the lecture number.
+%
+\newcounter{lecnum}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+\newlength\myindent
+\setlength\myindent{2em}
+\newcommand\bindent{%
+  \begingroup
+  \setlength{\itemindent}{\myindent}
+  \addtolength{\algorithmicindent}{\myindent}
+}
+\newcommand\eindent{\endgroup}
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \setcounter{section}{0}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+    \hbox to 6.28in { {\bf Optimization Algorithms
+	\hfill Winter 2019} }
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Maximum Weight Bipartite Matching  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it Choong Wey Yeh \hfill } }
+      \vspace{2mm}}
+   }
+   \end{center}
+}
+%
+% Convention for citations is authors' initials followed by the year.
+% For example, to cite a paper by Leighton and Maggs you would type
+% \cite{LM89}, and to cite a paper by Strassen you would type \cite{S69}.
+% (To avoid bibliography problems, for now we redefine the \cite command.)
+% Also commands that create a suitable format for the reference list.
+\renewcommand{\cite}[1]{[#1]}
+\def\beginrefs{\begin{list}%
+        {[\arabic{equation}]}{\usecounter{equation}
+         \setlength{\leftmargin}{2.0truecm}\setlength{\labelsep}{0.4truecm}%
+         \setlength{\labelwidth}{1.6truecm}}}
+\def\endrefs{\end{list}}
+\def\bibentry#1{\item[\hbox{[#1]}]}
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+\newcommand{\fig}[3]{
+			\vspace{#2}
+			\begin{center}
+			Figure \thelecnum.#1:~#3
+			\end{center}
+	}
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+
+% **** IF YOU WANT TO DEFINE ADDITIONAL MACROS FOR YOURSELF, PUT THEM HERE:
+
+\newcommand\E{\mathbb{E}}
+
+\begin{document}
+%FILL IN THE RIGHT INFO.
+%\lecture{**LECTURE-NUMBER**}{**DATE**}{**LECTURER**}{**SCRIBE**}
+\lecture{1}
+%\footnotetext{These notes are partially based on those of Nigel Mansell.}
+
+% **** YOUR NOTES GO HERE:
+
+% Some general latex examples and examples making use of the
+% macros follow.  
+%**** IN GENERAL, BE BRIEF. LONG SCRIBE NOTES, NO MATTER HOW WELL WRITTEN,
+%**** ARE NEVER READ BY ANYBODY.
+
+Consider a weighted bipartite graph, where the graph $G$ has a \textit{weight} $w(i,j)$. Then, the weight of the matching $M$ is the sum of the weights of the edges: $w(M) = \sum_{e \in M} w(e)$. We wish to find the matching in the graph $G$ with the \textbf{maximum weight}. More specifically, we shall look at the Kuhn-Munkres algorithm for maximum weight bipartite matching on bipartite graphs with equal partitions.
+
+\section{Paths and Trees}
+
+\begin{definition}
+Let $M$ be a matching of a graph G. A vertex $v$ is \textit{matched} if it's an endpoint of an edge in $M$, else it is \textit{free}
+\end{definition}
+
+\begin{definition}
+A path is called \textit{alternating} if the edges in the path $p$ alternate between $M$ and $E - M$. \\
+An alternating path is called \textit{augmenting} if the endpoints of the path are free vertices.
+\end{definition}
+
+Note that the augmenting path has one less edge in $M$ than in $E - M$. Hence, replacing the edges in the augmenting path that are in $M$ with those that are in $E - M$ will maintain the matching, but introduce one more edge into the matching.
+
+\begin{definition}
+An alternating tree is a tree rooted at a free vertex $v$ in which every path is alternating.
+\end{definition}
+
+\section{Labelings and Equalities}
+
+In the presence of weights, the maximum flow reduction does not work anymore. Instead, we need to perform a reduction to minimum cost maximum flow. However, we shall see that there is another algorithm that does not use maximum flow which is more efficient.
+
+\subsection{Feasible Labelings}
+
+\begin{definition}
+A vertex labeling is a function $l : V \rightarrow R$. 
+\end{definition}
+
+The vertex labelling function is used to assign weights or labels to each vertex, which we will use later in the algorithm to achieve optimality. A \textit{feasible labeling} is one	where the sum of the labels of the two endpoints of an edge $e$ is at least that of the weight of the edge $w(e)$. That is,
+
+\begin{equation*}
+l(x) + l(y) \geq w(x, y), \forall x \in X, y \in Y
+\end{equation*}
+
+\subsection{Equality Graphs}
+
+\begin{definition}
+The \textbf{equality graph} with respect to the labeling function $l$ is the graph $G = (V, E_l)$ where 
+\begin{equation*}
+E_l = \{ (x, y) : l(x) + l(y) = w(x, y) \}
+\end{equation*} 
+\end{definition}
+
+The equality graph consists of the edges with feasible labelings, but with a stricter condition that the sum of the two endpoints must be \textit{equal} to that of the weight of the edge.
+
+\begin{theorem}
+If $l$ is a feasible and $M$ a perfect matching in $E_l$, then $M$ is a maximum weight bipartite matching.
+\end{theorem}
+
+\begin{proof}
+Denote any edge $e$ in $E$ as $e = (x, y)$.\\
+Let the matching $M'$ be any perfect matching in $G$, not necessarily in $E_l$. Since $M'$ is a perfect matching, every endpoint is covered by at least one edge in $M'$ and we have:
+\begin{equation*}
+w(M') = \sum_{e \in M'} w(e) \leq \sum_{e \in M'} l(x) + l(y) = \sum_{v \in V} l(v)
+\end{equation*}
+
+Hence, the labelings placed on each vertex in the feasible labeling forms an \textit{upper bound} for the cost of any perfect matching.\\
+
+Now, let the matching $M$ be a perfect matching in $E_l$. Then,
+
+\begin{equation*}
+w(M) = \sum_{e \in M} w(e) = \sum_{e \in M} l(x) + l(y) = \sum_{v \in V} l(v)
+\end{equation*}
+
+because in the equality graph $G$, for each edge $e \in E_l$, the weight of the edge $w(e)$ is exactly equals to the sum of the labels of the endpoints $l(x) + l(y)$.Hence $w(M') \leq \sum_{v \in V} l(v) = w(M)$ and $M$ is the optimal maximum weight perfect matching.
+\end{proof}
+
+For the feasible labeling $l$, we have that the sum of the labels of the endpoints is at least that of the weight of the edge $w(e)$. However, we also cannot make the labelings too expensive because then there would be no edges in the equality graph $G = (V, E_l)$. Intuitively, we can think of the labelings being high enough to accommodate edges in $E_l$ such that there is a perfect matching. That is, the weights of the edges $w(e)$ form a sort of upper bound on the labelings.\\
+
+This theorem is also known as the \textbf{Kuhn-Munkres} theorem, and essentially transform the optimization problem of finding a maximum-weight matching into the combinatorial form of finding a perfect matching, which is a classic trick used to solve many optimization problems.
+
+Notice that the proof for the Kuhn-Munkres theorem implies that for any matching $M$ and any feasible labeling $l$, then 
+\begin{equation*}
+w(M) \leq \sum_{v \in V} l(v)
+\end{equation*}
+
+which is very similar to the capacity of the minimum cut upper bounding any flow in the Max-Flow Min-Cut Theorem.
+
+\section{Hungarian Algorithm}
+
+The Kuhn-Munkres algorithm or also known as the Hungarian algorithm, is as follows:
+
+\begin{algorithm}
+\caption{Kuhn-Munkres Algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\State $\text{Start with a feasible labeling $l$ and some matching $M$ in $E_l$}$
+\While{$M$ is not perfect}
+\If {$\exists$ augmenting path in $E_l$}
+\State Find an augmenting path $p$ for $M$ in $E_l$ 
+\State Augment down path $p$ to increase size of $M$
+\Else
+\State Improve labeling $l$ to $l'$ such that $E_l \subset E_{l'}$
+\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+Note that at each iteration of the algorithm, we either increase the size of the current matching $M$ if possible by finding an augmenting path, or we increase the size of $E_l$ by relabeling. Hence, the algorithm must terminate. Furthermore, the algorithm terminates only when the while loop terminates, which indicates that the resulting matching must be perfect in $E_l$ for some labeling $l$. By the Kuhn-Munkres theorem, we have that the perfecting matching $M$ returned in maximum weight.
+
+\subsection{Initialization}
+
+Finding an initial labeling that satisfies the feasibility constraint is simple. We can use the following assignment:
+
+\begin{equation*}
+\forall v \in X, l(v) = max_{u \in Y} w(v, u)
+\end{equation*}
+\begin{equation*}
+\forall v \in Y, l(v) = 0 
+\end{equation*}
+
+where $X, Y$ are partition vertex sets in the graph $G$. With this labeling, it is clear that the feasibility constraint is satisfied: $\forall x \in X, \forall y \in Y, w(x) \leq l(x) = l(y)$.
+
+\subsection{Updating Labelings}
+
+Now we need a way to update the labelings such that we have a new labeling that is feasible, but includes more edges into our equality graph without removing any current edges.\\
+
+Let $l$ be a feasible labeling, and define the neighbours of a vertex $u \in V$ reachable from $u$ in the equality graph to be:
+\begin{equation*}
+N_l(u) = \{v : (u, v) \in E_l\}
+\end{equation*}
+
+and the set $S \subset V$ to be 
+\begin{equation*}
+N_l(S) = \cup_{u \in S} N_l(u)
+\end{equation*}
+
+\begin{lemma}
+Let $S \subset X$ and $T = N_l(S) \neq Y$. Denote
+\begin{equation*}
+\alpha_l = \min_{x \in S, y\notin T} \{ l(x) + l(y) - w(x, y) \}
+\end{equation*}
+
+\[
+    l'(v)= 
+\begin{cases}
+    l(v) - \alpha_l,& \text{if } v \in S\\
+    l(v) + \alpha_l,& \text{if } v \in T\\
+    l(v)              & \text{otherwise}
+\end{cases}
+\]
+\end{lemma}
+
+Then $l'(v)$ is a new feasible labeling and there is at least one edge introduced into the equality graph $E_l$. We can see that:
+\begin{itemize}
+\item $\alpha_l$ represents the minimum difference between labelings of vertices in the two partitions $x, y$ and the weight of their edge $w(x, y)$ for edges $e \notin E_l$. That is,$ \alpha_l$ denotes the minimum change in the labelings of the vertices such that at least one additional edge satisfies the equality constraint.
+\item If $(x, y) \in E_l, x \in S, y \in T$, then we have that $l(x)$ is decremented by $\alpha_l$, and $l(y)$ is incremented by $\alpha_l$. That is, $l'(x) + l'(y) = (l(x) - \alpha_l) + (l(y) + \alpha_l) = l(x) + l(y) \geq w(x, y)$ Hence the labeling for $l(x), l(y)$ is still feasible. We have that $(x, y) \in E_{l'}$.
+\item If $(x, y) \in E_l, x \notin S, y \notin T$, then the labelings for both endpoints $l(x), l(y)$ are unchanged, and therefore still remains feasible and $(x, y) \in E_{l'}$.
+\item For some edge $e = (x, y), x \in S, y \notin T$, then the improved labeling $l'$ introduces this edge into the equality graph. More specifically, for the edge $e = (x, y) \notin E_l, x \in S, y\notin T$ with the minimal difference $l(x) + l(y) - w(x, y)$, we have that the labeling $l'(x) = l(x) - \alpha_l = w(x, y) - l(y)$ and hence $l'(x) + l'(y) = w(x, y) - l(y) + l(y) = w(x, y) \rightarrow$ equality constraint satisfied for $(x, y)$. Since this difference is minimal, for all other edges $(x, y) \notin E_l$, $l'(x) + l'(y) \leq w(x, y)$. This step is important as it introduces a new edge that is not in the neighbours of $u, N_l(u)$ into the equality graph
+\item For $(x, y) \in E, x \notin S, y \in T$, we have that the $l'(x) = l(x), l'(y) = l(y) + \alpha_l$ and $l'(x) + l'(y) = l(x) + l(y) + \alpha_l \geq w(x, y)$. Hence the labeling remains feasible.
+\end{itemize}
+\pagebreak
+\subsection{Full Hungarian Method}
+
+\begin{algorithm}
+\caption{Complete Kuhn-Munkres Method}\label{euclid}
+\begin{algorithmic}[1]
+\State $\text{Generate initial labeling:}$
+\State\hspace{\algorithmicindent} $\text{$\forall v \in X, l(v) = max_{u \in Y} w(v, u)$}$
+\State\hspace{\algorithmicindent} $\text{$\forall v \in Y, l(v) = 0 $}$
+\State $\text{Generate initial matching $M$}$
+\\
+\If{$M$ is perfect} 
+\State terminate
+\Else
+\State $u \in X \leftarrow$ free vertex in $X$
+\State $S \leftarrow \{ u\}, T = \emptyset$
+\EndIf
+\\
+\If{$N_l(S) = T$}  update labels:
+\State \[
+   \alpha_l = \min_{x \in S, y\notin T} \{ l(x) + l(y) - w(x, y) \}
+\]
+
+\State \[
+    l'(v)= 
+\begin{cases}
+    l(v) - \alpha_l,& \text{if } v \in S\\
+    l(v) + \alpha_l,& \text{if } v \in T\\
+    l(v)              & \text{otherwise}
+\end{cases}
+\]
+
+\EndIf
+\\
+\If{$N_l(S) \neq T$}  pick $y \in N_l(S) - T$:
+\If {$y$ is free} $u - y$ is an augmenting path:
+\State augment $M$ down this path and go to 6
+\Else 
+\State $y$ is matched(to $z$) $\rightarrow$ extend alternating tree:
+\State $S = S \cup \{ z \}, T = T \cup \{ y \}$
+\State go to 13
+\EndIf
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\section{Proof of Correctness}
+
+\subsection{Initialization}
+
+As mentioned before, we use the initial labeling function as in the algorithm. This labeling is feasible for all edges. Additionally, we can always start with the trivial naive empty matching $M = \emptyset$ to start the algorithm, which is a valid matching.
+
+\subsection{Maintenance}
+If $N_l(S) = T$, that means that we have exhausted all possible neighbours reachable in the equality graph $E_l$. In this case, by Lemma 7, we can always update the labels such that the current edges in $E_l$ are still in $E_{l'}$, while introducing a new edge that is not previously in the equality graph. Because of the way we chose the update to be the minimal difference in the labels and the weights of edges not in the equality graph, we do not disrupt the current structure too much, which ensures that the edges in the current matching $M$ which are in $E_l \subset E_{l'}$ are still valid.\\
+
+If $N_l(S) \neq T$, then we can always augment the alternating tree with our chosen $(x, y), y\in N_l(S) - T$. Because the current matching is not perfect, there exists a $y$ that is not matched, and hence at some point in time $y$ chosen will be free and we can augment down this path.
+
+\subsection{Termination}
+
+Just as previously mentioned, each iteration increases either the size of the matching(by augmenting down the alternating tree) or increases the size of the neighbours reachable in the equality graph $E_l$ by updating the labels. The algorithm terminates when the matching size cannot be further increased, that is when the matching is perfect. By Kuhn-Munkres theorem, $M$ is a perfect matching found in $E_l$ and hence, optimal.
+
+\section{Complexity}
+Let us denote each phase of the algorithm as the period of time between increments in the size of the matching $M$. Then, the work done between phases is mainly influenced by the calculation of the $\alpha_l$ term, which happens during:
+\begin{itemize}
+\item Initialization when the labels are computed. This takes $O(V)$ time for $V$ vertices to be labeled.
+\item Updating the labels when all neighbours are exhausted. This takes $O(V)$ time per labeling update, and for each labeling update, we introduce at least one new edge into the equality graph. This can happen only $V$ times if no augmenting path is found each time, since each time an edge extends from the set $S$, and hence augments an alternating tree. Since the maximum size matching is $\frac{V}{2}$, eventually after $V$ updates an augmenting path of length $V$ is present, in which can be augmented to increase the matching size. Hence, the total upper bound on this stage is $O(V^2)$.
+\item Augmenting the alternating tree. In this case, when we extend the current alternating tree with the matched vertex $z$, we need to update  the labelings which takes $O(V)$ time. Since $S \rightarrow S \cup \{ z\}$ can only happen a total of $\frac{V}{2}$ times by adding each of the $\frac{V}{2}$ vertices into $S$, this takes a total of $O(V^2)$ time
+\end{itemize} 
+
+Since the maximum total matching size for a perfect matching is $\frac{V}{2}$, the number of phases is $O(V)$ since there can only be a total of $\frac{V}{2}$ increases. Therefore, the total time complexity is $O(V^3)$.
+
+\end{document}
+
+
+
+
+
