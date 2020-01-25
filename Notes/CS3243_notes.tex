@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{vwcol} 
+\usepackage{lipsum,multicol}
+\usepackage[colorlinks]{hyperref} 
+\usepackage{caption}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% Expectation %
+\setlength\parindent{0pt}
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+\title{CS3243 Introduction to Artificial Intelligence}
+
+\date{AY2019/20 Semester 2}
+\author{Choong Wey Yeh}
+
+\begin{document}
+
+\maketitle
+
+\section{Uninformed Search}
+
+In this section, we will be discussing some of the basic uninformed search algorithms where these algorithms do not make use of certain heuristics to optimize their search strategy. Most of the time, we will observe that these basic uninformed search algorithms perform complete searches; that is they iterate over all the possible elements in the solution space before terminating.\\
+
+For this section, we will be working with:
+\begin{itemize}
+\item \textbf{Fully-Observable Environment:} Each item in the solution space is known to the algorithm; i.e there are no hidden states
+\item \textbf{Deterministic Setting:} No uncertainty/probabilistic notions involved in state change
+\item \textbf{Discrete Environment:} States consist of discrete variables instead of continuous uncountable ones
+\end{itemize}
+
+Some of these examples include winning a sequence of moves in a single-player game, assembly of machine parts and boolean satisfiability(SAT) problem. Essentially, we can formulate each of these examples as a search problem where we iterate over the possible solutions. For example, in the SAT problem, we can perform a complete uninformed search over each combination of variables such that the boolean formula is satisfied. Of course, we will eventually see that this is not an efficient(nor practical) way to attain a solution for various problems.
+
+\subsection{Problem Formulation}
+
+Formally, we can define the basic elements of a problem definition using \textbf{states}, which are the current configurations for the problem(e.g the variable values for a SAT problem), and \textbf{actions} which causes a transition of one state to another via changing configurations(setting a boolean variable from true to false). When considering the configurations for state and actions, most of the factors are unnecessary and may be \textbf{abstracted out}. For the route planning problem in particular, we are concerned with how route the driver takes to get to a location, but \textit{not exactly how he drives there}, such as which lane or which car he uses. In this case, such information may be left out of the problem definition.\\
+
+Additionally, we also have an \textbf{initial state}, which are the parameters that the algorithm starts with to search for the solution. This initial state can be default setting of certain parameters, or random initialization. But, we also need the following definitions:
+
+\subsubsection{Goal State}
+
+The \textit{goal state} is defined as the state that determines the termination of the algorithm as it has reached the objective of the solving the problem. When the search algorithm reaches a state that is deemed as the goal state, it will stop and return it's current solution. The goal state can be defined in various ways:
+
+\begin{itemize}
+\item \textbf{Explicit Set} of goal states, which can be the configurations that the algorithm permutates through. Often for problems with large solution spaces, this is not very practical as the set could be very large. 
+\item \textbf{Implicit Function} $f(x)$ that evaluates the current configuration of the algorithm and outputs if the configuration is indeed a goal state or not, where $x$ is the current configuration used as the input.
+\end{itemize}
+
+Ideally, we want the evaluation of whether the current configuration is the goal state or not to be \textit{efficient}, as this evaluation function is called every single time the algorithm changes states, and could be called a large number of times(e.g if boolean formula in SAT is very long). Hence, an inefficient evaluation function could be computationally expensive and slow down the search process immensely.
+
+\subsubsection{Path Cost}
+
+When we are discussing about a search problem, very often each transition from one state to another incurs a certain cost or penalty, such in the route planning problem where there is a cost incurred moving from a location to another. Then, a sequence of state transitions. which are viewed as actions, is a \textit{search path} taken by the algorithm to find the optimal solution by viewing the possible actions that can be taken by the algorithm now as a decision tree like structure. We denote the cost of an action, such as a transition from one state to another as the following function:
+
+\begin{equation*}
+c(s, a, s')
+\end{equation*}
+
+where an action of $a$ causes the algorithm to transition from state $s$ to $s'$. Here, if $a_i$ is the $i^{th}$ action taken by the algorithm, then the sequence of actions $a_1, a_2, ..., a_n$ is the search path of the algorithm. If this sequence of actions results in the final state being the goal state, then it is a solution to the problem. Note that the solution \textbf{may not be unique}.
+
+\subsubsection{Performance}
+
+Not required for the problem formulation, but it is also eventually necessary to make sure that our algorithm works, and is efficient. In particular, we need to consider:
+
+\begin{itemize}
+\item \textbf{Termination:} We want for our solution to eventually find a solution. If the algorithm does not terminate at all, then we may never get an answer as the algorithm continues running
+\item \textbf{Optimality:} We want a feasible solution, but above that we want to find the optimal feasible solution. That is, for a solution $y$, the solution is optimal if for all other feasible solutions $y'$, $c(y) \leq c(y')$. That is, the cost of our solution is minimal
+\item \textbf{Efficiency:} defined as the search cost as well, is the time and space complexity of our algorithm with respect to the size of the solution space
+\end{itemize}
+
+\subsection{Search Strategies}
+
+\subsubsection{Search Representation}
+
+We shall represent the states and actions in our search problem as nodes and edges in a tree or graph, such as in \textbf{tree search} and \textbf{graph search}. Each node represents a state from the state space, and the edge connecting node $s$ and $s'$ represents a transition from state $s$ to $s'$.\\
+
+Additionally, we also introduce the definition of a \textbf{frontier}. After we have reached a node $x$, the other nodes connected to $x$ are divided into those that are visited, and those that are not. The nodes that are visible from node $x$, but are not yet visited and can be expanded for exploration. These nodes form the frontier. Our search algorithm makes use of the frontier as a pool of nodes that are available to be visited next down it's search path. In tree search, we are allowed to repeat the nodes that we have visited(e.g backtracking), but in graph search we no longer return to a node once we have visited it.
+
+\subsubsection{Search Performance}
+
+Previously, we mentioned that the following criteria will be used to judge the performance of our algorithm:
+
+\begin{itemize}
+\item \textbf{Completeness:} Is the algorithm guaranteed to find a solution(if the solution exists)?
+\item \textbf{Time Complexity:} How long does the algorithm take to find a solution in the worst case?
+\item \textbf{Space Complexity:} How much space is required for the algorithm to perform the search?	
+\item \textbf{Optimality:} Does the algorithm find the highest quality solution in the presence of multiple feasible solutions?
+\end{itemize}
+
+We shall explicitly evaluate the upcoming algorithms using the following parameters:
+
+\begin{itemize}
+\item \textbf{Branching Factor $b$:} The maximum number of children, or successors of a node in a search tree of graph
+\item \textbf{Depth of Shallowest Goal Node $d$:} Height of the tree before the shallowest goal node is reached
+\item \textbf{Maximum Depth $m$:} Maximum depth of the search tree
+\end{itemize}
+
+Instead of the standard time complexity evaluation using $V$ and $E$ as the number of nodes and edges, due to the large size of search problems.
+
+\subsubsection{Breadth First Search}
+
+The basic idea of BFS is that at any point of time in the search, the shallowest nodes are explored first. In particular, if the frontier consists of nodes from depth $d, d + 1,...$ then all nodes at depth $d$ are visited first before $d + 1$. BFS can easily be implemented by using a queuing function that accepts the queued neighbours of visited nodes, and outputs them in the order that it is received where newly generated states are polled last.\\
+
+\begin{itemize}
+\item \textbf{Completeness:} BFS is a very systematic strategy, where it observes all nodes of depth 1, then depth 2 and so on. Hence, at depth $d$, BFS would have finished visiting all nodes of depth $d-1$ and lesser. By the time BFS reaches depth $m + 1$, it would have visited all nodes of depth $m$ and before, which is all the nodes in the tree. Hence if a solution exists, it is sure to have found one.
+
+\item \textbf{Time Complexity:} Consider the case where each node in the search tree has the maximum number of children $b$. Then, the first level of the search tree would generate $b$ children, and each of these children continues to generate another $b$ and so on. Then, the maximum number of nodes that the algorithm has to visit would be:
+\begin{equation*}
+1 + b + b^2 + ... + b^d = O(b^d)
+\end{equation*}
+
+where at the $i^{th}$ level, the search tree has $b^i$ children. Since the algorithm terminates when it has found the first goal node, if the shallowest goal node is at level $d$ then BFS would have eventually found it and does not continue past depth $d$.\\
+
+While the time complexity is exponential in the input, BFS can be useful if heuristic says that the search tree is wide but shallow, or if the goal node is within a certain depth from the root.
+
+\item \textbf{Space Complexity:} Similar to the time complexity, assuming the worst case scenario of a complete tree with branching factor $b$, then there are $O(b^d)$ children, and hence $O(b^d)$ amount of memory required to store all these children.
+
+\item \textbf{Optimality:} If we consider a special case of search where the search step cost is 1, then the optimal solution for this search problem would be a feasible solution with the least number of nodes in the search path, which would be the shallowest goal node which has the lowest possible depth. Since BFS traverses the tree level by level, it would find the shallowest goal node first among all other goal nodes, which is the optimal solution.\\
+
+However, most of the time the step cost is not unit, and in that case BFS does not usually find the optimal solution. This is because it finds the shallowest goal node, but it is not necessarily the \textit{least cost} path solution. We shall try to rectify this issue in the next search algorithm.
+\end{itemize}
+
+\subsubsection{Uniformed Cost Search}
+
+UCS modifies the BFs strategy by always expanding the lowest cost node in the frontier, measured by a path cost function $g(n)$ as the cost of the path from the root to the current node $n$. It is trivial to see that BFS is UCS with path cost function $g(n) = depth(n)$. In implementation, we modify from BFS slightly again by changing the queue used a priority queue, or a heap data structure that emphasises cheapest paths.
+
+\begin{itemize}
+\item \textbf{Completeness:} UCS is complete, under the caveat that the minimum step cost is $\geq \epsilon$, where $\epsilon$ is a non-negative number. If there is no bound on the step cost, then we could have cases of negative costs or exponentially decreasing costs. In this case, the algorithm could be stuck without termination.
+
+\item \textbf{Optimality:} Under the same conditions as completeness, the solution is optimal provided step costs are lower bounded by a non-negative number. This is because the first solution found by the algorithm is guaranteed to be the cheapest cost solution. If there were a cheapest cost solution, the algorithm would have found it first.\\
+
+Note the observation that because step cost $\geq \epsilon$, the step cost must never decrease. In other words, $g(successor(n)) > g(n)$. However, if we lift the lower bound on step cost, then the search problem is reduced to that of BFS, because a long and expensive path may become the optimal by running into a node with extremely high negative cost. As a result, we need to search all possible paths to obtain the optimal.
+
+\item \textbf{Time Complexity:} Remember that in the queue, we keep at most $b^i$ nodes in the queue if we are at depth $i$. Since the step cost $\geq \epsilon$, when the algorithm goes down a search path from depth $i$ to $i+1$, the overall current cost increases by at least $\epsilon$. Consequently, if the optimal path cost is $C^*$, then there are at most $\frac{C^*}{\epsilon} + 1$ nodes in the search path since the cost increases in sequence of $0, \epsilon, 2\epsilon,...,  \frac{C^*}{\epsilon}$. This also means the maximum depth the algorithm will go is at most $\frac{C^*}{\epsilon} + 1$, and hence the maximum number of nodes that it will visit is $b^{\frac{C^*}{\epsilon} + 1}$
+
+\item \textbf{Space Complexity:} Similarly, since the maximum depth is $\frac{C^*}{\epsilon} + 1$, the maximum number of nodes that will be stored in the heap will be at most $b^{\frac{C^*}{\epsilon} + 1}$.
+\end{itemize}
+
+\subsubsection{Depth-First Search}
+
+DFS expands one of the nodes the deepest level of the tree during the search instead of covering all nodes in a level. Only when the search hits the most bottom of the search path then does it go back to a shallower level and expand the nodes at those levels. This is good for search problems where it is beneficial to explore deeper rather than breadth. Implementation wise, DFS uses a stack instead of a queue to pick the next node.
+
+
+\begin{itemize}
+\item \textbf{Completeness:} Similar to BFS, DFS is complete as it eventually expands all nodes in a frontier and explore all possible paths, given that the depth of the search tree is \textit{finite}. For trees with infinite tree depths, then the algorithm may never terminate. 
+
+\item \textbf{Optimality:} Like BFS, DFS is not optimal for the same reason that it does not use any heuristic on path cost at all.
+
+\item \textbf{Time Complexity:} Assuming finite search tree height of $m$, let us consider the worst case that the optimal solution is a search path of length $m$ and that it is the rightmost path. Then, notice that because of the way DFS explores paths, DFS will exhaust all other possible paths before obtaining the optimal by depth-first traversal. If all nodes have the maximum successor branching of $b$, then that means DFS will go through all combinations of $b^m$ search paths in the worst case.
+
+\item \textbf{Space Complexity:} DFS has a better space complexity than BFS of $O(bm)$. Each time the algorithm expands a node, it pushes all the successors of that node into the stack, which is at most $b$. Since the maximum depth, and the length of a search path is $m$, and DFS fully explores and exhaust a search path before it expands another node, the maximum number of items pushed on the stack is $bm$. \\
+
+In fact we can continue to improve this space complexity further. Notice when we push the successors onto the stack, we pick one successor to continue exploring down. In this process, other successors are not used until all the possible paths following the picked successor is exhausted. In that case, we merely have to push the \textit{current} successor onto the stack to be tracked without the other successors. The algorithm can then backtrack and then pick another successor to expand along later in the search. Then, the space complexity is equivalent to the number of successors picked in a path, which is also equivalent to the maximum path length that is $O(m)$.
+\end{itemize}
+
+\subsubsection{Depth-Limited Search \& Iterative Deepening Search}
+
+We have seen that for trees with infinitely long tree heights, then the algorithm could potentially run forever. If we knew that we only had limited time to run our search, or that the goal node is within a certain height, then we could limit the maximum height that DFS runs to. That is, we can force our algorithm to terminate once there are no longer any more search paths with length $l \leq l*$ where $l*$ is the maximum height specified.\\
+
+However, note that if we do so, then our DLS algorithm is \textbf{not complete}. Because it only considers search paths of length $l^*$ and lesser, any search paths with longer lengths is ignored. If the goal node is of length $\geq l*$, then our algorithm would never return a solution.\\
+
+To address this, we introduce an additional condition: To perform DLS \textit{until a solution is found}. This guarantees that the algorithm is complete and will return a solution to us. Additionally, this algorithm is similar to BFS in the sense that the search deepens level by level, like how BFS expands nodes in a depth first.
+
+\begin{algorithm}
+\caption{Iterative Deepening Search}\label{euclid}
+\begin{algorithmic}[1]
+\For{$depth = 0 \rightarrow \infty$}
+	\State \textit{result} $\leftarrow$ DEPTH-LIMITED-SEARCH(\textit{problem, depth})
+	\If{$result \neq $ cutoff}
+		\State \textbf{return} \textit{result}
+	\EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+This allows us to maintain the space complexity benefit of DFS over BFS, but also allows us to address the problem of large state space and unknown tree depth(which is often most of the time).\\
+
+However, now we have another downside: we essentially repeat searches over subtrees of the search tree. We first perform DLS with depth $d$, then $d + 1$ and so on. Notice that the search space on the search tree limited with depth $d$, is a subspace of the search space on a tree with depth $d + k$. Hence, we are repeating some of the search from the previous iteration of IDS. In particular, the number of nodes expanded by DLS on depth $d$ is:
+
+\begin{equation*}
+1 + b + b^2 + ... + b^{d-1} + b^d
+\end{equation*}
+
+and the number of nodes expanded by IDS is:
+
+\begin{equation*}
+(d+1)1 + (d)b + (d-1)b^2 + ... + 2b^{d-1} + 1b^d
+\end{equation*}
+
+Notice that of all the subtrees of different depths of the search tree, IDS explores subtrees of shallowest heights the most, while the bottom-most parts of the trees is explored lesser. This is because of the fact that in every iteration of IDS, it performs DLS restarting from the root again. Hence the initial parts of the search tree are traversed more often. \\
+
+In particular, the further down the tree the search goes, the number of successors increases, perhaps exponentially. Since these parts of the tree are explored much lesser than the top, which has much lesser nodes, in perspective the search is repeated on a very small subset of the nodes of the entire search space considered, and hence the overhead in practice is actually within accepted bounds.
+
+\paragraph{Remarks}
+\begin{itemize}
+\item If $b$ is not finite, then all the uninformed algorithms we have discussed are not complete, since they will never be able to exhaust fully nodes of any depth
+\item If $b$ is finite, then BFS and IDS is complete, since IDS iteratively increases the depth similar to BFS. Additionally, if the step cost is lower bounded by $\epsilon$, then UCS is also complete
+\item If $m$ is finite, then DFS is complete, otherwise it may continually run forever down an infinite search path
+\item if the step cost is unit(i.e = 1), then UCS is reduced to BFS, and BFS and IDS are optimal because the step cost is equivalent to the number of nodes in search path
+\end{itemize}
+
+\end{document}
