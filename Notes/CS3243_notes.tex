@@ -19,6 +19,8 @@
 \setlength\parindent{0pt}
 \DeclareMathOperator{\E}{\mathbb{E}}
 
+\newtheorem{theorem}{Theorem}
+
 \title{CS3243 Introduction to Artificial Intelligence}
 
 \date{AY2019/20 Semester 2}
@@ -208,5 +210,126 @@ In particular, the further down the tree the search goes, the number of successo
 \item If $m$ is finite, then DFS is complete, otherwise it may continually run forever down an infinite search path
 \item if the step cost is unit(i.e = 1), then UCS is reduced to BFS, and BFS and IDS are optimal because the step cost is equivalent to the number of nodes in search path
 \end{itemize}
+\pagebreak
+
+\section{Informed Search}
+
+Previously, we have seen search strategies that makes use of the problem definition, such as the states and actions, to perform a general search action. This usually results in some form of queuing function that determines which node to expand next deterministically. However, more often than not we do not have enough information to full model the problem to determine the full cost. For example,
+
+\begin{itemize}
+\item Depth of search tree or size of solution space could be possibly infinite
+\item Repeated states could be present
+\item Certain constraints could be hard to model, or cause problems to be difficult to solve
+\end{itemize}
+
+If we use uninformed search strategies for these problems, optimality and completeness may not be guaranteed, in addition to the exponential time search efficiency. In this case, we can introduce additional information or heuristics that can be exploited in order to improve our search strategy. To do this, we introduce an evaluation function $f(n): X \rightarrow R$ which returns a number indicating the desirability of the node to expand next. This could be in terms of shortest path cost for example. The evaluation function that we define here serves to approximate the cost estimate from node to node in problems where full information is not present for us to perform uninformed search.
+
+\subsection{Best-First Search}
+
+In best-first search, we make use of the evaluation function by expanding the node that has the most desirable evaluation function score, by ordering the nodes by their evaluation function values. If the evaluation function is able to perfectly reflect the information stated in the problem definition, that is if the evaluation function is a true one, then expanding the node by the evaluation function score will be the optimal path and indeed be the best node to expand at the current point in time. However, this is often not the case and the evaluation function will reflect the node that \textit{appears} to be the best node to expand in that point in time.\\
+
+\begin{algorithm}
+\caption{Best-First Search}\label{euclid}
+\begin{algorithmic}[1]
+\State $result \leftarrow$ next node ordered by $f(n)$
+\If{$result == goal\ state$}
+	\State return $search\ path$
+\Else
+	\State goto $1$
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Greedy Best-First Search}
+
+A good Best-First Search strategy is to \textit{minimize estimated cost to reach the goal}. That is, we define a \textbf{heuristic function} $h(n)$ that estimates the cost from a node to the goal node. Often this function provides not an exact formulation of the actual cost from a node to the goal node, but a good enough estimate of this cost. Then, we set:
+
+\begin{itemize}
+\item $f(n) = h(n)$ and use the heuristic function to expand the next node
+\item $h(t) = 0$ where $t$ is the goal node, as the distance from the goal node to itself is clearly 0
+\end{itemize}
+
+\subsubsection{Performance Measure}
+
+\begin{itemize}
+\item \textbf{Completeness:} Similar to the uninformed search functions, Best-First Search also makes use of a queuing function, albeit using an evaluation function. This means that every node will eventually be added into the queue, and expanded until the solution is found if $b$ is finite. 
+
+\item \textbf{Optimality:} However, it is easy to see that Best-First Search \textbf{is not optimal}. Notice that Best-First Search aims to obtain low cost solutions by using the estimated cost from the node in the frontier to the goal node. However, \textit{it does not make use of past information of the cost of the path travelled so far}. Best-First Search focuses on greedily reducing the current estimated remaining cost to the goal, and completely ignores the overall path cost to reach the goal node.\\
+
+In order to focus the search on lowest cost paths toward the goal, our evaluation function must incorporate the \textit{cost of the path} from a state to the goal state, instead of ignoring the path of the cost so far to the current node.
+
+\item \textbf{Time Complexity:} In the worst case where the path containing the least cost weights has length of that of the height of the search tree, then the search will incur runtime exponential in the order of the branching factor $O(b^m)$
+
+\item \textbf{Space Complexity:} Similar to the time complexity, in the worst case we may maintain $b^m$ elements in the queue for a search tree with branching factor of $b$ and a search tree depth of $m$.
+\end{itemize}
+
+Apart from in-optimality issues due to ignoring of overall path cost, Best-First Search also has various other issues:
+
+\begin{itemize}
+\item \textbf{Susceptible to False Starts:} Because the search strategy only minimizes the current remaining estimated cost, it could be possible for the algorithm to pick the shortest node that leads to a dead end, resulting in unnecessary nodes being expanded.
+\item \textbf{Repeated States:} Furthermore, if we allow repeated states such as in Graph Search, then it could be possible for the algorithm to oscillate between 2 visited states if the estimated cost between the two is the cheapest among those in the frontier.
+\item \textbf{Infinite Search Path Length:} Similar to Depth-First Search, if the search tree path has infinite length, then it is possible for the algorithm to keep searching down that path and never terminate
+\end{itemize}
+
+\subsection{A* Search}
+
+We have seen that minimizes the estimated cost to the goal using the heuristic function $h(n)$ in a bout to reduce search cost, but it is not optimal. On the other hand, Uniformed-Cost Search(UCS) reduces the cost of the path so far to the goal, but it is inefficient due to it's exponential time complexity. But we can combine both strategies to obtain a search strategy with the advantages of both. We do this by summing up the the evaluation functions of both search algorithms where:
+
+\begin{itemize}
+\item $g(n)$ is the cost function from UCS that measures the cost from the start node to the current node $n$
+\item $h(n)$ is the cost estimate heuristic from Best-First Search that gives an estimate of the remaining cost from the node $n$ to the goal node
+\item $f(n) = g(n) + h(n)$ is the combined heuristic function that estimates the cost of the cheapest path from the start node to the goal node by expanding node $n$ from the current node.
+\end{itemize}
+
+Hence if we are aiming to minimize the overall cost of the search path, then minimizing $f(n)$ is a reasonable strategy. In fact, we will soon prove that given the following restriction on $h(n)$, then the search strategy is complete and optimal:
+
+\begin{theorem}
+If $h(n)$ is an \textbf{admissible heuristic}, then A* Search using Tree Search is optimal
+\end{theorem}
+
+Where a heuristic function $h(n)$ is an \textbf{admissible heuristic}, if $\forall n, h(n) \leq h*(n)$ where $h*(n)$ is the optimal true cost to reach the goal state from node $n$. That is, the algorithm \textit{never overestimates the true cost of the path from node $n$ to the goal}.\\
+
+Furthermore, we shall assume the \textbf{monotonic} property for the path costs for A* search that, all path costs are non-decreasing. That is for the path containing the node $n$ to the goal node $t*$, $f(n) \leq f(t*)$. If the path costs for a problem is non-monotonic, then we can use the following function to enforce monotonicity using the following $pathmax$ function:
+
+\begin{equation*}
+f(n') = max(f(n), g(n') + h(n'))
+\end{equation*}
+
+By the monotonicity property of the path costs, that means that A* will expand all nodes $n$ with evaluation function costs $f(n) < f*$ where $f*$ is the cost of the optimal solution path. This is similar to the BFS behaviour where A* expands nodes layer by layer, where each layer is a contour represented by it's evaluation function cost.
+
+\subsubsection{Proof of Optimality of A* Search}
+
+Let the optimal goal state in the search tree be $t*$, and a suboptimal goal state be $t$. Then, $f(t) = g(t) \leq f(t*) = g(t*)$. Let us then assume then A* algorithm has picked $t$ as the solution and terminated. We shall see that this is not possible.\\
+
+Let $n$ be an unexpanded node on the path to the optimal goal state $t*$. Such a node exists because if it does not, that means that the algorithm that already expanded all nodes on the path to $t*$, and hence found the optimal goal state. Additionally, let it be such that 
+
+\begin{equation*}
+f(t) \leq f(n)
+\end{equation*}
+
+such that $t$ is expanded before $n$, which can be rewritten as:
+
+ \begin{equation*}
+ \begin{aligned}
+f(t) \leq f(n) & = g(t) + h(t) \leq g(n) + h(n)\\
+&= g(t) \leq g(n) + h(n)
+\end{aligned}
+\end{equation*}
+
+since $h(t) = 0$ as $t$ is a goal state. Then, because path costs are non-decreasing, that means that:
+
+ \begin{equation*}
+ \begin{aligned}
+g(t) & \leq g(n) + h(n) \\
+& = f(n) \\
+& \leq f(t*) \\
+& = g(t*) + h(t*) = g(t*) (\text{since $h(t*) = 0$})
+\end{aligned}
+\end{equation*}
+
+Which means that the path cost of reaching the suboptimal goal state $t$ is lesser than that of the optimal goal state $t*$, which contradicts our initial assumption that $f(t) = g(t) \leq f(t*) = g(t*)$. Hence, we have proven that A* search is guaranteed to find the optimal goal state. Intuitively, we can see that this is true because $f(t) \leq f(t*) = g(t*) = g(n) + h*(n)  \leq f(n) = g(n) + h(n)$ for any node $n$ that is on the optimal path from the start node to the goal node due to non-decreasing costs, and by the admissible heuristic that $h(n) \leq h*(n)$. Moreover, it is also easy to see that if we have a heuristic that \textit{overestimates} the path cost to the goal node, then the algorithm might evaluate $f(n) > f(t)$ and eventually find the suboptimal goal first.\\
+
+In particular, it is also proven that A* is \textbf{optimally efficient}. That is, any other search algorithm that uses an admissible heuristic that finds the optimal goal state \textit{does not expand less nodes} than A*. This also means any algorithm that does not expand nodes $n$ with $f(n) 
+\leq f(t*)$ run the risk of non-completeness and not finding the optimal goal state.
 
 \end{document}
