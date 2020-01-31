@@ -20,6 +20,8 @@
 \DeclareMathOperator{\E}{\mathbb{E}}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
 
 \title{CS3243 Introduction to Artificial Intelligence}
 
@@ -287,9 +289,48 @@ Hence if we are aiming to minimize the overall cost of the search path, then min
 If $h(n)$ is an \textbf{admissible heuristic}, then A* Search using Tree Search is optimal
 \end{theorem}
 
-Where a heuristic function $h(n)$ is an \textbf{admissible heuristic}, if $\forall n, h(n) \leq h*(n)$ where $h*(n)$ is the optimal true cost to reach the goal state from node $n$. That is, the algorithm \textit{never overestimates the true cost of the path from node $n$ to the goal}.\\
+\begin{definition}
+A heuristic function $h(n)$ is an \textbf{admissible heuristic}, if $\forall n, h(n) \leq h^*(n)$ where $h^*(n)$ is the optimal true cost to reach the goal state from node $n$. 
+\end{definition}
 
-Furthermore, we shall assume the \textbf{monotonic} property for the path costs for A* search that, all path costs are non-decreasing. That is for the path containing the node $n$ to the goal node $t*$, $f(n) \leq f(t*)$. If the path costs for a problem is non-monotonic, then we can use the following function to enforce monotonicity using the following $pathmax$ function:
+That is, the algorithm \textit{never overestimates the true cost of the path from node $n$ to the goal}.\\
+
+Furthermore, we shall assume the \textbf{monotonic} property for the path costs for A* search that, all path costs are non-decreasing. That is for the path containing the node $n$ to the goal node $t*$, $f(n) \leq f(t*)$. In particular we say that the heuristic function is \textbf{consistent}.
+
+\begin{definition}
+A heuristic function $h(n)$ is \textbf{consistent}, if $\forall n$, and it's successors $n'$, $h(n) \leq c(n, n') + h(n')$.
+\end{definition}
+
+In some cases, we also call this heuristic function metric because it obeys the triangle inequality. A result from this definition is that path costs are non-decreasing, or monotonic. This can be seen via the following equation:
+
+\begin{equation*}
+\begin{aligned}
+f(n') & = g(n') + h(n') \\
+& = g(n) + c(n, n') + h(n') \\
+& \geq g(n) + h(n) = f(n)
+\end{aligned}
+\end{equation*}
+
+In particular, the following lemma holds:
+
+\begin{lemma}
+If a heuristic is consistent, then it is also admissible
+\end{lemma}
+
+A simple proof of this is that, we can take any node $n$, then we see that:
+
+\begin{equation*}
+\begin{aligned}
+h(n) & \leq c(n, n') + h(n')\\
+& \leq c(n, n') + c(n', n'') + h(n'') \\
+& ...\\
+& \leq c(n, n') + c(n', n'') + ... + c(n^{t-1}, t) + h(t) \\
+& \leq c(n, n') + c(n', n'') + ... + c(n^{t-1}, t) (\text{remember $h(t) = 0$})\\
+& \leq c(n, t)
+\end{aligned}
+\end{equation*}
+
+If the path costs for a problem is non-monotonic, then we can use the following function to enforce monotonicity using the following $pathmax$ function:
 
 \begin{equation*}
 f(n') = max(f(n), g(n') + h(n'))
@@ -329,7 +370,53 @@ g(t) & \leq g(n) + h(n) \\
 
 Which means that the path cost of reaching the suboptimal goal state $t$ is lesser than that of the optimal goal state $t*$, which contradicts our initial assumption that $f(t) = g(t) \leq f(t*) = g(t*)$. Hence, we have proven that A* search is guaranteed to find the optimal goal state. Intuitively, we can see that this is true because $f(t) \leq f(t*) = g(t*) = g(n) + h*(n)  \leq f(n) = g(n) + h(n)$ for any node $n$ that is on the optimal path from the start node to the goal node due to non-decreasing costs, and by the admissible heuristic that $h(n) \leq h*(n)$. Moreover, it is also easy to see that if we have a heuristic that \textit{overestimates} the path cost to the goal node, then the algorithm might evaluate $f(n) > f(t)$ and eventually find the suboptimal goal first.\\
 
+Additionally,  a stronger claim is that when a node $n$ is selected for expanding, that means that \textit{the path leading up to $n$ is the shortest path found}. To see why this is so, we shall assume that the algorithm expands node $n$ via a suboptimal path with last node $q_2$ instead of a optimal path with last node $q_1$. We know that since $n$ was expanded before $q_1$, that means that $f(q_2) \leq f(n) \leq f(q_1)$. But this contradicts the optimality of the optimal path with cost $f(q_1) < f(q_2)$, and the non-decreasing property since $q_1$ is on the path to $n$ and hence $f(q_1) < f(n)$.\\
+
 In particular, it is also proven that A* is \textbf{optimally efficient}. That is, any other search algorithm that uses an admissible heuristic that finds the optimal goal state \textit{does not expand less nodes} than A*. This also means any algorithm that does not expand nodes $n$ with $f(n) 
 \leq f(t*)$ run the risk of non-completeness and not finding the optimal goal state.
+
+\subsubsection{Proof of Completeness of A* Search}
+
+Recall that we mentioned that path costs are non-decreasing along the path. We can visualize the search landscape of the search tree in contours, where each contour is in order of increasing path costs. We can see that A* Search eventually expands all nodes in a contour before moving onto the next. In particularly, A* search moves in increasing order of contours using the evaluation function. This means that A* search will expand up the contours, before it eventually reaches the optimal shallowest goal node.\\
+
+However, this is only true under 2 conditions:
+\begin{itemize}
+\item If there are finite number of nodes with evaluation function costs $f(n) < f*$
+\item If the branching factor $b$ in the search tree is finite
+\end{itemize}
+
+Similar to problems with uninformed search, we can see that if the above 2 conditions do not hold, it is possible for the algorithm to be stuck within a contour and never terminate.
+
+\subsubsection{Time and Space Complexity of A* Search}
+
+While A* Search is optimally efficient, it still incurs time complexity exponential in the base $b$, to the power of the error incurred in the estimation of the heuristic function resulting in $O(b^{h^*(n) - h(n)})$, unless the error grows no faster than the logarithm of the actual path cost(proof omitted):
+
+\begin{equation*}
+|h^*(n) - h(n)| \leq O(\log h^*(n))
+\end{equation*}
+
+In particular, we wish to use dominant heuristic functions over a set of possible $h(n)$
+
+\begin{definition}
+For 2 heuristic functions $h_1(n), h_2(n)$ that are admissible, if $\forall n, h_1(n) \geq h_2(n)$, then $h_1(n)\ \textbf{dominates}\ h_2(n)$
+\end{definition}
+
+This also means that $h_1(n)$ incurs lower search costs, because since both functions are admissible, values for $h_1(n)$ are closer to the true cost function $h^*(n)$ than $h_2(n)$ is.\\
+
+This means that A* is greatly affected by the error incurred by the heuristic function estimation. However, computational time is not the biggest drawback. A* incurs a space complexity of $O(b^m)$ by maintaining nodes generated in the frontier in memory. More often than not, A* Search will run out of space before it finishes running.
+
+\subsection{Deriving Admissible Heuristics}
+
+Often we have to invent our own heuristic functions in order to tackle a search problem. One of the ways that we can do this is by \textbf{relaxing} the constraints to the problem. This means removing some of the restrictions placed on the problem itself, leading to special cases of the problem that can be solved using specific derivable heuristics. It is often that \textit{optimal solutions to a relaxed problem is often a good heuristic to solving the original}. By relaxing a problem, we can develop a set of admissible heuristic functions $\{h_1, h_2,..., h_n\}$ that provides optimal or near optimal solutions to specific configurations to the search problem, which can be used to evaluate different scenarios.\\
+
+With a set of specific heuristic functions, it follows that each of these heuristics that developed to solve a specific scenario, and not a general best heuristic for the best solution itself. If we pick one heuristic over another, it could be that the heuristic does optimally in one scenario, but very bad in another. Hence instead of picking, we can make use of the dominant property to pick heuristic functions at the current state:
+
+\begin{equation*}
+h(n) = \max (h_1, h_2, ..., h_n)
+\end{equation*}
+
+Which means that always have the best option of a heuristic at any state in the search. Using the dominant property, as well as the fact that the heuristics are admissible, guarantees the best choice of heuristics among all we have by picking the heuristic closest to the upper bound of the true cost.\\
+
+Other methods of derivation of heuristics involve statistical learning and feature evaluation as well, which allows the algorithm to derive importance of various features of heuristics in different situations by itself.
 
 \end{document}
