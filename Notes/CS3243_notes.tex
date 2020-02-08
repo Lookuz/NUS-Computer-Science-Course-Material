@@ -419,4 +419,42 @@ Which means that always have the best option of a heuristic at any state in the 
 
 Other methods of derivation of heuristics involve statistical learning and feature evaluation as well, which allows the algorithm to derive importance of various features of heuristics in different situations by itself.
 
+\pagebreak
+\section{Local Search}
+
+In some problems, the state description contains all the information about the problem that we need to make informed searches, and the path in which we take during our search may not be so useful anymore. We only require that the goal state be reached. In this case, local search, or \textbf{iterative improvement} algorithms may provide a practical approach that does not require searching over search paths. More often than not, it is often a good idea to \textit{start with a complete configuration of the problem, and make gradual improvements to the solution}. We can easily see that such algorithms search a smaller portion of the search space while still being able to provide reasonable solutions to the problem. Local search algorithms do not look far into a search path, and usually only considers neighbours within close proximity.
+
+\subsection{Hill-Climbing Search}
+
+The hill-climbing algorithm is one that continually moves the current position in the direction of an increasing objective value. The algorithm always aims to make an improvement through a movement to it's surrounding neighbours if possible. Variants of this algorithm in other problems such as convex optimization may also be known as  gradient descent.\\
+
+\begin{algorithm}
+\caption{Hill-Climbing Search}\label{euclid}
+\begin{algorithmic}[1]
+\State $current \leftarrow problem.$initial-state
+\Loop
+	\State $neighbour \leftarrow$ highest-valued successor of $current$
+	\If{neighbour.Value $\leq$ current.Value}
+		\State \Return current.State
+	\Else 
+		\State $current \leftarrow neighbour$
+	\EndIf
+\EndLoop
+\end{algorithmic}
+\end{algorithm}
+
+Note that unlike the previous algorithms that we have seen, the Hill-Climbing search algorithm does not maintain any form of search tree or graph, but only the current state, it's neighbour states and their evaluations. This cuts down the need for large memory requirements immediately.\\
+
+However, the Hill-Climbing search paradigm does suffer from certain drawbacks:
+
+\begin{itemize}
+\item \textbf{Local Maxima:} The algorithm may run into a point where the current state is a peak among all other neighbours, and returns this state. That is, the algorithm is guaranteed to return a \textit{maxima}, but it could be a local maxima and be maximal with respect to the neighbours, but not the entire state space and be a \textit{global maxima}. The algorithm does not know this and only recognises the local maxima as the highest value, since it does not look past the neighbours of the current state. In many cases, the local maxima returned by the algorithm may be far from satisfactory compared to the global maxima.
+
+\item \textbf{Plateau:} This is an area of the state space where the value does not change from current to neighbouring states. In this case, the algorithm does not know for sure which move to take, and either uses heuristics to decide or makes a random walk.
+\end{itemize}
+
+The drawbacks that Hill-Climbing search has points to the fact that once the algorithm is unable to make any further improvement, it returns the current best solution without checking other peaks in the state space, and most of the time the current highest returned is a local maxima and not the optimal solution to the problem. That is, Hill-Climbing fully uses exploitation, but not exploration in it's search. We can combat this in various ways depending on the problem, but the most commonly known is \textbf{Random-Restart Hill-Climbing} by restarting the algorithm initialized to different starting states in a bout to obtain a higher maxima.
+
+\section{Adversarial Search}
+
 \end{document}
