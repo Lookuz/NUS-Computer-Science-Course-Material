@@ -457,4 +457,100 @@ The drawbacks that Hill-Climbing search has points to the fact that once the alg
 
 \section{Adversarial Search}
 
+Unlike previous search problems that were defined before, we now look at problems where \textit{more than one player} is involved. For example, chess can be modelled as a search problem playing against another player and trying to make the best moves at each point in time. These problems are also called \textit{games}, and model real world problems much more accurately than previous problems.\\
+
+Unfortunately, the presence of additional agents also introduce multiple factors that increase the intractability of solving the problem:
+
+\begin{itemize}
+\item \textbf{Uncertainty} of the next environment states in the game, since the states are no longer influenced just by the agent's actions, but also other agent's actions as well.
+
+\item \textbf{Larger search space} due to the increase in the total number of combinations of moves resulting from additional agents participating in the game. The agent needs to account for the possible moves that the opponent might take in chess, for example.
+\end{itemize}
+
+\subsection{Two-Person Games}
+
+Let us being by considering games that involves 2 agents or players. In particular, we wish to look at \textbf{zero-sum games}, which are games where the gain or loss by a participant is exactly balanced and reflected in the other player's utility. For example, in a gambling problem involving a banker and the player, if the banker has a utility of $x$, that means that he/she has won $x$ dollars and consequently the player has lost $x$ dollars and has a utility of $-x$. Additionally, we reformulate the following:
+
+\begin{itemize}
+\item \textbf{Initial state} includes the starting board position, and who goes first
+\item \textbf{Set of operators} determines the legal moves that the current play can make
+\item \textbf{Terminal test} defines whether or not the game is over depending on win conditions, or if no more legal moves can be made
+\item \textbf{Utility/Payoff Function} returns a numerical value on the outcome of the game. In the game of chess, a win for the MAX player would give +1, a win for MIN player would give -1 and a draw would be 0
+\end{itemize}
+
+We also see that for zero-sum games, we define a MAX and MIN player, that aims to maximise and minimize the utility function respectively. We can see that the 2 agents now have objectives that contradicts each other, and makes the game harder for the opponent. More importantly, any gain or loss for the MAX player is a loss or gain for the MIN player respectively, and we can see that the total utility \textit{sums to 0}, which reflects the definition of a zero sum game.\\
+
+\subsubsection{Minimax Algorithm}
+
+Let us consider the search tree for formulating a 2 player zero-sum game. Note that the plays alternate between the MAX and the MIN player, and hence each depth of the search tree alternates between player MAX and MIN. The minimax algorithm uses this search tree to formulate the optimal moves for the MAX player that starts the game first, by deciding the best optimal starting move.
+
+\begin{enumerate}
+\item The algorithm first generates the entire search tree for the game, all the way to the terminate states that are represented by the leaves in the search tree. Each depth of the tree alternates between MAX and MIN's moves, with the root of the tree representing the starting move by MAX
+
+\item From the terminal states at the leaves, we apply the utility function to each leaf to determine the the utility value. This represents a +1 for a win for MAX, and -1 for a win by MIN for a game of chess for example.
+
+\item We recursively move one level up the tree everytime the utility values of the current depth is determined for all nodes, and use the utility value for the current depth to decide the utility value for the nodes one level up. In particular, let $S_i$ be the set of children residing in depth $i$ of node $v_{i+1}$, and $f$ the utility function used in the game. If level $i+1$ denotes a play by MAX, then 
+
+\begin{equation*}
+f(v_{i+1}) = \max_{u \in S_i} f(u) \text{ if player = MAX}
+\end{equation*}
+
+That is, at level $i+1$, MAX will pick the move out of all possible children that will lead it to the terminal state that yields the highest possible utility. Similarly for MIN, if the current level corresponds to a play by MIN, then 
+
+\begin{equation*}
+f(v_{i+1}) = \min{u \in S_i} f(u) \text{ if player = MIN}
+\end{equation*}
+
+instead to minimize the overall utility.\\
+
+In particular, we see that everytime the levels alternate, the utility switches from maximizing to minimizing based on the MAX and MIN player. This is because the 2 objectives of the players are clashing, and everytime MAX makes a move that maximizes the utility, in the next half-move by MIN player, he/she will counter MAX's progress by choosing a path that minimizes the overall utility. As such, MAX and MIN never really often attain the maximal/minimal utility, but rather, the \textit{maximum minimal utility} for MAX, and vice versa for MIN. Hence the name, Minimax algorithm.
+\end{enumerate}
+
+In particular, at each level of the search tree, the move taken by the player to maximize/minimize the utility is known as a \textbf{strategy}.  
+
+\begin{definition}
+A strategy $s_1$ for player 1 is called \textbf{winning} if for any strategy $S-2$ by player 2, the game ends with player 1 as the winner.\\
+A strategy $s_1$ for player 1 is called \textbf{non-losing} if for any strategy $s_2$ by player 2, the game ends in either a tie or a win for player 1.
+\end{definition}
+
+Another important observation is that at each level, the player that makes the play at that depth plays the best that they can to possibly maximize/minimize the utility, and we cannot change the search path choice to improve the utility. The minimax algorithm is also known to output a \textbf{sub-perfect Nash equilibrium}. While the choice over the entire tree may not be optimal, but at each play, the player makes the best choice they possibly can.
+
+\begin{itemize}
+\item \textbf{Completeness:} If the maximum depth of the tree $m$ is finite, and the number of legal moves(which translates to the number of branches $b$) is finite, then the algorithm is able to fully generate the tree and is complete.
+
+\item \textbf{Optimality:} Similar to completeness, since $m$ and $b$ are finite, the entire search tree with it's respective utility costs is visible to the algorithm. That means that the algorithm has perfect information to the utility cost of each move, and is able to make the best move that maximizes/minimizes it's utility. Hence, it would be able to output the optimal solution.
+
+\item \textbf{Time Complexity:} For a search tree of branching factor $b$ and depth $m$, in the worst case it needs to generate a tree with $b^m$ nodes, and hence takes $O(b^m)$ time to do so
+
+\item \textbf{Space Complexity:} Because of the recursive nature of generating the nodes, Minimax algorithm maintains nodes in a search path by diving into the terminal states before going back up, using at most $O(bm)$ space.
+\end{itemize}
+
+\subsection{Alpha-Beta Pruning}
+
+We have seen that for the minimax algorithm to output the optimal solution, it needs to generate the entire search tree which hinges on it being finite. However, even for finite trees, it can be seen that sometimes search trees can be very large, and it may take a long time for the algorithm to perform search.\\
+
+Fortunately, it is possible for Minimax to be optimized to search and output the optimal solution despite not looking at every single node in the search tree, using the intuition that \textit{we do not explore nodes that are already bad}. Consider a node $n$ along the search tree. If the player has a better choice at node $m$ which is a parent of, or higher up the search tree from $n$ that improves his/her utility, then node $n$ will never be reached. Hence, it is not necessary to explore the paths further down from $n$.\\
+
+Since Minimax is depth first, we only need to consider nodes along a single path in the tree. We denote $\alpha(n)$ as the highest observed value found on any path from $n$ initialized at $- \infty$, and $\beta(n)$ as the lowest observed value initialized at $\infty$. Intuitively, this can be seen as $\alpha$ is the maximal possible utility for MAX, and $\beta$ the minimal for MIN, and any further values of $\beta$ that do not improve the value of the current $\alpha$ will be pruned. In particular,
+
+\begin{itemize}
+\item given a node $n$ at a level corresponding to a MIN play, we stop searching below $n$ if there is a MAX ancestor $i$ of $n$ such that $\alpha(i) > \beta(n)$
+\item given a node $n$ at a level corresponding to a MAX play, we stop searching below $n$ if there is a MIN ancestor $i$ of $n$ such that $\beta(i) < \alpha(n)$
+\end{itemize} 
+
+Note that alpha-beta pruning prunes aways branches of the search tree does will never get reached, and hence these branches do not influence the final decision. But how much computational effort does alpha-beta pruning actually save? This depends on the ordering of the moves that are legal, which determines the search path ordering. With perfect ordering, alpha-beta pruning can give a time complexity on Minimax of $O(b^\frac{m}{2})$. This means that the algorithm can actually search twice as deep with the same time constraints. However, even without a good ordering, on average alpha-beta pruning gives a time complexity of $O(b^\frac{3}{4})$ in a random ordering.
+
+\subsection{Evaluation Functions}
+
+When search gets large, we also have the option of limiting search, just as in DLS. However, for cases like Minimax algorithm, we run into several major problems, the first being that since depth is limited, we may not reach the terminal states for certain search paths. Because the utility of intermediate noes rely on the terminal states to determine the actual utility, that means that we are unable to determine intermediate nodes of search paths that do not reach the terminal state.\\
+
+We rectify this by introducing an \textbf{evaluation function}, which is an approximation function that evaluate how good an intermediate state is. We require that the evaluation function satisfy the following conditions:
+
+\begin{itemize}
+\item The evaluation function must agree with the utility function on terminal states
+\item The evaluation function cannot be too expensive, in particular it cannot be more expensive than the utility function as an approximation. 
+\item The evaluation function must be accurate in reflecting the player's odds of winning
+\end{itemize}
+
+Additionally, we also need to ensure that we do not run into the \textbf{horizon problem} when we perform the search limited. If we cut off search at a state that is volatile, and is threatened by possible wild swings or moves that may turn the game around, then it could be possible that the winning odds reflected at the state before and after the cutoff reflect very different information. Hence, we also include the condition that the search be performed til a \textbf{quiescent} position before being cut off, which is one that is robust to large changes.
 \end{document}
