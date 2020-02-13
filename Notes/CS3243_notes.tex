@@ -553,4 +553,168 @@ We rectify this by introducing an \textbf{evaluation function}, which is an appr
 \end{itemize}
 
 Additionally, we also need to ensure that we do not run into the \textbf{horizon problem} when we perform the search limited. If we cut off search at a state that is volatile, and is threatened by possible wild swings or moves that may turn the game around, then it could be possible that the winning odds reflected at the state before and after the cutoff reflect very different information. Hence, we also include the condition that the search be performed til a \textbf{quiescent} position before being cut off, which is one that is robust to large changes.
+
+\subsection{Expectimax Algorithm}
+
+In some games that involve stochastic layers, we also need to incorporate randomness into the game itself such as Poker. In addition to our standard minimax algorithm search tree, we also need to insert 'chance' nodes that represent as random choice between state changes. For each of the children of chance node $i$, $x_j$, we represent the probability that the search goes down to node $x_j$ is denoted $p(x_j)$. At the terminal nodes, we continue to use our utility function to obtain the utility value. However when we propagate upwards to the chance nodes, then we are unsure of exactly which path we will take. Instead, we take the $expected$ utility value upon reaching that node, which is the combination of the utility values among all children weighted by the probabilities of hitting that node.
+
+\begin{equation*}
+\begin{aligned}
+f(x_i) = E[f(x_i)]  = \sum_{j \in J} p(x_j) f(x_j)
+\end{aligned}
+\end{equation*}
+
+By introducing chance nodes and randomness into our search algorithm, we have increases the time complexity from $O(b^m)$ to that of $O(b^mn^m)$ because of the fact that we could have up to $n$ chance nodes at each of the $m$ levels.
+
+\pagebreak
+\section{Constraint Satisfaction Problems}
+
+In some problems, in addition to the basic requirements of obtaining the optimal solution or reaching the goal state, we also need to satisfy additional requirements or properties for the solution to be feasible. These properties are called \textbf{constraints}, and the problem can be modelled as what is called a \textbf{Constraint Satisfaction Problem(CSP)}. In CSPs, the states are represented in the form of variables, and constraints that the goal state must obey. For example:
+
+\begin{equation*}
+\begin{aligned}
+&\min c^T x\\
+&s.t \textbf{	} Ax = b\\
+&x \geq 0
+\end{aligned}
+\end{equation*}
+
+is commonly seen as the standard form of the Linear Programming problem. \\
+
+Each variable $x_i$  has a domain $D_i$ that it takes it's values from, such as $D_i = \mathbb{R}$ for real numbers, or $D_i = \{0, 1\}$ for binary values.This domain can be discrete or continuous, but CSP under continuous domains falls under the previously mentioned Linear Programming problem, and for this section we focus on discrete values. Additionally, constraints can be the following:
+
+\begin{itemize}
+\item \textbf{Unary Constraints} involving one variable: $x_i = a$
+\item \textbf{Binary Constraints} involving 2 variables: $x_i + x_j \leq a$
+\item \textbf{Higher Order Constraints} involving multiple variables
+\end{itemize}
+
+Note that in this case, we are using integer operations on constraints. This is defined by our \textbf{Constraint Language}, which represents \textit{how} our constraints should be formulated.\\
+
+Converting our CSPs back to the form of search state spaces, we can denote our initial state as an empty assignment; that is no values are assigned to any variables, and the transition functions being the assigning of values to variables. Lastly, our goal state is an assignment for the variables such that the solution is feasible. In particular, we say that the assignment is $complete$ if the assignment does not violate any constraints in the CSP, and $\forall i, y_i \in D_i$ .\\
+
+A standard search paradigm for working with CSPs is as follows:
+
+\begin{algorithm}
+\caption{Standard CSP Search}\label{euclid}
+\begin{algorithmic}[1]
+\State $assignment \leftarrow []$
+\While{$assignment$ is not complete}
+\State $assignment \leftarrow assignment \cup {y_i}$ where $x_i = y_i, y_i \in D_i$
+\State \If{$assignment$ is complete} 
+	\Return $assignment$
+\EndIf
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+Note that there are a few quirks of simply following the above routine:
+\begin{itemize}
+\item \textbf{Repeated States} but different order of assignments. This means that in term of a search tree, then we would have many unnecessary nodes that represent the same state(e.g assigned $x_i = a$ then $y_i = b$ in one path and the reverse order in another path. Notice order is not required. We can merely represent each level of the search tree as the assignments for a $single variable$. Then, for $d$ dimensional variable and $m$ variables, the search tree is at most $O(d^m)$. This is also known as \textbf{Backtracking Search}, where we assign a variable per level.
+
+\item \textbf{Running into already invalid assignment} but still continuing to search. In many cases, we can already determine if progress from the current state will lead to a valid assignment. If the current state can no longer reach a valid assignment, we can simply stop the search down that sub tree and effectively prune search in that subtree.
+\end{itemize}
+
+\subsection{Backtracking Search}
+\begin{algorithm}
+\caption{Backtracking Search}\label{euclid}
+\begin{algorithmic}[1]
+\State $assignment \leftarrow []$
+\While{$assignment$ is not complete}
+\State \If{$assignment$ is complete} 
+	\Return $assignment$
+\EndIf
+
+\State $var \leftarrow$ Select-Unassigned-Variable$(csp)$
+\For{each value in Order-Domain-Values$(var, assignment, csp)$}
+\If{$y_i$ is consistent with $assignment$}
+\State add $\{ x_i = y_i\}$ to $assignment$
+\State $inferences \leftarrow$ Inference$(csp, var, value)$
+\If{$inferences \neq failure$}
+\State add $inferences$ to $assignment$
+\State $results \leftarrow$ Backtracking Search($assignment, csp$)
+\If{$result \neq failure$}
+\Return $result$
+\EndIf
+\EndIf
+\EndIf
+\EndFor
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+Notice that 
+\begin{itemize}
+\item \textbf{Order of variable assignment is irrelevant}, similar to how we do not bother about the search path and concentrate on finding a valid assignment
+\item \textbf{At every level, consider a single variable}. This considerably reduces our search space for assignments
+\item \textbf{Use of inferences}, which tells us what we can say about the remaining values given the current assigned values. That is, the currently assigned values determine which of the remaining values are valid or not.
+\end{itemize}
+
+In particular, we can improve efficiency and save runtime by optimizing the subroutines: \textbf{Select-Unassigned Variables, Order-Domain-Values and Inferences}. Basically, \textit{how do we choose what to assign each variable at each point in time}. The following as heuristics we can use:
+
+\begin{itemize}
+\item \textbf{Minimum Remaining Values(MRV):} Pick the variable with the \textit{fewest} legal values left. This allows us to detect  invalid assignments quicker before searching too deep and wasting search time.
+\item \textbf{Degree(Most Constraining Variable) Heuristic:} Pick the variable that has the most relations with other variables. That is, it \textit{influences} other variables the most. Similar to MRV, selecting this variable first allows us to quick eliminate assignments to other variables made invalid because of this variable quickly.
+\item \textbf{Least Constraining Value} for \underline{value selection} to be assigned to the variable. We want values assigned to variables to be permissive, so that we are more likely to find a valid assignment and not waste time searching only to reach an invalid solution.
+\end{itemize}
+
+\subsection{Inferences}
+
+\subsubsection{Forward Checking}
+
+In forward checking, the main idea is to keep track of remaining illegal values for unassigned variables. At any point in the time in the search, if any of the variables has no remaining legal values left, then it ay progress cannot output a valid assignment since one variable cannot be satisfied. Hence, we terminate search down the current subtree and return back to a state where a valid assignment is still possible.
+
+\subsubsection{Constraint Propagation}
+
+Using forward checking, we are able to terminate search down a subtree that is guaranteed to not have a valid assignment, and hence prunes portions of the search tree to reduce search space. But we can improve this further. Note that forward checking does not detect early signs of invalid assignments. This is where \textbf{constraint propagation} comes in. Using constraint propagation, we are able to observe if values are illegal by reducing and narrowing down the search space by removing assignments that have illegal values. In particular, constraint propagation enforces constraints \textbf{locally} for certain variables in order to continue search.
+
+\subsubsection{Arc-Consistency}
+
+\begin{definition}
+$X_i$ is \textbf{arc-consistent} with $X_j$ iff for every value $x_i \in D_i$, there exists some value $y_j \in D_j$ such that the binary constraint on the arc $(X_i, X_j)$ is satisfied
+\end{definition}
+
+That is, an arc $(X_i, X_j)$ is arc-consistent if there is a valid assignment for $X_j$ for every value that we assign to $X_i$. As we perform search down the tree, it is likely that most of the variables in the state that we are in or will be in, will not be arc-consistent with every other variable. If that is the case, then most likely whatever value we pick for the variable $X_i$, the leading assignment will violate some constraint since it is not arc-consistent. However, we can \textbf{enforce} arc-consistency by removing illegal values from the domain $D_i$ such that the resulting domain $D_{i}^{'}$ is arc-consistent with every other variable. Then, we have effectively reduced the domain $D_i$ for $X_i$ to one that contains legal values that do not lead to illegal assignments. This is done through:
+
+\begin{itemize}
+\item \textbf{Enforcing unary constraints} on the variable $X_i$. That is, we prune values from $D_i$ that do not enforce unary constraints $X_i \geq a$ for example.
+\item \textbf{Propagating arc-consistency on binary constraints}. By enforcing arc-consistency on the arc $(X_i, X_j)$, then the arc-consistency on the neighbouring arc $(X_k, X_i)$  can be enforced on $D_k$ on the reduced domain $D_{i}^{'}$. This could not have been possible without enforcing arc-consistency on $(X_i, X_j)$ since we could have enforced arc-consistency on $(X_k, X_i)$ with respect to illegal values in $D_i$. This represents transitive arc-consistency relations.
+\end{itemize}
+
+Hence, arc-consistency acts as a form of local repeated constraint propagation by enforcing it after every assignment. This way, we prune as much as of the domain space as possible by removing values that will possibly lead to illegal assignments.
+
+\begin{algorithm}
+\caption{Arc-Consistency Algorithm AC-3}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{AC-3}{$csp$} \textbf{returns} $false$ if inconsistency found and $true$ otherwise
+\State $queue \leftarrow$ all arcs in $csp$
+\While{$queue$ is not empty}
+$(X_i, X_j) \leftarrow$ Remove-First($queue$)
+\If{Revise($csp, X_i, X_j$)}
+\If{size of $D_i$ = 0} \Return $false$ \EndIf
+\For{each $X_k \in$ $X_i$.neighbours -$\{X_j\}$}
+\State add $(X_i, X_j)$ to $queue$
+\EndFor
+\EndIf
+\EndWhile
+\EndProcedure
+\\
+\Procedure{Revise}{$csp$} \textbf{returns} $true$ if the domain $D_i$ of $X_i$ is revised
+\State $revised \leftarrow false$ 
+\For{each $x \in D_i$}
+\If{no value $y_j \in D_j$ allows $(x_i, y_j)$ to satisfy the constraint between $X_i$ and $X_j$}
+\State delete $x$ from $D_i$
+\State $revised \leftarrow true$
+\EndIf
+\EndFor 
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+The AC-3 algorithm is one that allows us to ensure arc-consistency via constraint propagation. It first begins with arcs from the CSP problem, and prunes values from each domain $D_i$ for the variable $X_i$ if there are any values such that $X_i$ is not arc consistent with any $X_j$. Once we do this, we re-enforce transitive arc-consistency by re-evaluating the values in the domains of the other neighbours of $X_i$, $X_k$ such that once $(X_i, X_j)$ is arc-consistent after the Revise procedure, each of the other neighbours of $X_i, X_k$ needs to be arc-consistent with the revised domain of $X_i, D_{i}^{'}$.\\
+
+Notice that for a CSP problem, there are at most $n^2$ directed arcs in a complete graph where very node has a directed edge to other nodes. Additionally, each $X_i$ has at most $d$ values in their respective domains $D_i$, and hence on revising of neighbouring arcs, an arc $(X_i, X_j)$ can be re-queued for the Revise operation at most $d$ times(exactly $d$ if everytime we only delete 1 element from the $d$ elements in $D_i$). Each revise operation compares each cartesian product of the domains $D_i, D_j$ and hence incurs at most $d^2$ comparisons. Putting all of these together, we have that the AC-3 algorithm incurs a total time complexity of $O(n^2d^3)$.\\
+
+Hence, we can use the AC-3 algorithm as a routine on our CSP to ensure that all values in each domain is arc-consistent since it enforces transitive constraint propagation. In particular, we can re-execute this routine after every assignment to maintain the arc-consistency, and this entire process is known as \textbf{Maintaining Arc-Consistency} procedure. This ensures that after every assignment, we revise our domains to contains values that only lead to legal assignments.
+
 \end{document}
