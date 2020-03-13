@@ -498,7 +498,7 @@ f(v_{i+1}) = \max_{u \in S_i} f(u) \text{ if player = MAX}
 That is, at level $i+1$, MAX will pick the move out of all possible children that will lead it to the terminal state that yields the highest possible utility. Similarly for MIN, if the current level corresponds to a play by MIN, then 
 
 \begin{equation*}
-f(v_{i+1}) = \min{u \in S_i} f(u) \text{ if player = MIN}
+f(v_{i+1}) = \min_{u \in S_i} f(u) \text{ if player = MIN}
 \end{equation*}
 
 instead to minimize the overall utility.\\
@@ -509,7 +509,7 @@ In particular, we see that everytime the levels alternate, the utility switches 
 In particular, at each level of the search tree, the move taken by the player to maximize/minimize the utility is known as a \textbf{strategy}.  
 
 \begin{definition}
-A strategy $s_1$ for player 1 is called \textbf{winning} if for any strategy $S-2$ by player 2, the game ends with player 1 as the winner.\\
+A strategy $s_1$ for player 1 is called \textbf{winning} if for any strategy $s_2$ by player 2, the game ends with player 1 as the winner.\\
 A strategy $s_1$ for player 1 is called \textbf{non-losing} if for any strategy $s_2$ by player 2, the game ends in either a tie or a win for player 1.
 \end{definition}
 
@@ -692,8 +692,8 @@ Hence, arc-consistency acts as a form of local repeated constraint propagation b
 $(X_i, X_j) \leftarrow$ Remove-First($queue$)
 \If{Revise($csp, X_i, X_j$)}
 \If{size of $D_i$ = 0} \Return $false$ \EndIf
-\For{each $X_k \in$ $X_i$.neighbours -$\{X_j\}$}
-\State add $(X_i, X_j)$ to $queue$
+\For{each $X_k \in$ $X_i$.neighbours - $\{X_j\}$}
+\State add $(X_k, X_i)$ to $queue$
 \EndFor
 \EndIf
 \EndWhile
@@ -715,6 +715,278 @@ The AC-3 algorithm is one that allows us to ensure arc-consistency via constrain
 
 Notice that for a CSP problem, there are at most $n^2$ directed arcs in a complete graph where very node has a directed edge to other nodes. Additionally, each $X_i$ has at most $d$ values in their respective domains $D_i$, and hence on revising of neighbouring arcs, an arc $(X_i, X_j)$ can be re-queued for the Revise operation at most $d$ times(exactly $d$ if everytime we only delete 1 element from the $d$ elements in $D_i$). Each revise operation compares each cartesian product of the domains $D_i, D_j$ and hence incurs at most $d^2$ comparisons. Putting all of these together, we have that the AC-3 algorithm incurs a total time complexity of $O(n^2d^3)$.\\
 
-Hence, we can use the AC-3 algorithm as a routine on our CSP to ensure that all values in each domain is arc-consistent since it enforces transitive constraint propagation. In particular, we can re-execute this routine after every assignment to maintain the arc-consistency, and this entire process is known as \textbf{Maintaining Arc-Consistency} procedure. This ensures that after every assignment, we revise our domains to contains values that only lead to legal assignments.
+Hence, we can use the AC-3 algorithm as a routine on our CSP to ensure that all values in each domain is arc-consistent since it enforces transitive constraint propagation. In particular, we can re-execute this routine after every assignment to maintain the arc-consistency, and this entire process is known as \textbf{Maintaining Arc-Consistency} procedure. This ensures that after every assignment, we revise our domains to contains values that only lead to legal assignments.\\
+
+Notice that the AC-3 algorithm is used to maintain transitivity of arc-consistency on \textit{binary constraints}. In the case of ternary constraints where more variables are involved, we need to decompose the ternary constraints into multiple binary constraints if we wish to continue using the AC-3 algorithm. However, it is not always that ternary constraints can be decomposed into binary constraints, especially when constraints start to get complicated. Fortunately, we can extend the AC-3 algorithm from enforcing 2-consistency between pair of arcs $(X_i, X_j)$ to a general algorithm that establishes $k$-consistency on ternary constraints.
+
+\subsection{Local Search on CSP}
+
+Previously, we have discussed how to perform standard search over the state space for CSPs, by starting with an empty assignment, and assigning a value to each variable at each level of the search tree. We then improved this to ensure we only assign legal values by performing forward-checking, in particular checking arc-consistency between variables to reduce search space to only valid assignments instead of searching down paths that lead to invalid assignments.\\
+
+However, we can also consider local search techniques for solving CSPs, by first starting with an initial assignment(which can obviously be allowed to violate constraints, or else we are done), and perform iterative improvement by applying modification operators to move the current configuration towards a valid assignment. Often, these modification operators aims to reduce the number of inconsistencies in the constraints, and hence called \textbf{heuristic repair} methods. One commonly used heuristic that measures such inconsistencies in constraints is called the $min-conflicts$, which measures the $number of constraints that are violated$. Hence, by seeking a solution that minimizes this heuristic, we are aiming to find a solution that satisfies the maximal number of constraints possible.
+
+\subsubsection{Min-Conflicts}
+
+
+\begin{algorithm}
+\caption{Min-Conflicts}\label{euclid}
+\begin{algorithmic}[1]
+\State $current \leftarrow$ assignment for $csp$
+\For{$i = 1$ to $max\_step$ }
+\If{$current$ is solution for $csp$}
+\Return $current$
+\EndIf
+\State $var \leftarrow$ randomly chosen variable from $csp$.Variables
+\State $value \leftarrow$ value $v$ for$var$ that minimizes $conflicts(var, v, current, csp)$
+\State $current.var \leftarrow value$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Notice that we execute the Hill-Climbing search with min-conflicts as the heuristic function that we aim to minimize. Similar to Hill-Climbing search, we may face the issue of being stuck in a local minima that is not a global minima if the algorithm no longer finds any moves that can improve the current position, since it merely aims to reduce the heuristic function that leads to a better position now, but not in the long run and never explores nor backtracks. But surprisingly, in many cases, we are able to find the optimal solution with Hill-Climbing search with high probability.\\
+
+Additionally, we can add element of exploration and exploitation by labelling constraints that are important, or have not been 'repaired' for a long time. We do this by assigning weights to constraints, which value can fluctuate over the period of the search. At each state of the search space, we aim to find an action that leads to a configuration that reduces the $total weight$ of all constraint violated. Depending on how we define the value adjustments, this allows us to get out of local minima by marking constraints that are stagnant for long time, or label constraints that absolutely need to be satisfied among all constraints.\\
+
+An important feature of local search is that it allows flexibility in time, by providing us with the best known solution at the time of termination, even if the search is not complete. This is particularly useful for extremely large search spaces. Additionally, it allows for existing solutions to be fixed due to change in constraints by using the current previously valid assignment, and running local search on it with new constraints. 
+
+\subsection{Structured CSP}
+
+In general, solving CSPs is considered a computationally intractable problem. For CSPs with discrete valued variables, the search space is in the factor of $O(d^n)$ for all $n$ variables. To reduce this computation time, we can break CSPs into independent CSPs. For reduced CSPs with $c$ variables each, the computation time is reduced to $O(d^n) = O(d^c\frac{n}{c})$.\\
+
+However, if we can find a substructure in the CSP, then we can exploit it to solve the CSP in polynomial time.
+
+\begin{theorem}
+If the CSP constraint graph is a tree, then an assignment to the CSP can be found in polynomial time in factor of $O(nd^2)$ time
+\end{theorem}
+
+To solve a tree-structured CSP, we first need to impose a hierarchical structure to the constraint graph. We do this by choosing an ordering of the graph that imposes \textbf{topological sorting} on the graph itself. Once that is performed, we can ensure arc-consistency of each arc $(X_i, X_j)$ for each in the tree, from the leaf node $X_j$ up to the parents. Since a tree with $n$ nodes contains at most $n-1$ arcs, that means that the total time incurred for ensuring arc-consistency on all arcs is $O((n-1) \times d \times d) = O(nd^2)$.\\
+
+\begin{lemma}
+If all arcs $(X_i, X_j), \forall$ i, j s.t $X_j$ $\in$ children of $X_i$ are consistent, then the following is true:
+
+\begin{itemize}
+\item There is legal assignment for CSP if $D_i  \neq \emptyset$ for each parent $X_i$ 
+\item There is no legal assignment for CSP if $\exists D_i : D_i = \emptyset$
+\end{itemize}
+\end{lemma}
+
+The second part of the claim is easy to see: If one of the domains $D_i$ is reduced to an empty set using arc-consistency, that means that for every variable in the domain $D_i$, it violates a constraint between $X_i$ and at least one child $X_j$. This means that there is no legal assignment for $X_i$, and hence for the CSP itself.\\
+
+If every domain is non-empty, the algorithm ensures that every arc between a parent and child node $(X_i, X_j)$ is consistent. This means that for every value in the domain $D_i$ for $X_i$, there is legal assignment for each child $X_j$. Notice that although the algorithm does not ensure that the reverse is true: the arc $(X_j, X_i)$ is arc-consistent, we argue that the resulting reduced domains is valid. This is because while we ensure arc-consistency from the bottom of the tree up to the root, we assign values to variables by propagating down the tree. This means that we pick values from parent nodes \textit{before} the child nodes, we only have to ensure that the values we pick for the parent nodes $X_i$ induces valid values for the child node $X_j$ that is selected after the parent node, which is exactly what arc-consistency on $(X_i, X_j)$ ensures. \\
+
+This also means that there is no need for backtracking when we assign values, since arc-consistency ensures that whatever values that we select for the parent nodes ensures that there is at least one valid value to be assigned to the child. Additionally, since the graph is a tree, each node only has at most one parent. Hence, the only values that can affect the selection of values for the current variable is the value of the parent node selected before. But because we ensured that each arc from parent to child node is arc-consistent, we know that we always have a valid value(is the domain is non-empty) for the current node no matter what the parent node is assigned. 
+
+\begin{lemma}
+Ensuring arc-consistency in a constraint graph that is a tree does not remove options for a valid CSP assignment
+\end{lemma}
+
+Notice that by ensuring arc-consistency, we only remove values from a domain $D_i$ if $\exists X_j : X_i = d \rightarrow D_j = \emptyset$.  That is, the value $d$ causes a child $X_j$ to have only assignments that violate constraints. For a valid assignment for a CSP, every value $d_i$ for each node $X_i$ is valid. Assume that a value $d^*_j$ for the variable $X_j$ is removed by the arc-consistency algorithm. That means that $\exists X_i$ such that all $d_i \in D_i$ are invalid assignments if $d_j$ is chosen.  But that also means that the value $d^*_i \in D_i$ from the valid assignment is also removed by the arc-consistency algorithm, implying that if $d^*_j$ is chosen, $d^*_i$ will be an invalid assignment for $X_i$ that violates some constraint. But this contradicts the fact that $d^*_i, d^*_j$ is in the valid assignment since having both violates at least 1 constraint in the CSP. Hence, options for a valid assignment for the CSP will never be removed because for each arc $(X_i, X_j)$, the value for the valid assignment $d^*_i$ will at least have the valid value in the assignment $d^*_j$ chosen for $X_j$, since both in the assignment implies they do not violate any constraints.\\
+
+This brings us to our next lemma:
+
+\begin{lemma}
+If a valid assignment is possible for the CSP, it will always be found regardless of the topological ordering induced on the constraint graph
+\end{lemma}
+
+Observe that the valid assignment for the CSP is independent of the topological sorting of the constraint graph nodes. If we switch the topological ordering to form a new tree, the valid assignment values for CSP is still valid because picking each of the values $_i$ for variable $X_i$ in this valid assignment implies that for each of the new children $X_j$ of the reformed tree, we can minimally pick the valid values $d_j$ from the valid assignment since these combination of values do not yield violating constraints. By the lemma before, this means that this valid assignment is not removed from by the arc-consistency algorithm, and hence can still be found if the topological ordering is different. Although, it is possible that a different valid assignment may be found instead.
+\pagebreak
+
+\section{Reinforcement Learning}
+
+Previously, we have discussed games in search trees using utility functions to determine which moves are the most optimal, and then propagating them back up using the Minimax and alpha-beta pruning algorithm. However, this requires that we be able to define the labelling for these outcomes of games. In some games, this may not be possible due to the sheer number of possible winning outcomes, or just that we do not perfectly know what is the best or most optimal outcome. In this case, it is difficult for the algorithm to search optimally without feedback from us. Hence, \textit{the agent needs to be able to function without perfect feedback}. Instead of telling the algorithm explicitly which path is most optimal, we instead incentivize algorithms to take better paths by providing \textbf{rewards or reinforcements} to it, which is a signal to the algorithm that a particular action is favored over others.\\
+
+We also impose the property of \textbf{Markov Decision Process} in reinforcement learning, where \textit{the next state in the game is determined by the current state and actions, and not the entire sequence}.\\
+
+The \textbf{policy} $\pi$ that the agent choose determine the agent's behaviour and what actions it take at each state. The policies can be:
+
+\begin{itemize}
+\item \textbf{Deterministic:} $a_t = \pi(s_t)$. The agent chooses the best valued action at the current state
+\item \textbf{Stochastic:} $\pi(a | s_t) = \Pr[a_t = a | s_t]$. The policy is a distribution of actions that can be taken by the agent at the state in time. 
+\end{itemize}
+
+In order to determine what actions to take, the agent need to evaluate if the action, and possibly the sequence of actions taken after it will yield optimal rewards. Consider the reward function $r_t(a_t, s_t)$ at the time $t$ that infers the rewards received by the algorithm when taking the action $a_t$ at state $s_t$. Then, we see the value function as:  
+
+\begin{equation*}
+V^{\pi}(s_t) = r_t(a_t, s_t) + \gamma r_{t+1}(a_{t+1}, s_{t+1}) + ... = \sum^{\infty}_{l = 0} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})
+\end{equation*}
+
+That represents the rewards that will be received by the algorithm by taking a sequence of action from the current state on subsequent resulting states, where $0 \leq \gamma \leq 1$ is known as the discount value. This discount value can be thought of as the \textit{importance} of the rewards received upon reaching the state $s_t$. A high value of $\gamma$(e.g = 1) would mean that the agent is long-sighted: the rewards received in the next state is almost as, or equally important as the the rewards received in future states. However, notice if the value of $\gamma$ is low, the value of $\gamma^l$ decays much quicker. This means the agent is more concerned with maximizing immediate rewards rather than future rewards.\\
+
+We wish to choose a value maximizing policy based on the above value function. Notice that we are missing information to do so, which are rewards of unobserved states, which are usually non-terminal states. Hence, we have to use rewards inferred from current and transitioned states to learn the expected utility that is associated with each non-terminal state:
+
+\begin{equation*}
+U^{\pi}(s_t) = \E[V^{\pi}(s_t)] = \E[\sum^{\infty}_{l = 0} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})]
+\end{equation*}
+
+Note that the value function \textit{has nothing to do with the agent's internal state of the environment}. It is fully objective, and aims to represent the rewards that the agent receives if it takes an action that transitions it to another state.
+
+\subsection{Markov Decision Processes}
+
+To define a Markov Decision Process(MDP), we first start with a fully-observable environment, such as the Tic-Tac-Toe game. In such cases, the agent is able to observe the entire environment during each of it's states, and also how it's actions taken affect the environment. In this case, as previously discussed, the agent would be able to construct an optimal strategy that reaches the goal state.\\
+
+However, now let us look at the possibility that the \textit{environment interferes with the agent's actions}. That is, every action the agent performs happens with a probability of $p \leq 1$, and with a total probability of $1-p$ the environment could cause the agent to not be able to carry out it's intended action. In this case, the \textbf{transition model} is no longer deterministic that specifies the action taken at state $s, T(s, a, s')$, but rather in terms of probability:
+
+\begin{equation*}
+P(s' | a, s)
+\end{equation*}
+
+which denotes the probability that the agent indeed reaches the state $s'$ from $s$ by taking the action $a$, should the environment not interfere successfully. Now our transition model becomes stochastic. Additionally, we assume that the transition model is \textbf{Markovian}: the odds of the agent transitioning to a state $s'$ from the state $s$ by the action $a$ is affected \textit{only by where it's current state $s$ is}. The states that the agent were in in the past, $s_1, ..., s_{n-1}$ do not affect the probabilities of transition from it's current state to the next state. More formally:
+
+\begin{equation*}
+P(s' |a, s_n, s_{n-1},..., s_1) =  P(s' |a, s_n)
+\end{equation*}
+
+Lastly, the utility function for the agent is now dependent on the \textbf{reward function} $R(s)$ at state $s$. Unlike previous strategies, the reward function is now cumulative: it depends on the sequence of actions that the agent has taken. For example, the total utility that the agent receives using a policy $\pi$ could just be the sum of the rewards at each state it has visited. A sequential decision problem for a fully observable, stochastic environment with a Markovian transition model and additive rewards is called a \textbf{Markov Decision Process(MDP)}.
+
+\subsubsection{Optimal Policy}
+
+Since we no longer have a deterministic transition model, a fixed action sequence that is used for a deterministic version of the search may or may not yield the best results. Hence instead of employing the strategy that we discussed in zero-sum games, we now make use of a \textbf{policy} $\pi$, which is a function that tells the agent the action that it \textit{should} take at state $s$. Hence, the policy function at a state $s, \pi(s)$, explicitly determines the agent function.\\
+
+ Notice that since the environment is now stochastic in nature, running the agent with a fixed policy may return multiple different environment histories. Hence, the quality of a policy is no longer determined by the utility of a single environment history, but rather the \textbf{expected} utility from a series of environment histories returned by running the same policy on the environment several times. The optimal policy, is one that yields the \textbf{highest expected utility} out of all policies.\\
+ 
+ Additionally, it is also important to note that the reward function $R(s)$ influences the policy greatly, and how conservative it is. If rewards for reaching the goal state is low and penalty elsewhere is high, then the agent will tend to be more conservative.
+ 
+ \subsubsection{Learning Optimal Policies}
+ 
+We have seen that the optimal policy is one that gives the highest expected returns for the agent at any state in the environment. However, we can only pick an optimal policy for the agent if we actually know the true probability distribution for the MDP, $\Pr(s' | a, s)$. Usually, in many real world problems, such a distribution is unknown to us, and hence we required the agent to \textit{learn} this optimal strategy.\\
+ 
+ Remember that in Reinforcement Learning, we aim to maximize the utility that the agent gets through it's value function:
+ 
+ \begin{equation*}
+V^{\pi}(s_t) = r_t(a_t, s_t) + \gamma r_{t+1}(a_{t+1}, s_{t+1}) + ... = \sum^{\infty}_{l = 0} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})
+\end{equation*}
+
+where $\gamma$ is the discount factor that determines how much the agent values long term rewards. If $\gamma = 1$, then
+
+ \begin{equation*}
+V^{\pi}(s_t) = r_t(a_t, s_t) + r_{t+1}(a_{t+1}, s_{t+1}) + ... = \sum^{\infty}_{l = 0} r_{t+l}(a_{t+1}, s_{t+1})
+\end{equation*}
+
+are known as additive rewards. In this case, rewards in the future are as valuable as the immediate rewards. However, due to the possibly stochastic nature of environments, we may not always know what rewards that we will get by taking an action $a$. Instead, we wish to compute the expected utility:
+
+\begin{equation*}
+U^{\pi}(s_t) = \E[V^{\pi}(s_t)] = \E[\sum^{\infty}_{l = 0} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})]
+\end{equation*}
+
+where $s_t$ is the state that the agent is in at time $t$, following the actions that policy $\pi$ recommends. Observe that if the policy is deterministic, then clearly $U^{\pi}(s_t) = V^{\pi}(s_t)$. Then, computing the optimal policy $\pi^*$ is given as follows:
+
+\begin{equation*}
+\pi^* = {\arg \max}_{\pi} U^{\pi}(s_0)
+\end{equation*}
+
+Where the optimal policy aims to provide the the best action starting at the current state $s_0$ that maximises \textbf{long term} expected rewards, as opposed to $r(a, s)$ that indicates short term rewards. Note also that as the discount factor $\gamma$ goes to 0, $U(s)$ goes closer to $r(a, s)$. Additionally, because of the Markov property, when we start at a state, say $s_0$, and move onto the state $s_1$, the agent no longer needs to consider the previous state $s_0$. Hence, the utility function $U(s)$ allows the agent to select the best action using the principle of best expected utility at state $s$:
+
+\begin{equation*}
+\pi^*(s) = {\arg \max}_{\pi} U^{\pi}(s) = {\arg \max}_{a \in A(s)} \sum_{s'} \Pr(s' | s, a) U(s') 
+\end{equation*}
+
+\subsection{Bellman Equation}
+
+We have seen that the utility of a state is the expected sum of discounted rewards from that state onwards. From this, we can break the equation down further using the following reasoning: \textit{the utility of a state is the immediate reward obtained from that state, followed by the expected discounted reward from the next state}.
+
+\begin{equation*}
+\begin{aligned}
+U^{\pi}(s_t) &= \E[\sum^{\infty}_{l = 0} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})] \\
+&= \E[r_t(a_t, s_t) + \gamma r_{t+1}(a_{t+1}, s_{t+1}) + \gamma^2 r_{t+2}(a_{t+2}, s_{t+2})  + ...] \\
+&= \E[r_t(a_t, s_t) + \gamma (r_{t+1}(a_{t+1}, s_{t+1}) + \gamma r_{t+2}(a_{t+2}, s_{t+2})  + ...)] \\
+&= \E[r_t(a_t, s_t) + \gamma \sum^{\infty}_{l = 1} \gamma^l r_{t+l}(a_{t+1}, s_{t+1})] \\
+&= \E[r_t(a_t, s_t)] + \gamma U^{\pi}(s_{t+1})
+\end{aligned}
+\end{equation*}
+
+The optimal policy would then be one that maximizes:
+
+\begin{equation*}
+\pi^*(s) = {\arg \max}_{\pi} U^{\pi}(s) = {\arg \max}_{a \in A(s)} \{ r(a, s) + \gamma U^{\pi}(T(a, s))\} 
+\end{equation*}
+
+with a optimal utility of: 
+
+\begin{equation*}
+\begin{aligned}
+U^{\pi^*}(s_t) &= r^*_t(a_t, s_t) + \gamma U^{\pi^*}(s_{t+1})
+\end{aligned}
+\end{equation*}
+
+As in with MDP planning, we could formulate and compute the optimal policy $\pi^*$ \textit{if we knew the reward function $r(a, s)$ and the transition model $T(a, s)$}. However we don't, and therefore we cannot explicitly compute the optimal policy if we do not know what the rewards are if we take an action and what the next state is. Instead, we try to learn a policy that \textit{converges} to the optimal one.
+
+\subsection{Q-Learning}
+
+Previously we have seen that computing and even learning the utility functions may not always be possible, as we require knowledge of the reward and the transition model. Instead, we learn an action-utility representation known as \textbf{Q-Learning}, denoting $Q(s, a)$ as the function that returns the value of performing action $a$ at state $s$. More formally:
+
+\begin{equation*}
+\begin{aligned}
+Q^{\pi}(s, a) = r(s, a) + \gamma U^{\pi}(s' = T(s, a)) 
+\end{aligned}
+\end{equation*}
+
+is the utility the agent obtains by performing action $a$ at state $s$(which may or may not be the one recommended by policy $\pi$), and then performing the actions recommended by policy $\pi$ from state $s'$ onwards. What we wish to learn is the optimal Q function. That is, the Q function that maximizes the possible rewards if an action $a$ is taken. Using the Bellman equation, we have that:
+
+\begin{equation*}
+\begin{aligned}
+Q^*(s, a) &= r(s, a) + \gamma U^{*}(s' = T(s, a)) \\
+&= r(s, a) + \gamma  \sum_{s'} \Pr(s' | s, a) \max_{a'} Q^*(s' ,a')
+\end{aligned}
+\end{equation*}
+
+$Q^*(s,a)$ represents the maximum utility that the agent can receive from state $s'$, given that the agent has taken the action leading to $s'$. Observe further that the Q function and the utility function are related as follows:
+
+ \begin{equation*}
+\begin{aligned}
+U^*(s) = \max_{a} Q^*(s ,a)
+\end{aligned}
+\end{equation*}
+
+Because the maximum utility that the agent can receive at the next state $s', U^*(s)$, will be the maximum utility given an action $a'$ at $s'$ is taken. Hence, at every state we can replace the utility function $U^*(s)$ with the Q function.\\
+
+Notice that the Q-Learning function does not require knowledge of the transition model $\Pr[s' | s, a]$: it gains this knowledge from learning or from observation by actually transitioning to the state by taking the action. Hence, it is a \textbf{model-free} method. Therefore, we have expressed the learning of our utility function in terms of a function that can observe these values without having to know the transition and reward functions.
+
+\subsection{Value-Iteration Algorithm}
+
+The Value-Iteration Algorithm aims to update the Q function values iteratively by observing the rewards and transitioned states as the agent performs actions. 
+
+\begin{algorithm}
+\caption{Value-Iteration Algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\State $\hat{Q}(s,a) \leftarrow 0, \forall a$
+\State $s \leftarrow s_0$ 
+\For{$t = 0,1,...$}
+	\State $a \leftarrow \small{\textsc{SELECT-ACTION}}(s)$
+	\State $r \leftarrow r(s, a)$
+	\State $s' \leftarrow T(s, a)$
+	\State $\hat{Q}(s, a) \leftarrow r + \gamma \max_{a'} \hat{Q}(s', a')$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+Let us assume that the rewards $r(s, a)$ are non-negative. Observe that in the beginning, all values of $\hat{Q}(s, a) = 0$, and $\hat{Q}(s, a) \leq Q^*(s, a)$. As we continue to observe the rewards and updates the values of $\hat{Q}(s, a)$, the value of $\hat{Q}(s, a)$ gets updated to the actual rewards received when action $a$ is taken at state $s$. Because we observe and update the exact values of rewards, the value of $\hat{Q}(s, a)$ \textit{never overestimates} $Q^*(s, a)$, and converges to $Q^*(s, a)$ over time as the actual values of the reward are observed by the agent.
+
+\subsubsection{Policy Update}
+
+Following the general algorithm, we have that the A values are constantly updated by new values as the agent observes rewards. This seems like a good idea, but notice that it completely overwrites the values of the previous $Q(s, a)$ with the new values. Complete ignoring the previous values in the computation of $Q(s, a)$ can result in large fluctuations of the Q values and lead to an underestimate of the actual utility.\\
+
+Instead, we aim to stabilize the update of Q values by using a form of \textit{learning rate}. As we observe the values of $Q(s, a)$ more and more times, we aim to incorporate the previous values seen and decrease the contribution of the new value to $Q(s, a)$:
+
+\begin{equation*}
+\hat{Q}(s, a) \leftarrow (1 - \alpha_t)\hat{Q}(s, a) + \alpha_t(r(s, a) + \gamma \max_{a'} \hat{Q}(s', a'))
+\end{equation*}
+
+where 
+
+\begin{equation*}
+\alpha_t = \frac{1}{1 + N[s, a]}
+\end{equation*}
+
+represents a fraction over the number of times we have visited the state. As we continue to observe more values, we wish to incorporate contributions of each value observed, and hence decrease contribution of new values to stabilize the updates.
+
+\subsubsection{\textsc{SELECT-ACTION}}
+
+In the Value-Iteration Algorithm, the action $a_t$ is selected based on a routine \textsc{SELECT-ACTION}. However, how do we specify which action to select at time $t$ and state $s_t$? We can perform the selection deterministically, such as specifying a criteria(e.g action with best expected rewards) using greedy selection, or incorporate randomization. One way to do this is the following:
+
+\begin{equation*}
+\Pr[a | s] = \frac{e^{\epsilon \hat{Q}(s, a) }}{\sum_{a'} e^{\epsilon \hat{Q}(s, a) }}
+\end{equation*}
+
+where $\epsilon$ is a tunable parameter, represents the probability of being picked. Observe that we pick actions with higher expected utility value of $Q(s, a)$ with a higher probability. The sensitivity to Q values are influenced to the value of $\epsilon$. Low values of $\epsilon$(e.g 0) indicate that probabilities do not different too much with increasing values of $Q(s, a)$, with $\epsilon = 0$ being complete randomness. On the other hand, higher values of $Q(s, a)$ indicate biasedness towards high expected utilities, and we want the agent to be greedier.
 
 \end{document}
