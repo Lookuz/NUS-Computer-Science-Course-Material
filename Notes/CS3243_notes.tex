@@ -3,6 +3,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
 \usepackage{microtype}
 \usepackage[a4paper,margin=2cm]{geometry}
 \usepackage{vwcol} 
@@ -18,6 +19,7 @@
 % Expectation %
 \setlength\parindent{0pt}
 \DeclareMathOperator{\E}{\mathbb{E}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
@@ -988,5 +990,185 @@ In the Value-Iteration Algorithm, the action $a_t$ is selected based on a routin
 \end{equation*}
 
 where $\epsilon$ is a tunable parameter, represents the probability of being picked. Observe that we pick actions with higher expected utility value of $Q(s, a)$ with a higher probability. The sensitivity to Q values are influenced to the value of $\epsilon$. Low values of $\epsilon$(e.g 0) indicate that probabilities do not different too much with increasing values of $Q(s, a)$, with $\epsilon = 0$ being complete randomness. On the other hand, higher values of $Q(s, a)$ indicate biasedness towards high expected utilities, and we want the agent to be greedier.
+
+\subsection{Regret Minimization}
+
+Previously, we have mentioned that how we select which action to pick at each stage is critical for for update policy to converge to the optimal policy.  What we wish to do in selecting the right action, is to pick the action that does not fall too far from the optimal action. That is, if we perform a series of actions over time $T$, we want that our expected rewards of picking actions $a$ to not fall too far from the optimal utility, $U^*$. More formally, let
+
+\begin{equation*}
+U^*(s) = Q^*(s, a^*) = \max_{a \in A(s)} Q^*(s, a)
+\end{equation*}
+
+again be the optimal utility achievable at state $s$ by executing the optimal policy $\pi^*$. Note also again that we do not know what $\pi^*$ is, else we could compute it. Then, let $\pi$ be some other policy that may not be the optimal. The policy assigns the probability $p^t_i$ to the action $a^t_i$ at time $t$. Then, the expected utility of the agent at time $t$ following the policy $\pi$ is given by:
+
+\begin{equation*}
+u^{\pi}_t = \E[r(s_t, a_t)] = \sum_i p^t_i u^t_i
+\end{equation*}
+
+And the expected utility of a policy $\pi$ is given by:
+
+\begin{equation*}
+U^{\pi}(s) = \sum^{\infty} u^{\pi}_t = \E[Q^{\pi}(s, a)]
+\end{equation*}
+
+which can also be represented by the expectation over the rewards of it's action-value representation in the form of the Q function we saw previously. Remember we aim to learn a policy $\pi$ that maximize our cumulative value - then this policy should be one that is not too far from the optimal value $U^*$. More formally, we aim to reduce:
+
+\begin{equation*}
+\frac{1}{T}(U^*_T - U^{\pi}_T)
+\end{equation*}
+
+which is the difference between the expected value that we get from a policy $\pi$, and the optimal policy. This is known as \textbf{regret}. We see that the probability distribution that we place on the \textsc{SELECT-ACTION} routine, influences the expected utility that the agent gets from the updated Q function. Bad action selection could lead to high underestimation of the actual optimal value that we could have received.
+
+\subsubsection{Greedy Algorithm}
+
+How we can pick an action deterministically, is to \textit{greedily select an action that maximizes the total reward up to time $t$}. That is, we maintain a set of actions $S_t$ that maximizes the total rewards from previous actions. Using a deterministic tie-breaking scheme, we pick an action from this set of actions.\\
+
+On paper, this would mean that we would pick an action at time $T$ is likely to get the highest expected rewards. However, we shall soon see that for any \textit{deterministic} action-selection routine, we can always find a set of inputs such that it gets very bad rewards.
+
+\begin{theorem}
+For any deterministic algorithm $A$, there is a sequence of actions for which $U^*_T \geq \ceil{\frac{(n-1)\times T}{n}}$, but $U^A_T = 0$
+\end{theorem}
+
+\textit{Proof:} If the algorithm is deterministic, and we know how the algorithm works, given a certain input, we can determine what action $a_{t-1}$ the algorithm will pick at the next step. In that case, given an online learning setting where we can provide the input at each step, we can always construct an input where the action that the algorithm will pick will yield 0 rewards, and all other actions will yield 1.\\
+
+In general, we can construct an input for a sequence of actions up to time $T$, such that the algorithm always gets 0 rewards at each time step but all other actions get 1, and hence after time $T$, $U^A_T = 0$. Given $n$ actions, that means that at each round there are $n-1$ 1s associated to the other non-selected actions. Over time $T$, there are a total of $(n-1) \times T$ 1s, and hence an average of $\frac{(n-1) \times T}{n}$ 1s. But that means that \textit{at least} 1 action would yield a utility of $U_T \geq \frac{(n-1) \times T}{n}$ 1s.
+
+\subsubsection{Randomized Greedy Algorithm}
+
+Stepping up from the greedy algorithm, we combat the adversarial aspect by introducing randomness. That is, the only change that we make is instead of a deterministic tie-breaking scheme in selection of actions from $S_t$, we instead pick actions from this set randomly with uniform probability. 
+
+\begin{algorithm}
+\caption{Randomized Greedy Selection}\label{euclid}
+\begin{algorithmic}[1]
+\For{$t = 0,1,...$}
+	\State $U^{\max}_t \leftarrow \max_i U^i_t$
+	\State $S_t \leftarrow \{ i \in N : U^{i-1}_t = U^{\max}_t\}$
+	\For{$i \in N$}
+	\If{$i \in S_t$}
+		\State $p^i_t \leftarrow \frac{1}{|S_t|}$
+	\Else
+		\State $p^i_t \leftarrow 0$ 
+	\EndIf
+	\EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+That is, at each round we pick each action that is in the set $S_t$ with uniform probability, and all other actions with probability 0. In fact, with some observations, we will see that the Randomized Greedy algorithm can lose at most $\log n + 1$ times between the loss of the best action. \\
+
+First, observe that as the time $t$ passes, actions are removed from the set $S_t$ as these actions incur losses. It is also true that actions can also be added to the $S_t$, however, this actually lowers the probability of picking a losing action and does not provide a good bound on the number of losses Randomized Greedy will make.
+
+Consider the number of times $l$ that the best action loses. That is, the best action does not yield rewards at times $t_1,..., t_l$. Then we wish to ask the question: in between losses $t_j$ and $t_{j+1}$, how many times will the Randomized Greedy selection lose? Let the number of times that the algorithm loses be $k_j$. Then, we can observe that if there is a single time period where there are $k_j$ actions that lost, then there is $\frac{k_j}{|S_t|}$ probability that the agent picks a losing action:
+
+\begin{equation*}
+\E[U^*_{t_j} - U^{RG}_{t_j}] = \frac{k_j}{|S_t|}
+\end{equation*}
+
+Furthermore, observe that over a period of time between $t_j$ and $t_{j+1}$, if actions are slowly removed from $S_t$(in particular, removed 1 at each round), then:
+
+\begin{equation*}
+\begin{aligned}
+\E[U^*_{t_j} - U^{RG}_{t_j}] &= \frac{1}{|S_{t_j}|} + \frac{1}{|S_{t_j}| - 1} + ... + \frac{1}{|S_{t_j}| - k_j + 1} \text{ (actions removed 1 at a time)}\\ 
+& \geq \frac{l_1}{|S_{t_j}|} + \frac{l_2}{|S_{t_j}| - l_1} + ... + \frac{l_k}{|S_{t_j}| - l_{k-1}} \text{ (actions removed $l_i$ at a time)}\\
+&=   \underbrace{\frac{1}{|S_{t_j}|} + ...}_{l_1 \text{ times}} + \frac{1}{|S_{t_j}| - l_1} + ... \\
+& \geq \underbrace{\frac{1}{|S_{t_j}|} + ...}_{k_j \text{ times}} = \frac{k_j}{|S_t|} \text{ (actions removed all at once)}
+\end{aligned}
+\end{equation*}
+
+We can see that removing actions once at a time without having actions added into the set , yields the greatest loss. In fact, it acts as an upper bound for the number of times that the Randomized Greedy algorithm will lose, which is further upper bounded by:
+
+\begin{equation*}
+\begin{aligned}
+\frac{1}{|S_{t_j}|} + \frac{1}{|S_{t_j}| - 1} + ... + \frac{1}{|S_{t_j}| - k_j + 1} & \leq \log|S_t| + 1\\
+&= \log n + 1
+\end{aligned}
+\end{equation*}
+
+Hence, the Randomized Greedy algorithm loses at most times in logarithmic factor to the number of actions available in between losses of the best action. Then, in total, the number of losses the Randomized Greedy algorithm will make is:
+
+\begin{equation*}
+\log n + (\log n + 1 )\times m
+\end{equation*}
+
+where $m$ is the number of losses the best action makes up to time $t$.
+
+\subsubsection{Multiplicative Weights Update}
+
+Now, we have an algorithm that does not lose out too much from the optimal utility,  with a logarithmic factor. However, it turns out that we can actually do better than this by adjusting the probabilities with which we select actions. With Randomized Greedy selection, the algorithm does not use knowledge of how good a move is. But, if we adjust probabilities to pick better moves with higher utilities, we can actually achieve close to the utility of the best action.
+
+\begin{algorithm}
+\caption{Multiplicative Weights Update}\label{euclid}
+\begin{algorithmic}[1]
+\For{$n = 1,.., n$}
+\State $w^i_1 \leftarrow 1$
+\State $p^i_1 \leftarrow \frac{1}{n}$
+\EndFor
+\For{$t = 0,1,...$}
+	\For{$i = 1,.., n$}
+		\State $w^i_t \leftarrow w^i_{t-1} \times e^{\epsilon u^i_t}$
+	\EndFor
+	\State $W_t \leftarrow \sum_i w^i_t$
+	\For{$i = 1,..., n$}
+		\State $p^i_t \leftarrow \frac{w^i_t}{W_t}$
+	\EndFor
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+The weights used in the algorithm $w^i_t$ represents how good the moves are with respect to the total utility that the action has earned up to time $t$. If the action yields positive rewards at time $t$, then $v^i_t$ is positive and hence $w^i_t$ increases in the update step. Then, each move with picked with respect to probability that scales with it's weight at time $t$.\\
+
+More importantly, we shall see that this algorithm yields rewards that are \textit{at least as good as} the best action. Firstly, we have that the weights with respect to time $t + 1$ is:
+
+\begin{equation*}
+\begin{aligned}
+W_{t+1} &= \sum_i w^i_{t+1} \\
+& \geq w^*_{t+1} \\
+&= w^*_t \times  e^{\epsilon u^*_{t+1}} \\
+&= w^*_1 \times e^{\epsilon u^*_{1}} \times ... \times e^{\epsilon u^*_{t+1}} \\
+&= e^{\epsilon (u^*_{1} + ... + u^*_{t+1})} \\
+&= e^{\epsilon U^*_{t+1}}
+\end{aligned}
+\end{equation*}
+
+On the other hand, we also have that:
+
+\begin{equation*}
+\begin{aligned}
+W_{t+1} &= \sum_i w^i_{t+1} \\
+&= \sum_i w^i_t \times e^{\epsilon u^i_{t + 1}} \\
+&\leq \sum_i w^i_t \times (1 + \epsilon u^i_{t+1} + (\epsilon u^i_{t+1})^2) \text{ using the fact that for $x \in [-1, 1], 1 e^x \leq 1 + x + x^2$}\\
+&\leq \sum_i w^i_t \times (1 + \epsilon u^i_{t+1} + \epsilon^2) \text{ since $0 \leq u^i_{t+1} \leq 1 \rightarrow (\epsilon u^i_{t+1})^2) \leq \epsilon^2$}\\
+&= \epsilon \sum_i w^i_t u^i_{t+1} + (1 + \epsilon^2) \sum_i w^i_t \\
+&= \epsilon \times W_t \sum_i p^i_t u^i_{t+1} + (1 + \epsilon^2) \sum_i w^i_t \text{ using the fact that $\frac{w^i_t}{W_t} = p^i_t$}\\
+&= \epsilon W_t (u^{MWU}_{t+1}) + (1 + \epsilon^2) W_t \text{ because $u^{MWU}_{t+1} = \sum_i p^i_t u^i_{t+1}$ is the time $t+1$ expected reward of MWU}\\
+&= W_t (1 + \epsilon^2 + \epsilon u^{MWU}_{t+1})\\
+&\leq W_t (e^{\epsilon^2 + \epsilon u^{MWU}_{t+1}}) \text{ using the fact that $1 + x \leq e^x$}
+\end{aligned}
+\end{equation*}
+
+Applying the equation above recursively, we then have:
+
+\begin{equation*}
+\begin{aligned}
+W_{t+1} &\leq W_t (e^{\epsilon^2 + \epsilon u^{MWU}_{t+1}})\\
+&= W_{t -1} \times (e^{\epsilon^2 + \epsilon u^{MWU}_{t}}) \times (e^{\epsilon^2 + \epsilon u^{MWU}_{t+1}})\\
+& ...\\
+&= W_1 \times  (e^{\epsilon^2 + \epsilon u^{MWU}_{1}}) \times  (e^{\epsilon^2 + \epsilon u^{MWU}_{2}}) \times ... \times (e^{\epsilon^2 + \epsilon u^{MWU}_{t+1}})\\
+&= n \times e^{t\epsilon^2 + \epsilon(\sum^{t+1}_{j=1} u^{MWU}_{j})} \\
+&= n \times e^{t\epsilon^2 + \epsilon U^{MWU}_{t+1}} 
+\end{aligned}
+\end{equation*}
+
+Taking the first part and second part,
+
+\begin{equation*}
+\begin{aligned}
+& e^{\epsilon U^*_{t+1}} \leq W_{t+1} \leq n + e^{t\epsilon^2 + \epsilon U^{MWU}_{t+1}}\\
+& \epsilon U^*_{t+1} \leq \log n +  t\epsilon^2 + \epsilon U^{MWU}_{t+1} \\
+& U^*_{t+1} \leq \frac{\log n +  t\epsilon^2}{\epsilon} + U^{MWU}_{t+1} \\
+\end{aligned}
+\end{equation*}
+
+which shows that the expected rewards of the MWU algorithm is at least as good as the expected reward of the best action.
 
 \end{document}
