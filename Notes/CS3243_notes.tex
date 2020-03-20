@@ -1171,4 +1171,224 @@ Taking the first part and second part,
 
 which shows that the expected rewards of the MWU algorithm is at least as good as the expected reward of the best action.
 
+\section{Logical Agents}
+
+Previously in search, agents had knowledge of the environment, transition models and the possible utilities at several states. However, such knowledge is limited. For example, the agent playing chess using purely these information, may not be able to identify that it cannot reach the checkmate position to win from it's current position. Meaning, it cannot \textit{infer} knowledge based on what it already knows. Instead, what we try to do is formulate smarter agents: Agents that are able to infer information based on an existing knowledge. What the agent currently knows is called a \textbf{knowledge base}. The knowledge base first starts off empty, but continue to grow as the agent makes new inferences, and the inferences made by the agent are \textit{sentences} in a \textit{formal language} in the knowledge base.\\
+
+\subsection{Knowledge-Based Agents}
+
+The difference between logical agents and the previous agents is that the logical agent has a \textbf{knowledge base} that tracks what the agent knows so far. The knowledge base consists of \textbf{sentences or axioms} that is expressed in a \textbf{knowledge representation language}. This knowledge base may contains background knowledge using prior knowledge or assumptions. A logical agent, very generally, can be formulated as such:
+
+\begin{algorithm}
+\caption{Knowledge-Based Agent}\label{euclid}
+\begin{algorithmic}[1]
+\State \textbf{Persistent:} $KB$ - a knowledge base, $t$ - time counter
+\\
+\State \textsc{TELL}($KB$, \textsc{MAKE-PERCEPT-SENTENCE($percept, t$)})
+\State $action \leftarrow$ \textsc{ASK}($KB$, \textsc{MAKE-ACTION-QUERY($t$)})
+\State \textsc{TELL}($KB$, \textsc{MAKE-ACTION-SENTENCE($action, t$)})
+\State $t \leftarrow t + 1$
+\\
+\Return $action$
+\end{algorithmic}
+\end{algorithm}
+
+The knowledge-based agent is governed by 2 actions: \textsc{TELL} and \textsc{ASK}. They justify the actions that the logical agent must be able to perform. Firstly, the agent must be able to take in new percepts. This is seen by performing the \textsc{TELL} operation when it receives a new percept through sensors, and performs an action using actuators. Both operations update the knowledge base based on the perceived new environment, or the new action performed. For example, in the current state the agent may perceive that it cannot make a certain legal move based on the rules that it knows, and hence updates it's knowledge base on this information.\\
+
+Then, using the existing knowledge and newfound ones(if any), the agent performs an action using the \textsc{ASK} operation, which makes a legal and perhaps even optimal move based on what it already knows. In relation to Reinforcement Learning, RL actually plays a big role in the \textsc{ASK} operation, where it selects the optimal ones in the presence of multiple valid actions.\\
+
+Inference may be present in both \textsc{TELL} and \textsc{ASK} operations, where the agent derives new sentences from existing ones and the current percept. Additionally, we required that the knowledge base be updated with information that is correct. That is, new axioms must indeed follow from what is implied by the current knowledge. This is also called \textbf{entailment}. For now, we are interested in the \textsc{TELL} operation: how do we infer new information based on existing information and new percepts?
+
+\subsection{Logic}
+
+The fundamental concepts of logical representation and reasoning that allow us to formulate sentences are as follows:
+
+\begin{itemize}
+\item The \textbf{syntax} of the knowledge representation language tells us how we can express logic in the form of sentences, as well as if a sentence is valid. For example, the arithmetic language tells us that $x + y = m$ is valid, but $x y +>$ is not.
+\item The \textbf{semantics} of the language tells us the meaning of the sentences formulated in that language, as well as the truth values behind these sentences. $x+y=4$ would hold true in the arithmetic language where $x=2, y=2$, but false when $x=1, y=1$.
+\item a model $m$ is said to \textbf{model} the logical sentence $\alpha$, if $\alpha$ is true under $m$. $m$ can usually be thought of as the 'world' or environment that the agent lives in. Following the previously example, $x + y = 4$ is satisfied by the environment where there are $x$ red balls and $y$ blue balls, and there are always a total of 4 balls. Since $x + y =4$ is always in such a world, we say that it is a model of $\alpha$.
+\end{itemize}
+
+\subsubsection{Entailment}
+
+We say that a logical sentence, or a collection of logical sentences \textbf{entails} another, if the entailed sentence \textit{follows logically} from the sentence. More formally, we say that if $\alpha$ entails $\beta$, then:
+
+\begin{equation*}
+\alpha \models \beta
+\end{equation*}
+
+we say that $\beta$ follows logically from $\alpha$, or that $\alpha$ implies $\beta$. Following the property of models, let $M(\alpha)$ be the set of all models under which $\alpha$ is true. Then the following formal definition ensues for entailment:
+
+\begin{definition}
+$\alpha \models \beta$ if and only if, in every model $m$ in which $\alpha$ is true, $\beta$ is also true.
+\end{definition}
+
+That is, if $m \in M(\alpha)$, then $m \in M(\beta)$, and hence $M(\alpha) \subset M(\beta)$. Hence, we can see that if $\alpha \models \beta$, then $\alpha$ is a \textit{stricter} condition than $\beta$. \\
+
+Then, using the definition of entailment, we wish that our inference algorithm be \textbf{sound}and \textbf{complete}. This ensures that our inference algorithm does indeed derive the optimal and correct solutions to our logic problem. Now, let the notation
+
+\begin{equation*}
+KB \vdash_A \alpha
+\end{equation*}
+
+denote that the logical sentence $\alpha$ is derived from the knowledge base $KB$ using inference algorithm $A$. Then, the inference algorithm $A$ is \textbf{sound} if:
+
+\begin{equation*}
+KB \vdash_A \alpha \rightarrow KB \models \alpha
+\end{equation*}
+
+That is, if a logical statement $\alpha$ is inferred by the algorithm $A$ from the knowledge base $KB$, then that statement $\alpha$ indeed follows from the logical sentences in the knowledge base. Our inference algorithm only infers what is indeed correct, and not nonsense. We also say that such an algorithm is \textbf{truth-preserving}.\\
+
+The inference algorithm $A$ is \textbf{complete}, if it satisfies:
+
+\begin{equation*}
+KB \models \alpha \rightarrow KB \vdash_A \alpha 
+\end{equation*}
+
+If a logical statement $\alpha$ is true and follows from the logical sentences of the knowledge base, then it would be found by the inference algorithm $A$. Then, the agent would not having missing information using the inference algorithm $A$.
+
+\subsection{Propositional Logic}
+
+\subsubsection{Truth Table Enumeration}
+
+One simple way to check if a sentence $\alpha$ is entailed by the knowledge base that we have, is to enumerate through the models in $M(KB))$ and check that $\alpha$ is indeed true for each model.\\
+
+The algorithm is sound is because it simply uses the direct definition of entailment, and checks that the condition holds. It is also complete because given a finite number of symbols, then there are only a finite number of propositional logic statements. However, this still incurs a time complexity of $O(2^n)$ for $n$ symbols. Using a depth first search technique, this incurs a space complexity of $O(n)$.
+
+\begin{algorithm}
+\caption{\textsc{Truth-Table Enumeration}}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{\textsc{TT-ENTAILS?}}{$KB, \alpha$} \textbf{returns} $true$ or $false$
+\State \textbf{inputs: } $KB$ - the knowledge base, $\alpha$ - sentence in propositional logic
+\State $symbols \leftarrow$ a list of propositional symbols in $KB, \alpha$\\
+\Return \textsc{TT-CHECK-ALL($KB, \alpha, symbol, \{\}$)} 
+\EndProcedure
+\\
+\Procedure{\textsc{TT-CHECK-ALL}}{$KB, \alpha, symbols, model$} \textbf{returns} $true$ or $false$
+\If{\textsc{EMPTY?}$symbols$}
+\If{\textsc{PL-TRUE?}$(KB, model)$}
+\Return \textsc{PL-TRUE?}$(\alpha, model)$
+\Else \
+\Return $true$
+\EndIf
+\Else
+\State $P \leftarrow \textsc{FIRST}(symbols)$
+\State $rest \leftarrow \textsc{REST}(symbols)$
+\State \Return $\textsc{TT-CHECK-ALL}(KB, \alpha, rest, model \cup \{ P = true\})$ \textbf{and}\\  $\textsc{TT-CHECK-ALL}(KB, \alpha, rest, model \cup \{ P = false\})$
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Propositional Theorem Proving}
+
+Previously, we have shown how we can determine entailment through basic model checking: by enumerating all possible table values and checking that the definition of entailment always holds. However, this can be very expensive, and not leveraging our knowledge of propositional logic. Instead, what we shall do is that we can show entailment(or lack of thereof) through \textbf{theorem proving} - by applying the rules of inference directly to sentences.\\
+
+First, we introduce a series of concepts related to propositional logic:
+
+\begin{itemize}
+\item \textbf{Logical Equivalence:} two sentences $\alpha$ and $\beta$ are logically equivalent, if they are true in the same set of models. For example $P \vee Q$ and $Q \vee P$ are logically equivalent. Then, we denote logical equivalence as:
+
+\begin{equation*}
+\alpha \equiv \beta
+\end{equation*}
+
+Alternatively, that means that if either of $\alpha$ or $\beta$ is true, then the other must be true. Hence, one actually entails the other. We can then look at equivalence as: 
+\begin{equation*}
+\alpha \equiv \beta \leftrightarrow \alpha \models \beta \land \beta \models \alpha
+\end{equation*}
+
+\item \textbf{Validity:} We say that a sentence is valid if it is true in \textit{all} models. For instance, $P\lor \lnot P$ is always valid, since it always holds. Valid sentences are also known as tautologies: they are necessarily true.
+
+\item \textbf{Satisfiability:} A sentence is satisfiable if it is $true$ in \textit{some} model. Additionally, a sentence is \textbf{unsatisfiable} if it is never true: it is $false$ in all models.
+\end{itemize}
+
+Using the above concepts, we can derive the following deduction theorem:
+
+\begin{theorem}
+For any sentences $\alpha$ and $\beta$, $\alpha \models \beta \leftrightarrow (\alpha \implies \beta)$ is valid
+\end{theorem}
+
+And this is exactly the same formal definition that we defined earlier on entailment: a sentence $\alpha$ entails another $\beta$, if $\beta$ follows from $\alpha$ in all models. That is, $\alpha \implies \beta$ always holds for every model, which means that it is indeed valid.\\
+
+Furthermore, notice that validity and satisfiability are linked: if a sentence $\alpha$ is valid, then it always holds in all models no matter what. That would imply that it's negation $\lnot \alpha$ can never hold in any model. That is, $\lnot \alpha$ is unsatisfiable. In fact that means that to show entailment, which originally is the following using Theorem 4:
+
+\begin{equation*}
+KB \models \alpha \leftrightarrow (KB \implies \alpha) \text{ is valid}
+\end{equation*}
+
+We can also show that the \textit{negation} of $(KB \implies \alpha)$ is unsatisfiable. That is, proving the above is logically equivalent to:
+
+\begin{equation*}
+KB \models \alpha \leftrightarrow (KB \land \lnot \alpha) \text{ is unsatisfiable}
+\end{equation*}
+
+\subsubsection{Inference Rules}
+
+We now discuss some techniques known as inference rules that allow us to infer rules from existing ones, and eventually arrive at the a conclusion.\\
+
+\textbf{Modus Ponens:} $\frac{\alpha \implies \beta, \alpha}{\beta}$\\
+
+Says that if we have the rule $\alpha \implies \beta$, and we know the value of $\alpha$, then we can infer what $\beta$ is.\\
+
+\textbf{And-Elimination:} $\frac{\alpha \land \beta, \alpha}{\alpha} \equiv \frac{\alpha \land \beta, \alpha}{\beta}$\\
+
+And-Elimination tells us if we have a conjunction of clauses, if the conjunction holds true then we know each of the individual conjuncts are true as well.\\
+
+\textbf{Biconditional Elimination:} $\frac{\alpha \iff \beta}{(\alpha \implies \beta) \land (\beta \implies \alpha)} \equiv \frac{\beta \iff \alpha}{(\alpha \implies \beta) \land (\beta \implies \alpha)}$\\
+
+This allows us to convert if and only if statements into implication statements. Now, the next rule is important and will allow us to yield a sound and complete inference algorithm:\\
+
+\textbf{Resolution:} $\frac{(x_1 \lor ... \lor x_{m-1} \lor x_m)\land(y_1 \lor ... \lor y_{m-1} \lor \lnot x_m)}{x_1 \lor ... \lor x_{m-1} \lor y_1 \lor ... \lor y_{m-1}}$\\
+
+The resolution says that, if a clause contains a literal, and another contains it's negation, then both can be removed from it's respective clauses, and the disjunction of the clauses with literal and it's negation removed is known as the \textbf{resolvent}. This is true because, consider the conjunction of clauses $(P \lor x) \land (Q \lor \lnot x)$. For this sentence to hold, both clauses in the conjunction must be hold. But notice that only $x$ and it's negation $\lnot x$ can hold at once, and not both. If $x$ holds, then $\lnot x$ does not and hence $Q$ must hold, and vice versa. Hence $P \lor Q$ holds.\\
+
+Alternatively, we can also think of it this: Given an existing clause with prior knowledge in the form of the literal $x$. Now, we have an additional inferred clause that says $\lnot x$ holds, which means $x$ is no longer true. Hence, we resolve the clauses by removing each of the literals $x$ and $\lnot x$. Hence, the resolution rule is \textit{sound}.\\
+
+\subsubsection{Resolution Algorithm}
+
+Remember that using propositional theorem solving, to show that $KB$ indeed entails $\alpha$, we want to show that $KB \implies \alpha$ is valid, or consequently that $KB \land \lnot \alpha$. The resolution proves this by contradiction as follows:
+
+\begin{enumerate}
+\item $KB \land \lnot \alpha$ is converted into conjunctive normal form(CNF). This is achieved using a combination of inference rules.
+\item The resolution rule is applied to resulting clauses, which is the proof by contradiction process. Each pair of clauses that contains complementary literals is resolved to produce a new clause that is added back into the set. Then, one of 2 things will happen:
+\begin{itemize}
+\item No new clauses can be added in the set. That means that there exists a pair of generating clauses such that they do not contain complementary literals, and that they can potentially hold in some models, and hence $KB \implies \alpha$ is satisfiable. Therefore, $KB$ does not entail $\alpha$. 
+\item 2 clauses resolve to produce the empty clause. Remember that literals are removed when they cannot both be satisfied, that is they are contradicting/complementary literals. Then, 2 clauses that resolve to become the empty clause, means that the generating clauses in $KB \implies \alpha$ can be reduced to clauses that cannot both hold at the same time. Hence,  $KB \implies \alpha$ is unsatistifable, and $KB$ entails $\alpha$.
+\end{itemize}
+\end{enumerate}
+
+\begin{algorithm}
+\caption{\textsc{PL-RESOLUTION}}\label{euclid}
+\begin{algorithmic}[1]
+\State \textbf{inputs:} $KB$ - knowledge base. $\alpha$ - propositional logic sentence
+\\
+\State $clauses \leftarrow $ set of clauses in CNF representation of $KB \land \lnot \alpha$
+\State $new \leftarrow \{ \}$
+\Repeat
+\For{each pair of clauses $C_i, C_j$ in $clauses$} 
+\State $resolvents \leftarrow \textsc{PL-RESOLVE}(C_i, C_j)$
+\If{$resolvents = \emptyset$} \Return $true$
+\EndIf
+\State $new \leftarrow new \cup resolvents$
+\EndFor
+\If{$new \subset clauses$} \Return $false$
+\EndIf
+\State $clauses \leftarrow clauses \cup new$
+\Until{all clauses resolved}
+\end{algorithmic}
+\end{algorithm}
+
+We have seen that using the resolution rule yields inferences that are sound, because resolved rules are indeed entailed by $KB$ using propositional logic rules. Now we shall argue that it is complete:\\
+
+\textbf{Completeness of Resolution}\\
+
+First, let us introduce the concept of a \textbf{resolution closure}, $RC(S)$ of a set of clauses $S$, which is the set of all clauses derivable by repeated application of the resolution rule to the clauses in $S$, as well as their derivatives. We can see that for a finite number of symbols involved in the clause $P_1, ..., P_k$ that appear in $S$, we can only construct a finite number of resolved clauses. Additionally, we repeat the resolution process for each pair of clauses everytime we introduce new clauses into the set.Since we introduce only a finite number of resolved clauses into the set, then consequently the number of iterations of \textsc{PL-RESOLUTION} is also finite.\\
+
+To complete the proof for completeness, we state the \textbf{ground resolution theorem:}\\
+
+If a set of clauses is unsatisfiable, then the resolution closure of those clauses contains the empty clause.\\
+
+We can prove this by it's contrapositive. Suppose that the resolution closure $RC(S)$ does not contain the empty clause. Then, remember that resolution is a form of reduction using propositional logic. That is, the resolved clauses are entailed by the generating clauses that were involved in the resolution to it. Since the generating clauses entailed a non-empty clause, we can find assignments for this resolved clause such that it holds. Hence, this means that  $KB \land \lnot \alpha$ is satisfiable.
+
 \end{document}
