@@ -1391,4 +1391,228 @@ If a set of clauses is unsatisfiable, then the resolution closure of those claus
 
 We can prove this by it's contrapositive. Suppose that the resolution closure $RC(S)$ does not contain the empty clause. Then, remember that resolution is a form of reduction using propositional logic. That is, the resolved clauses are entailed by the generating clauses that were involved in the resolution to it. Since the generating clauses entailed a non-empty clause, we can find assignments for this resolved clause such that it holds. Hence, this means that  $KB \land \lnot \alpha$ is satisfiable.
 
+\subsection{Model Inference}
+
+Because resolution is a sound and complete method for proving propositional logic, it is very important int he logic world. However, it is very expensive and runs in time exponential to the number of variables and clauses. Instead, we have more practical methods that runs more efficiently than the resolution algorithm.
+
+\subsection{Horn and definite clauses}
+
+For us to use more efficient algorithms, more often than not they are more specific and required certain conditions. Some of these conditions, is that the logic statements must be in \textbf{Horn clause} or \textbf{definite clause}. This allows us to use algorithms like Forward and Backward Chaining.\\
+
+\textbf{Definite clauses} are clauses that contain a disjunction of literals, of which \textit{at most one is positive}. For example, $(\lnot x \lor \lnot y \lor z)$ is a definite clause, while $(x \lor \lnot y \lor z)$ is not. Slightly more general form of this is the \textbf{Horn clause}, which are clauses where \textit{at most one} literal is positive.Clauses that do not have any positive literals are called \textbf{goal clauses}, and they also fall under Horn clauses.\\
+
+We wish to express our knowledge base $KB$, in the form of a conjunction of Horn clauses. Doing so is particularly interesting because:
+
+\begin{itemize}
+\item Every definite clause can be expressed in it's implication form, whose premise is a conjunction of positive literals(derived from disjunction of negative literals), and the conclusion is a single positive literal. In general, we have that:
+
+\begin{equation*}
+\begin{aligned}
+(\lnot x_1 \lor ... \lor \lnot x_i \lor y) &= (\lor_i \lnot x_i \lor y)\\
+&= (\lnot (\land_i x_i) \lor y) \\
+&= \land_i x_i \implies y
+\end{aligned}
+\end{equation*}
+
+\item For goal clauses, we have that the implication form has all the literals(in positive form) as the premise, and $false$ as the conclusion:
+
+\begin{equation*}
+\begin{aligned}
+(\lnot x_1 \lor ... \lor \lnot x_i) &= (\lor_i \lnot x_i \lor y)\\
+&= (\lnot (\land_i x_i)) \\
+&= \land_i x_i \implies false
+\end{aligned}
+\end{equation*}
+
+\item Sentences in Horn clauses can be converted to implication forms, which makes it easier to understand. More importantly, it turns out deciding entailment with Horn clauses can be done in time $linear$ in the size of the knowledge base using Forward and Backward Chaining.
+
+\end{itemize}
+
+\subsubsection{Forward Chaining}
+
+Forward Chaining is a \textbf{data-driven} approach to model checking that sequentially infers new knowledge, given our knowledge base $KB$ in the form of Horn clauses, as well as base facts that we already know(important, else we cannot infer anything at all from the start).\\
+
+We can view the forward chaining procedure in an implication graph, or AND-OR graph as the algorithm sequentially adds new variables that it infers to it's knowledge. We start with base facts: sentences containing knowledge of things we know. This, together with our rules in Horn clause form, allow us to \textbf{entail} new knowledge by definition of implication. More formally, the algorithm uses Modus Ponens:
+
+\begin{equation*}
+\frac{a_1 \land ... \land a_k; \land_i a_i \implies b}{b}
+\end{equation*}
+
+That is, if we know facts $a_1$ to $a_k$, and we know that a conjunction of these facts imply $b$, then we know that $b$ holds, and we can add it to our knowledge base. Generally, for each rule/clause $c$ that is in Horn clause form: $\land_i x_i \implies y$. Then, let $count[c]$ be the number of literals in the clause's premise that have not yet been inferred, initialized to $k$. That is, we still need to infer that the remaining $count[c]$ literals in premise of $c$ holds, before we can infer it's conclusion $y$ by Modus Ponens.\\
+
+Each time we infer a new variable $x_i$, if $x_i \in$ premise of $c$, then we decrement the $count[c]$ by 1 since we have inferred knowledge of a new variable that contributes to the conclusion of $c$. When $count[c]$ is decremented to 0, that means that we have inferred all knowledge in the premise of $c$, and hence by Modus Ponens, can conclude that $c$ is true, adding the conclusion $y$ of $c$ to our knowledge base.
+
+\begin{algorithm}
+\caption{\textsc{PL-FC-ENTAILS?}}\label{euclid}
+\begin{algorithmic}[1]
+\State \textbf{inputs: } $KB$ - knowledge base, $q$, the symbol queried
+
+\State $count \leftarrow$ a table, where $count[c]$ is number of symbols in $c$'s premise
+\State $inferred \leftarrow$ a table, where $inferred[s]$ is initially $false$ for all symbols
+\State $agend \leftarrow$ a queue of symbols, initially symbols known to be true in $KB$
+
+\While{$agend$ is not empty}
+\State $p \leftarrow \textsc{POP}(agenda)$
+\If{$p=q$} \Return{$true$}
+\EndIf
+\If{$inferred[p] p false$}
+\State $inferred[p] \leftarrow true$
+\For{each clause $c$ in $KB$ where $p$ is in $c$.\textsc{PREMISE}}
+\State $count[c] \leftarrow count[c] - 1$
+\If{$count[c] = 0$} add $c$.\textsc{CONCLUSION} to $agenda$
+\EndIf
+\EndFor
+\EndIf
+\EndWhile
+\State \Return $false$
+\end{algorithmic}
+\end{algorithm}
+
+It is clear that Forward Chaining is indeed \textbf{sound}, because it infers new knowledge using Modus Ponens, which is known to be sound and follows the definition of entails. Forward Chaining is also \textbf{complete:} every entailed atomic sentence will be derived by the algorithm. When the algorithm terminates, the final state of the $inferred$ table will contain $true$ if it was inferred by FC at any point in the search, and $false$ otherwise. Furthermore, \textit{every definite clause in the original $KB$ is true in this model}.\\
+
+Assume this is false. Then, that means that there exists a clause $a_1 \land ... \land a_k \implies b$ such that $a_1 \land ... \land a_k$ holds, but $b$ is $false$. But that means that the FC algorithm has yet to infer the clause, and hence has not yet terminated. Therefore, we can see that the FC algorithm will infer all the knowledge that it can possibly infer before terminating. That is, if the knowledge base $KB$ entails $b$ given certain ground truths, then Forward Chaining would have inferred it.
+
+\subsubsection{Backward Chaining}
+
+Backward Chaining is a form of \textbf{goal-directed reasoning}. The algorithm starts with the query $q$ and works backwards to infer if $q$ is true. If the query $q$ is known then no work is needed. Otherwise, the algorithm finds implications in the knowledge base whose conclusion is $q$. If all premises of one of those implications can be proved true by Backward Chaining, then $q$ is true. Else, we propagate backwards to find implications where our current variable is a conclusion, until we can prove all premises of the implication by Modus Ponens.\\
+
+Unlike Forward Chaining that infers new knowledge using existing data, Backwards Chaining is less expensive because it only uses relevant implications and facts, compared to using all data in the knowledge base.  
+
+\subsection{Propositional Model Checking}
+
+\subsubsection{DPLL Algorithm}
+
+The DPLL(Davis, Putnam Logemann, Loveland) algorithm, is an improved backtracking search algorithm that uses multiple heuristics to decide how to assignments for sentences in conjunctive normal forms. These heuristics include:
+
+\begin{itemize}
+\item\textbf{Early Termination:} The algorithm can detect whether the entire sentence is true or false without having to complete the assignments for all variables, similar to constraint propagation. Notice since the sentence is in CNF, as long as any clause is false, then the entire sentence is false.
+
+Simiarly, a clause is true is any of it's literal is true. This reduces the amount of checking that we have to do over all clauses, if we know that a symbol within it is already true. Early termination allows us to prune large subspaces of search.
+
+\item \textbf{Pure Symbol Heuristic:} A pure symbol is one that always appears either as it's literal, or it's negation in all clauses. For example, in the clause $(x \lor \lnot y) \land (z \lor y) \land (x \lor z)$, $x$ and $z$ are pure symbols. When we have pure symbols in the sentence, we start assigning values to these symbols first. This is because since they either only appear as it's literal or the negation, then making it true will cause all clauses that has this variable to be true, since negations of the symbol do not appear. Hence, such assignments will only make clauses true, and never false, thus increasing the number of clauses that are true. This is similar to the least constraining value heuristic in CSPs.
+
+\item \textbf{Unit Clause:} If a clause contains only a single literal, then that literal must be evaluated to true, else the sentence cannot hold true. This includes clauses with multiple literals assigned except one that still evaluates to false. Then, the last literal must evaluate to true. For example, in the clause $(\lnot B \lor C)$, if $B = true$, then we have no choice but to set $C = true$ for the clause to be true. This mirrors the most constrained variable heuristic that we have seen in CSPs.
+\end{itemize}
+
+\begin{algorithm}
+\caption{\textsc{DPLL}}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{\textsc{DPLL-SATISFIABLE?}}{$s$} \textbf{returns} $true$ or $false$
+\State \textbf{inputs:} $s$, a sentence in propositional logic\\
+
+\State $clauses \leftarrow$ set of clauses in the CNF representation of $s$
+\State $symbols \leftarrow$ a list of propositional symbols in $s$
+\State \Return{DPLL($clauses, symbols, \{ \}$)}
+\EndProcedure \\
+
+\Procedure{\textsc{DPLL}}{$clauses, symbols, model$} \textbf{returns} $true$ or $false$
+\If{every clause in $clauses$ is true in $model$} \Return $true$ \EndIf
+\If{some clause in $clauses$ is false in $model$} \Return $false$ \EndIf
+\State $P, value \leftarrow \textsc{FIND-PURE-SYMBOL}(symbols, clauses, model)$
+\If{$P$ is non-null} \Return{DPLL($clauses, symbols - P, model \cup \{P = value\}$)} \EndIf
+\State $P, value \leftarrow \textsc{FIND-UNIT-CLAUSE}(clauses, model)$
+\If{$P$ is non-null} \Return{DPLL$(clauses, symbols - P, model \cup \{P = value\})$} \EndIf
+\State $P \leftarrow \textsc{FIRST}(symbols); rest \leftarrow \textsc{REST}(symbols)$
+\State \Return{DPLL$(clauses, symbols - P, model \cup \{P = true\}) \lor$ DPLL$(clauses, symbols - P, model \cup \{P = false\})$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Additionally the DPLL algorithm has various other ways to optimization that allows it to be scaleable to larger graphs:
+
+\begin{itemize}
+\item \textbf{Component Analysis:} As DPLL assign truth values to variables, the set of clauses may become separated into disjoint subsets called components, that shared no unassigned variables. Efficiently detecting these subsets may allow for increased speed by working on each component separately.
+
+\item \textbf{Variable and value ordering:} The DPLL algorithm above uses the values $true$ before $false$ for tie-breaking. As in the CSP, we can design better tie-breaking heuristics such as the degree heuristic.
+
+\item \textbf{Intelligent Backtracking:} SAT solvers can make use of intelligent backtracking by making use of some form of conflict clause learning to record conflicts so that they won't be repeated later in search.
+
+\item \textbf{Random restarts:} may be required when the search seems to not be making progress sometimes, allowing for reduced search time doing making little progress.
+\end{itemize}
+
+\subsubsection{Walk-SAT}
+
+Because the problem of solving the satisfiability of boolean CNF-SAT formulas is intractable similar to solving general CSPs, we often look towards local search methods which are able to produce approximately good solutions in reasonable time
+. Just like how we have \textsc{MIN-CONFLICTS} in CSPs, we also have the \textsc{Walk-SAT} algorithm for CNF formulas.\\
+
+With local search methods, we require that the algorithm knows that it is moving in the direction of improvement: There is a need for an evaluation function to estimate how good a certain configuration is. Similar to the number of conflicts in the \textsc{MIN-CONFLICTS} algorithm, we approximate our goal of finding an assignment of satisfying every clause by counting the number of unsatisfied clauses.\\
+
+The \textsc{Walk-SAT} algorithm greedily chooses to either perform exploitation by picking an assignment for a variable that minimizes the number of unsatisfied clauses in the new state, or perform a "random walk" by picking a random symbol for assignment in the exploration stage with a probability $p$
+
+\begin{algorithm}
+\caption{\textsc{Walk-SAT}}\label{euclid}
+\begin{algorithmic}[1]
+\State \textbf{inputs:}
+\State $clauses$, a set of clauses in propositional logic
+\State $p$, the probability of choosing to do a 'random walk' move
+\State $max\_flips$, the number of flips allowed before giving up\\
+
+\State $mode \leftarrow$ a random assignment of $true/false$ to the symbols in the clause
+\For{$i=1$ to $max\_flips$}
+\If{$model$ satisfies $clauses$} \Return{$model$} \EndIf
+\State $clause \leftarrow$ a randomly selected clause from $clauses$ that is false in $model$
+\State \textbf{with probability} $p$ flip the value of a randomly selected symbol in $clause$
+\State \textbf{else} flip whichever symbol in $clause$ maximizes the number of satisfied clauses
+\EndFor
+\State \Return{$failure$}
+\end{algorithmic}
+\end{algorithm}
+
+When \textsc{Walk-SAT} returns a model, that means that it has indeed found a satisfying solution. However, if it returns failure instead, this could be for 2 reasons: Either the sentence itself is unsatisfiable, or that the algorithm did not manage to find it due to it's probabilistic nature. Increasing the number of flips with $max\_flips$ will increase the chances of \textsc{Walk-SAT} finding a satisfying solution if there exists one, and even more so if $max\_flips = \infty$, then it will return return a model(if it exists) because eventually it will hit the solution. Unfortunately, this is so in theory, but in practice that means that the algorithm may never terminate.\\
+
+Because of this, \textsc{Walk-SAT} is \textbf{incomplete}, since there is no guarantee that with every iteration the number of satisfied clauses is non-decreasing. More importantly, it cannot be used to detect unsatisfiability, since upon termination with failure we cannot tell if indeed the sentence is unsatisfiable, since it does not necessarily search the entire space.
+
+\section{First Order Logic}
+
+Using propositional logic, we are able to declaratively tell the logical agents what we want them to do. However, even for simple and small problems, we will see that the number of inferences and rules blow up exponentially: There can be a large number of propositional logic sentences. Instead the knowledge base of our logical agents in propositional logic, can more often than not be expressed more concisely using \textbf{first-order logic}. Hence, first order logic is said to be more \textit{expressive}.
+
+\subsection{First Order Inference}
+
+The \textbf{syntax} of FOL consists of the following:
+
+\begin{itemize}
+\item \textbf{Constants:} $2$, John
+\item \textbf{Predicates:} $brother(John, Doe), isSmart(x)$
+\item \textbf{Functions:} $myFunc(x), \sqrt{x}$
+\item \textbf{Variables:} $x, y, z$
+\item \textbf{Connectives:} $\lnot, \lor, \land, \implies$
+\item \textbf{Equality:} =
+\end{itemize}
+
+A \textbf{term} refers tp a constant, variable or function, and an\textbf{ atomic sentence} a single sentence containing a predicate, without the use of connectives: $sibling(John, Richard)$. \textbf{Complex sentences} are then constructed from atomic sentences using connectives: $(a leq b) \lor (a > b)$ or $sibling(John, Richard) \implies sibling(Richard, John)$. Unlike in propositional logic where each expression has a fixed meaning to it, in FOL each predicate and function is defined by what meaning we assign it. For example, in the example before, the predicate $sibling(x, y)$ means that persons $x$ and $y$ are siblings.\\
+
+In propositional logic, remember that if we had a composition of rules, for instance a conjunction rules, we would express them as:
+
+\begin{equation*}
+\begin{aligned}
+&King(John) \land Greedy(John) \implies Evil(John)\\
+&\land King(Richard) \land Greedy(Richard) \implies Evil(Richard)\\
+&\land King(father(John) \land Greedy(father(John)) \implies Evil(father(John))\\
+...
+\end{aligned}
+\end{equation*}
+
+Which says that if a king is greedy, then he is evil. But this single english sentence is yet expressed in a possibly infinitely many propositional logic sentences, if we were to list out all possible kings! Fortunately, FOL allows us to concisely pack them using $quantifiers$, in particular for this one using \textbf{universal instantiation}:
+
+\begin{equation*}
+\forall x, King(x) \land Greedy(x) \implies Evil(x)
+\end{equation*}
+
+Similar if we wish to say that there is \textbf{some} king who is greedy and evil, instead of saying:
+
+\begin{equation*}
+\begin{aligned}
+&King(John) \land Greedy(John) \implies Evil(John)\\
+&\lor King(Richard) \land Greedy(Richard) \implies Evil(Richard)\\
+&\lor King(father(John) \land Greedy(father(John)) \implies Evil(father(John))\\
+...
+\end{aligned}
+\end{equation*}
+
+we can use \textbf{existential instantiation} to rephrase it as:
+
+\begin{equation*}
+\exists x, King(x) \land Greedy(x) \implies Evil(x)
+\end{equation*}
+
 \end{document}
