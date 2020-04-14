@@ -1614,5 +1614,333 @@ we can use \textbf{existential instantiation} to rephrase it as:
 \begin{equation*}
 \exists x, King(x) \land Greedy(x) \implies Evil(x)
 \end{equation*}
+ 
+However, we have a simpler reduction technique known as \textbf{Skolemization} by adding a new constant known as the \textbf{Skolem constant} as follows:
 
+\begin{equation*}
+\exists x: P(x) \implies P(x_0)
+\end{equation*}
+
+where $x_0$ is a Skolem constant that we introduce into our $KB$ that wasn't originally there. This basically means there is \textit{some} variable $x_0$(which we may not know what is now), such that $P(x_0)$ holds.\\
+
+Functions and predicates are treated as constant variables in the propositional logic sentence(e.g $King(John)$).\\
+
+This technique of \textbf{propositionalization} can be made completely general by applying the above methods. In fact, any first order logic knowledge base and query can be propositionalized in a way such that entailment is preserved. However, while the result of propositionalization of FOL knowledge bases are complete, the procedure of conversion is not. In particular, when the knowledge base contains function symbols(with infinite domains), then the set of possible ground term substitutions are infinite. For example, if we have the the original FOL:
+
+\begin{equation*}
+x > y \iff x - next(y) \lor \exists z, x = next(z) \land z > y
+\end{equation*}
+
+can be converted into:
+
+\begin{equation*}
+x > y \implies x = next(y) \lor x = next(next(y)) \lor ...
+\end{equation*}
+
+results in an infinitely nested term during propositionalization. Propositional algorithms will run for infinitely long periods of time with $KB$ having infinitely many terms. Fortunately, Herbrand's theorem says the following:
+
+\begin{theorem}
+If $\alpha$ is entailed by a First Order Logic knowledge base $KB$, then is entailed by a \textbf{finite subset} of the propositionalized $KB$
+\end{theorem}
+
+Since any such subset has a maximum depth of nesting among it's ground terms, we can find the subset by first generating all the instantiations with constant symbols up to a specific depth $k$ that is non-decreasing, and then perform a check for entailment as before using algorithms like resolution and forward/backward chaining. This is similar to the IDS search algorithm that we have done before. \\
+
+Observe that if the algorithm returns true, then we know that a finite subset of depth $k$ of the original $KB$ does indeed entail $\alpha$. However, if the algorithm returns false, we cannot immediately decide that $KB$ does not entail $\alpha$, since the current check for entailment is only up to depth $k$. In fact, we cannot know for sure at all that $KB$ does not entail $\alpha$ if the algorithm returns false. This is known as \textbf{semi-decidability}. 
+
+\begin{definition}
+The question of entailment for first order logic is \textbf{semi-decidable}, if there exists algorithms that say yes to every entailed sentence, but no algorithm exists that say no to every non-entailed sentence
+\end{definition}
+
+More importantly, further observe that any predicate or function involving $k$ variables each with $d$ values, results with a $d^k$ number of instantiations. This exponential blow up of sentences is unnecessary because more often than not we do not need most of them.
+
+\subsection{Unification}
+
+Unification is a key component of all first order logic inference algorithms, and it is a process that aims to make 2 logical expressions in FOL language look identical. The \text{\small{UNIFY}} algorithm takes in 2 sentences $p, q$, and returns a unifier $\theta$ for them if one exists:
+
+\begin{equation*}
+\text{\small{UNIFY}} (p, q) = \theta \text{ where } \text{\small{SUBST}} (\theta, p) = \text{\small{SUBST}}(\theta, q) 
+\end{equation*}
+
+where the unifier $\theta$ is a set of variable assignments involved in the 2 sentences $p$ and $q$ to make them look identical. For example, if we wish to ask the question $AskVars(Knows(John, x))$: Whom does John know? The answer to this can be found by finding all sentences in the knowledge base that unify with $Knows(John, x)$. If we know that John knows Jane: $Knows(John, Jane)$, then we can make the following unification:
+
+\begin{equation*}
+\text{\small{UNIFY}} (Knows(John, x), Knows(John, Jane) = \theta = \{ x \leftarrow Jane \}
+\end{equation*}
+
+Where the fact follows that if John knows everyone and John knows Jane, then we can infer that John knows Jane(trivially) by unifying the 2 sentences. More generally, if we have that $Knows(y, Jane)$, that is, everyone knows Jane, then the following unification holds:
+
+\begin{equation*}
+\text{\small{UNIFY}} (Knows(John, x), Knows(y, Jane) = \theta = \{ x \leftarrow John, y \leftarrow Jane \}
+\end{equation*}
+
+which has the following meaning entailed by the substitution: if John knows everyone and everyone knows Jane, then definitely John knows Jane. However, the following does not work:
+
+\begin{equation*}
+\text{\small{UNIFY}} (Knows(John, x), Knows(x, Jane) = \theta = fail
+\end{equation*}
+
+because the 2 sentence share the same variable $x$, which results in name clashes and complications arising. This problem can be avoided by \textbf{standardizing apart} one of the 2 sentences being unified by renaming the variables to form:
+
+\begin{equation*}
+\text{\small{UNIFY}} (Knows(John, x), Knows(x', Jane) = \theta = \{ x \leftarrow John, x' \leftarrow Jane \}
+\end{equation*}
+
+\subsubsection{Most General Unifier}
+
+Previously, we have mentioned that the \text{\small{UNIFY}} procedure should return a single substitution that makes the 2 sentences look identical. However, we may have situations where there are multiple possible substitutions that fulfil the unification. In $\text{\small{UNIFY}} (Knows(John, x), Knows(y, z)$, we can use $\theta = \{ x \leftarrow z, y \leftarrow John \}$ as a substitution. But we can also use $\theta = \{x \leftarrow John, y \leftarrow John, z \leftarrow John \}$ since the 2 sentences are still identical. We say that the first unifier is \textit{more general} than the second, since it places less restrictions than the second and yet captures the information that the second unifier implies. In particular, it turns out that for every unifiable pair of expressions, there is a single \textbf{most general unifier(MGU)}, that entails the information of every other possible unifier, and it is unique up to renaming and substitution of variables. Hence, we wish to find the MGUs for each unification process, and the algorithm for doing so can be found below:
+
+\begin{algorithm}[H]
+\begin{algorithmic}
+\caption{\textsc{\small{UNIFICATION}}}\label{euclid}
+\Procedure{\textsc{\small{UNIFY}}}{$x, y, \theta$} \textbf{returns} substitution $\theta$ to make $x, y$ identical
+\State \textbf{inputs:} 
+\State $x, y$ - variable, constant, list, or compound expression to be unified, 
+\State $\theta$ - the substitution to be return(initialized to empty)\\
+
+\If{$\theta = $ fail} \Return{fail}
+\ElsIf{$x = y$} \Return{$\theta$}
+\ElsIf{$\textsc{\small{VARIABLE?}}(x)$} \Return{$\textsc{\small{UNIFY-VAR}}(x, y, \theta)$}
+\ElsIf{$\textsc{\small{VARIABLE?}}(y)$} \Return{$\textsc{\small{UNIFY-VAR}}(y, x, \theta)$}
+\ElsIf{$\textsc{\small{COMPOUND?}}(x) \land \textsc{\small{COMPOUND?}}(y)$ } 
+\State \Return{\textsc{\small{UNIFY}}(x.\textsc{\small{ARGS}}, y.\textsc{\small{ARGS}}, \textsc{\small{UNIFY}}(x.\textsc{\small{OP}}, y.\textsc{\small{OP}}, $\theta$))}
+\ElsIf{$\textsc{\small{LIST?}}(x) \land \textsc{\small{LIST?}}(y)$ } 
+\State \Return{\textsc{\small{UNIFY}}(x.\textsc{\small{REST}}, y.\textsc{\small{REST}}, \textsc{\small{UNIFY}}(x.\textsc{\small{FIRST}}, y.\textsc{\small{FIRST}}, $\theta$))}
+\Else \ \Return{fail}
+\EndIf
+
+\EndProcedure\\
+
+\Procedure{\textsc{\small{UNIFY-VAR}}}{$var, x, \theta$} \textbf{returns} substitution $\theta$
+\If{$var \leftarrow val \in \theta$} \Return{\textsc{\small{UNIFY}}(val, x, $\theta$)}
+\ElsIf{$var \leftarrow val \in \theta$} \Return{\textsc{\small{UNIFY}}(val, x, $\theta$)} 
+\ElsIf{\textsc{\small{OCCUR-CHECK?}}(var, x)} \Return{fail}
+\Else \ \Return{$\theta \cup var \leftarrow x$}
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+The unification algorithm for finding MGU for 2 sentences is composed of 2 components. The first component is a general \textsc{\small{UNIFY}} procedure, which takes in 2 sentences $P, Q$, as well as an empty unifier $\theta$ at the start. Along the way, if the unifier contains $failure$, or if a valid unifier has been found($P = Q$), then the unifier $\theta$ is returned.\\
+
+If both sentences $P, Q$ are functions, then we cannot directly compare them. Instead, we break them down into 3 components: the arguments of $P$ and $Q$ in lists, as well as the function names of $P$ and $Q$. Because functions are treated as unique variable names, we cannot unify $P$ and $Q$ if they are of different function names(e.g $Knows(x, y)$ and $Greedy(u, v)$). Hence, the algorithm will return false in this case.\\
+
+If the function names agree, then the algorithm compares each respective argument from both sentences, using the \textsc{\small{UNIFY-VAR}} if there exists at least one variable argument. If the variable $var$ already has a value $val$ assigned to it from earlier substitutions, then we unify the sentence $x$ with the $val$ by getting the 2 to equate. Conversely, if $x$ is already assigned a value, then we unify $x$ with the variable $var$. Similar to before, if $x$ contains $var$, then the algorithm automatically returns $failure$. Otherwise, we set $var \leftarrow x$. We repeat this process until we find a valid unifier, or failure.
+
+\subsection{Generalized Modus Ponens}
+
+In the original modus ponens in propositional logic given as $\frac{\alpha_1...\alpha_k; (\alpha_1 \land ... \land \alpha_k) \implies \beta}{\beta}$ says that if the facts $\alpha_1$ to $\alpha_k$ are known, as the conjunction of these facts imply $\beta$, then we know that $\beta$ is true. In FOL, we can perform modus ponens as well using \textbf{lifting}. Lifted or generalized modus ponens allows us to perform modus ponens in the FOL context.\\
+
+More specifically, given an implication $p_1 \land ... \land p_k \implies q$, and atomic sentences $p_i, p_i'$, if there is a substitution $\textsc{\small{SUBST$(\theta, p_i$)}} = \textsc{\small{SUBST($\theta, p_i'$)}}$ for all $i$, then we can conclude that $q$ holds.
+
+\begin{equation*}
+\frac{p_1', ..., p_k'; (p_1 \land ... \land p_k) \implies q}{q}
+\end{equation*}
+
+This is intuitively saying that given whatever we know and can infer from $KB = \{p_1',...\}$ we can substitute these facts into the implication statement by unifying each respective implicants $p_i, p_i'$.\\
+
+We can show that generalized modus ponens is indeed a sound inference rule. Observe that for any sentence $p$ whose variables are universally quantified, for any valid substitution $\theta$, $p \models \textsc{\small{SUBST($\theta, p$)}}$ by property of universal instantiation. Thus, for $p_1',...,p_k'$, we can infer 
+\begin{equation*}
+\textsc{\small{SUBST($\theta, p_1'$)}} \land ... \land \textsc{\small{SUBST($\theta, p_k'$)}}
+\end{equation*}
+
+and from the implication premise $p_1 \land ... \land p_k$, again by property of universal instantiation entails $\textsc{\small{SUBST($\theta, p_1$)}} \land ... \land \textsc{\small{SUBST($\theta, p_k$)}}$, which gives us:
+\begin{equation*}
+\textsc{\small{SUBST($\theta, p_1$)}} \land ... \land \textsc{\small{SUBST($\theta, p_k$)}} \implies q
+\end{equation*}
+\subsection{Forward Chaining with FOL}
+
+\subsubsection{First Order Definite Clauses}
+
+Before we get into performing forward chaining for FOL, we shall first introduce the concept of first order definite clauses. These are clauses that are either atomic, or are disjunctions of literals of which exactly one is positive. An implication statement in FOL is also a result of this, and hence a first oder definite clause. With first order definite clauses, the forward chaining algorithm is sound and complete. However in general, this is not always the case, especially with functions, as the algorithm may recursively generate infinitely many new sentences.
+
+\pagebreak
+
+\subsubsection{Forward Chaining Algorithm}
+
+\begin{algorithm}
+\caption{\textsc{\small{FOL-FC-ASK($KB, \alpha$)}}\textbf{ returns} substitution $\theta$ or $fail$}\label{euclid}
+\begin{algorithmic}[1]
+\State \textbf{inputs: } $KB$, the
+\State knowledge base in FOL
+\State $\alpha$, the query
+\State \textbf{local variables:}
+\State $new$, set of new sentences inferred on each iteration.\\
+
+\While{$new$ is not empty}
+\State $new \leftarrow \{ \}$
+\For{\textbf{each $rule$ in $KB$}}
+\State $(p_1 \land ... \land p_n \implies q) \leftarrow \textsc{\small{STANDARDIZE-VARIABLES}}(rule)$
+\For{\textbf{each} $\theta$ such that \textsc{\small{SUBST}}($\theta, p_1 \land ... \land p_n$) = \textsc{\small{SUBST}}($\theta, p'_1 \land ... \land p'_n$) for some $p'_1 \land ... \land p'_n$ in $KB$}
+\State $q' \leftarrow \textsc{\small{SUBST}}(\theta, q)$
+\If{$q'$ does not unify with some sentence already in $KB$ or $new$}
+\State add $q'$ to $new$
+\State $\phi \leftarrow \textsc{\small{UNIFY}}(q', \alpha)$
+\If {$\phi$ is not $fail$} \Return{$\phi$}
+\EndIf
+\EndIf
+\EndFor
+\State add $new$ to $KB$
+\EndFor
+\EndWhile
+\State \Return{$false$}
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Efficient Forward Chaining}
+
+Observe that the forward chaining algorithm performs large number of operations, many of which may be unnecessary due to repeated searches. We can improve the efficiency of the FC algorithm for FOL by performing the following tricks:
+
+\paragraph{Matching rules against known facts:}
+We match rules that we want to infer, and it's premise against the facts that we already know in $KB$. For example, if we wish to infer.
+
+\begin{equation*}
+Missile(x) \implies Weapon(x)
+\end{equation*}
+
+Then we don not need to loop over all facts in $KB$, but rather only those that unify with $Missile(x)$ or implies $Missile(s)$. Furthermore, consider the rule:
+
+\begin{equation*}
+Missile(x) \land Owns(Nono, x) \implies Sells(West,x,Nono)
+\end{equation*}
+
+We can choose the order in which we want to unify the sentences in the premise of the implication rule. This is known as conjunct ordering, and optimal ordering is in NP-Hard. However, we can use good heuristics that we have seen before, such as $Minimum Remaining Values$. If we realise that there are many things that $Nono$ owns, but very little objects that are missiles, then we can choose to select values for $Missiles(x)$ first before unification on $Owns(Nono,x)$.
+
+\paragraph{Incremental Forward Chaining:}
+
+The FC algorithm still performs many redundant and repeated rule matchings. For example, we have that we know $Missiles(M_1)$ and $Missile(x) \implies Weapon(x)$. In the first round of forward chaining, using the substitution $x \leftarrow M_1$ we can infer $Weapon(M_1)$, which is added to our $KB$. However, because the algorithm loops over all rules, in future iterations of the algorithm, it will arrive at these 2 sentences and again re-infer what we already know, which is that $M_1$ is a weapon.\\
+
+We can avoid such redundant rule matching by making the following observation: \textit{Every new fact inferred on time $t$ must be derived from at least one new fact inferred on iteration $t-1$}. This must be true, because if we use facts that were inferred before $t-1$, then the same information would have be available at time $t-1$ and hence the information would have been inferred then.\\
+
+This observation leads naturally to an incremental forward-chaining algorithm where at iteration $t$, we check a rule only if it's premise includes a conjunct $p_i$ that unifies with a newly inferred fact $p_i'$ in the previous iteration. This generates the same facts as the original algorithm, without looping over already known facts over and over again.\\
+
+\paragraph{Rete Algorithm:}
+
+When we perform substitutions that only substitute some of the variables in the conjunct, the original algorithm does not keep the partially substituted conjuncts but discards it. This is wasteful because we may possibly substitute in the same values again in future iterations. The rete algorithm rectifies this by keeping partially matched rules to avoid duplicate work in the future.
+
+\pagebreak
+\subsection{Backward Chaining}
+
+However, similar to forward chaining for propositional logic, it also suffers from checking of irrelevant facts not related to the goal. Backward chaining solves this problem by only propagating premises backward that are related the goal. The following backward chaining algorithm comprises of 2 functions:
+
+\begin{algorithm}
+\caption{Backward Chaining}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{ \textsc{\small{FOL-BC-ASK}}} {$(KB, query)$} \textbf{returns} a generator of substitutions
+\State \Return $\textsc{\small{FOL-BC-OR}}(KB, query, \{ \})$
+\EndProcedure\\
+
+\Procedure{ \textsc{\small{FOL-BC-OR}}} {$(KB, goal, \theta)$} \textbf{yields} a substitution
+\For{\textbf{each} rule $(lhs \implies rhs)$ \textsc{\small{FETCH-RULES-FOR-GOAL}}$(KB, goal)$}
+\State $(lhs, rhs) \implies \textsc{\small{STANDARDIZE-VARIABLES}}(lhs, rhs)$
+\For{\textbf{each} $\theta'$ in \textsc{\small{FOL-BC-AND}}$(KB, lhs, \textsc{\small{UNIFY}}(rhs, goal, \theta))$}
+\State \textbf{yield} $\theta'$
+\EndFor
+\EndFor
+\EndProcedure\\
+
+\Procedure{ \textsc{\small{FOL-BC-AND}}} {$(KB, goal, \theta)$} \textbf{yields} a substitution
+\If{$\theta = failure$} \Return 
+\ElsIf{\textsc{\small{LENGTH($goals$)}} = 0 } \textbf{yield} $\theta$
+\Else
+\State $first, rest \leftarrow \text{\small{FIRST}}(goals), \text{\small{REST}}(goals)$
+\For{\textbf{each $\theta'$ in} \textsc{\small{FOL-BC-OR}}$(KB, \text{\small{SUBST}}(\theta, first), \theta)$}
+\For{\textbf{each $\theta"$ in} \textsc{\small{FOL-BC-AND}}$(KB, rest, \theta')$}
+\State \textbf{yield} $\theta"$
+\EndFor
+\EndFor
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Backward chaining functions exactly just as in propositional logic: each each step, we retrieve the rules that is relevant to the premises or query we wish to prove, and find a valid substitution that brings us one step to the goal. The $\textsc{\small{FOL-BC-OR}}$ function allows us to find \textit{any} rule that leads to the given query under unification, while in $\textsc{\small{FOL-BC-AND}}$ we we wish to substitutions such that all of the premise conjuncts are true.\\
+
+Similar to DFS, if the search tree for BC-FOL has infinite depth, then the algorithm is not guaranteed to terminate, making it incomplete. Additionally, we may run into repeated searches in cases like biconditionality.
+
+\subsection{Resolution in FOL}
+
+\subsubsection{CNF for First Order Logic}
+
+As in the propositional case, first order resolution requires that the sentences be in conjunctive normal form(CNF). The only exception now, is that previously we had literals for propositional logic sentences, we now have variables in the context of first order logic. We shall see later how to unify CNF sentences containing variables. For example, the sentence:
+
+\begin{equation*}
+\forall x, [\forall y, Animal(y) \implies Loves(x, y)] \implies [\exists y, Loves(y, x)]
+\end{equation*}
+
+\paragraph{Eliminate implications:}
+We transform implications into disjunctions to produce:
+
+\begin{equation*}
+\forall x, [\lnot \forall y, \lnot Animal(y) \lor Loves(x, y)] \lor [\exists y, Loves(y, x)]
+\end{equation*}
+
+\paragraph{Reduce negations:}
+Using De Morgan's law, we can further reduce the sentence:
+
+\begin{equation*}
+\begin{gathered}
+\forall x, [\lnot (\forall y, \lnot Animal(y) \lor Loves(x, y))] \lor [\exists y, Loves(y, x)]\\
+\forall x, [\exists y, \lnot \lnot Animal(y) \land \lnot Loves(x, y)] \lor [\exists y, Loves(y, x)]\\
+\forall x, [\exists y, Animal(y) \land \lnot Loves(x, y)] \lor [\exists y, Loves(y, x)]
+\end{gathered}
+\end{equation*}
+
+\paragraph{Standardize variables:} 
+To tell apart from the the variables $y$ in the implication premise and implicant represent different things, we need to standardize them apart by renaming them. Replacing the $y$ in the implicant with $z$, we get:
+
+\begin{equation*}
+\forall x, [\exists y, Animal(y) \land \lnot Loves(x, y)] \lor [\exists z, Loves(z, x)]
+\end{equation*}
+
+\paragraph{Skolemization:} As before, we cannot merge universal instantiation with existential quantification together directly. To do so, we skolemize variables under existential quantification. Previously, we have seen that for a sentence like:
+
+\begin{equation*}
+\exists x, \forall y, y \geq x
+\end{equation*}
+
+We can skolemize it to become:
+
+\begin{equation*}
+\forall y, y \geq x_0
+\end{equation*}
+
+However, we cannot do the same for something like:
+
+\begin{equation*}
+\forall y, \exists x, y \geq x
+\end{equation*}
+
+Does not equate to $\forall y, y \geq x_0$. Previously when the existential quantifier is outside the universal, the Skolem constant applies for every variable in the universal quantification. However, when the existential quantifier lies inside the universal instantiation, then the variable $x$ may vary and be different depending on $y$. Hence, we need to replace the existential quantifiable variable with a \textbf{Skolem function}. This is exactly the case in the our original example, and replacing $y, z$ with Skolem functions and removing universal instantiation, we get:
+
+\begin{equation*}
+Animal(F(x)) \land \lnot Loves(x, F(x)) \lor Loves(G(x), x)
+\end{equation*}
+
+by setting $y \leftarrow F(x), z \leftarrow G(x)$. Think of Skolem functions outputting the respective $y, z$ values for the above sentence depending on the variable $x$.
+
+\paragraph{Distribute disjunctions over conjunctions:}
+Finally, using the distribution rule, we can obtain the sentence in CNF form represented by:
+
+ \begin{equation*}
+[Animal(F(x)) \land Loves(G(x), x)] \land [\lnot Loves(x, F(x)) \lor Loves(G(x), x)]
+\end{equation*}
+
+Which concludes the process. In fact, every sentence of first-order logic can be converted into an inferentially equivalent sentence, allowing us to then perform resolution on these sentences.
+
+\subsubsection{Resolution Inference on FOL sentences}
+
+Just as modus ponens, we perform resolution on FOL CNF sentences as we do in propositional logic, with the except of lifting. Firstly, we say that propositional literals are \textbf{complementary} if one is the negation of the other, while in first order logic, 2 literals are complementary if one unifies with the \textit{negation} of the other. In other words, we have:
+
+\begin{equation*}
+\frac{l_1 \lor ... \lor l_k \lor a; m_1 \lor ... \lor m_n \lor \lnot b}{\textsc{\small{SUBST}}(\theta, l_1 \lor ... \lor l_k \lor m_1 \lor ... \lor m_n)}
+\end{equation*}
+
+where $a, b$ are complementary literals that unify under the substitution $\theta$, and $\textsc{\small{SUBST}}(\theta, a) = \textsc{\small{SUBST}}(\theta, \lnot b)$. For example, we resolve:
+
+\begin{equation*}
+[Animal(F(x)) \land Loves(G(x), x)] ; [\lnot Loves(u, v) \lor Kills(u, v)]
+\end{equation*}
+
+With the substitution $\theta = [u \leftarrow G(x), v \leftarrow x]$ we can see that $Loves(G(x), x)$ and $\lnot Loves(u, v)$ are first order complementary literals, and can resolve to form just $Animal(F(x)) \lor Kills(G(x), x)$. This is also known as first order factoring. The rest of the FOL resolution procedure proceeds as per in propositional logic: To prove that $KB \implies \alpha$, where $KB$ is a knowledge base in FOL, we first convert $KB$ to CNF form, and resolve $KB \land \lnot \alpha$ to derive a contradiction.
+ 
 \end{document}
