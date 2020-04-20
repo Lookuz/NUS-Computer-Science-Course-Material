@@ -1942,5 +1942,238 @@ where $a, b$ are complementary literals that unify under the substitution $\thet
 \end{equation*}
 
 With the substitution $\theta = [u \leftarrow G(x), v \leftarrow x]$ we can see that $Loves(G(x), x)$ and $\lnot Loves(u, v)$ are first order complementary literals, and can resolve to form just $Animal(F(x)) \lor Kills(G(x), x)$. This is also known as first order factoring. The rest of the FOL resolution procedure proceeds as per in propositional logic: To prove that $KB \implies \alpha$, where $KB$ is a knowledge base in FOL, we first convert $KB$ to CNF form, and resolve $KB \land \lnot \alpha$ to derive a contradiction.
+
+\pagebreak
+\section{Bayesian Inference}
+
+\subsection{Uncertainty}
+
+\subsubsection{Probability}
+
+Let a random variable $X$ have a domain $D_X$. Then, events represent a subset of the domain $D_X$ of values that the random variable $X$ can take on. An atomic event is one where a value is assigned to a random variable: $P(X_1 = 2), P(X_1 + X_2 = 8)$. The probability values that is assigned to each of the atomic events $P(X = k)$ is denoted as the \textbf{probability distribution}. The probability distribution respects the following axioms of probability:
+
+\begin{itemize}
+\item $\forall x \in D_X P(X = x) \geq 0$
+\item $\sum_{x \in D_X} P(X=x) = 1$
+\item $P(A_1 \cup A_2 \cup ... \cup A_k) \leq P(A_1) + P(A_2) + ... + P(A_k)$
+\end{itemize}
+
+The \textbf{joint probability} of an atomic event $(x,y) \in D_X \times D_Y$, is the probability of 2 random variables taking on 2 values: $p_{X,Y}(x, y) = P(X = x, Y = y)$. In particular, the \textbf{marginal distribution} of $X$ with respect to $Y$ is denoted as $P(X = x) \sum_{y \in Y} P(X = x, Y= y)$.\\
+
+The \textbf{conditional probability} of $X$ given $Y$ is denoted as $P(X = x | Y = y)$, and it represents the \textit{posterior belief} that given an event $Y$ has happened, $P(X = x | Y = y)$ is the probability of $X$ happening. The posterior probability for $X$ given $Y$ is also represented:
+
+\begin{equation*}
+P(X = x | Y = y) = \frac{P(X = x, Y = y)}{P(X = x)}
+\end{equation*}
+
+From the conditional probabilities of $X, Y$, we can derive the following:
+
+\begin{itemize}
+\item \textbf{Chain rule:} $P(X_1, X_2,..., X_k) = \prod_{j =1,...,k} P(X_j | X_1, ..., X_{j-1})$
+Where the joint probabilities of multiple events happening can be expressed as a sequences of events happening in order
+\item \textbf{Bayes rule:} $P(X = x | Y = y) = \frac{P(X = x)P(Y = y | X = x)}{P(Y = y)}$
+Sometimes, it may be easier to find conditional probabilities of $Y$ on $X$ instead of their joint probabilities.
+\end{itemize}
+
+2 events $X, Y$ are said to be \textbf{independent} if $P(X = x, Y= y) = P(X = x) P(Y =y )$. That is, knowing information of another event does not influence the probability that one happens. Equivalently, this also means that $P(X|Y) = P(X)$. 
  
+\subsubsection{Bayesian Inference}
+ 
+In previous chapters, we perform inferrence to determine the following statement: Is $X$ true given a set of rules or sentences? However, in this chapter, because we are dealing with uncertainty, we cannot be fully sure that $X$ is definitely true if certain conditions hold. Instead, we wish to infer: \textit{How likely} is the event $X$ to happen given certain events has happened? More formally, we wish to find:
+
+\begin{equation*}
+P(X=x|Y_1 = y_1, ..., Y_k = y_k)
+\end{equation*}
+
+\paragraph{Inference by Enumeration:} We first observe that the conditional probability on $X$ given $Y_1,..., Y_k$ is dependent on the joint and marginal probabilities, $P(X, Y_1,..., Y_k)$ and $P(Y_1,...,Y_k)$. Hence, if we know these probabilities a priori(beforehand), then we can explicitly compute the likelihood $P(X=x|Y_1 = y_1, ..., Y_k = y_k) = \frac{P(X = x, Y_1 = y_1, ..., Y_k = y_k)}{P(Y_1 = y_1, ..., Y_k = y_k)}$ via table enumeration. \\
+
+This method is by far the simplest and most explicit to compute. However, we soon realise that we shall run into several problems doing this:
+
+\begin{itemize}
+\item \textbf{Difficulty in obtaining joint probabilities:} Joint probabilities require us to observe the combination of events $Y_1,...,Y_k$ happening. This is not practical in many situation, especially when the combination consists of large number of events $k$.
+
+\item \textbf{Large memory requirements:} Assume that each random variable $Y_i$ has $n$ values in it's domain $D_{Y_i}$. Then for $k$ events $Y_1,..., Y_k$, this means that our probability table contains $k^n$ entries for each possible combination of values for these events. The size of this table scales exponentially with the number of variables and the size of it's domain. \\
+
+However, if we know that the events $Y_i$ are \textit{independent}, then we can factorize the joint probabilities $P(Y_1,...,Y_k) = P(Y_1)...P(Y_k)$. Then, we only require the individual marginal probabilities, which amounts to only $kn$ values!
+\end{itemize}
+
+\paragraph{Conditional Independence:} It would be good if we knew that the events $Y_1,...,Y_k$ are independence. But, it is not always safe to assume that they are \textit{absolutely independent}. Instead, we can relax the restrictions by making the following observation: The events may not be independent all the time, but they may independent \textit{given another event}. That is, the $Y_1,...,Y_k$ are independent given $X$, and hence:
+
+\begin{equation*}
+P(Y_1,...,Y_k | X) = P(Y_1|X)P(Y_2|X)...P(Y_k|X)
+\end{equation*}
+
+expresses the \textbf{conditional independence} of events $Y_1,...,Y_k$ given $X$. With conditional independence, we can now express the joint probability distribution of these events given the event $X$, as a product of their individual conditional probabilities on $X$. The size of our truth table is now linear in the number of variables instead of exponential as before.
+
+\paragraph{Maximum Likelihood:}
+Going back to inference, previously we wish to infer the probabilities $P(X| Y_1,...,Y_k)$ as the likelihood of the event $X$ happening, given that $Y_1,...,Y_k$ are known to us. Combining everything so far, we can deduce using \textbf{Bayes rules} that this likelihood is:
+
+\begin{equation*}
+P(X = x | Y_1,...,Y_k) = \frac{P(X = x)P(Y_1,...,Y_k | X = x)}{P(Y_1,...,Y_k)}
+\end{equation*}
+
+and using the reasonable assumption that events $Y_i$ are conditionally independent given $X$, we have that
+
+\begin{equation*}
+\begin{aligned}
+P(X = x | Y_1,...,Y_k) &= \frac{P(X = x)P(Y_1,...,Y_k | X = x)}{P(Y_1,...,Y_k)}\\
+&= \left( \frac{1}{P(Y_1,...,Y_k)} \right) P(X = x)P(Y_1| X = x)...P(Y_k| X = x)
+\end{aligned}
+\end{equation*}
+
+However, this still looks very messy and difficult to compute. In particular, we still require knowledge of the joint probabilities $P(Y_1,...,Y_k)$. In most cases, we actually only wish to know the \textit{likelihood} of events $X = x_1, X = x_2,...$ given $Y_1,...,Y_k$. Notice that in the computations for the likelihoods of the values of $X$, the factor $\frac{1}{P(Y_1,...,Y_k)} $ remains constant because we take likelihoods with respect the same events $Y_1,...,Y_k$. We can hence normalize this term to get:
+
+\begin{equation*}
+P(X = x | Y_1,...,Y_k) = \alpha P(X = x)P(Y_1| X = x)...P(Y_k| X = x)
+\end{equation*}
+
+And hence, the most likely value for $X$ is:
+
+\begin{equation*}
+\begin{aligned}
+x^* &= \arg\max_{x \in D_X} \alpha P(X = x)P(Y_1| X = x)...P(Y_k| X = x)\\ 
+&= \arg\max_{x \in D_X} P(X = x)P(Y_1| X = x)...P(Y_k| X = x)
+\end{aligned}
+\end{equation*}
+
+\subsection{Bayesian Networks}
+
+We have seen how conditional independence allows us to reduce the amount of information that we need to store in order to perform inference on likelihoods. We can exploit the dependencies on variables further using a structure called Bayesian networks. A Bayesian is capable of representing any full joint probability distribution and in many cases can do so very concisely.\\
+
+A Bayesian network is a directed graph where each node represents probability information. The structure of a Bayesian network is as follows:
+
+\begin{itemize}
+\item Each node corresponds to a random variable, which may be discrete or continuous.
+\item A set of directed edges connects nodes $X, Y$ if $X$ influences $Y$. As such, $X$ is said to be a parent of $Y$.
+\item The graph is a directed acyclic graph(DAG), and contains no cycles.
+\item Each node $X_i$ has a conditional probability distribution $P(X_i | Parents(X_i))$ that quantifies the effect of the parents of the node, as well as the conditional probabilities $P(X_i | Parents(X_i))$ for various values of $Parents(X_i)$ in the form of a Conditional Probability Table(CPT)
+\end{itemize}
+
+Then, instead of the joint probability distribution $P(X_1, X_2,..., X_k)$, using a Bayesian network we express this joint probability in the form of product of conditional probabilities using dependence of variables on another:
+
+\begin{equation*}
+P(X_1, X_2,..., X_k) = \prod_i P(X_i | Parents(X_i))
+\end{equation*}
+
+\subsubsection{Constructing a Bayesian network}
+
+Before we can leverage on a Bayesian network to make use of ease of computations of conditional independence, we first need to decide on a network structure for our Bayesian network. That is, we need to use conditional independence relations between variables to determine the topology and flow of the network. More importantly, we require that the Bayesian network accurately represents the conditional independence relations between variables. That is,
+
+\begin{equation*}
+\forall X_i, P(X_i | X_1, ..., X_{i-1}) = P(X_i | Parents(X_i))
+\end{equation*}
+ 
+where $Parents(X_i) \subset \{X_1, ..., X_{i-1} \}$ is our choice of the predecessors of nodes before $X_i$ that directly influence $X_i$. We say that the Bayesian network is a correct representation of the domain if and only if each node is conditionally independent of it's other predecessors not in $Parents(X_i)$. Our choice of this subset of predecessors that forms $Parent(X_i)$ will be formulated in the following strategy:
+
+\begin{enumerate}
+\item \textit{Nodes:} First determine ordering of our variables $\{X_1,...,X_n\}$ in which we will pick in sequence to construct the network. While a different order does not mean the network is incorrect, it may affect how \textit{compact} the network will be and the size of the CPT and computations, as well as the accuracy of the representation of the network of the real world.
+
+\item \textit{Edges:} To determine the directed edges from predecessor nodes to the current node $X_i$, we do:
+\begin{itemize}
+\item Select a \textbf{minimal} set of nodes from the predecessors $\{X_1,..., X_{i-1}\}$ that forms $Parents(X_i)$ such that: 
+\begin{equation*}
+P(X_i | X_1, ..., X_{i-1}) = P(X_i | Parents(X_i))
+\end{equation*}
+
+That is, we select the smallest set of nodes from the predecessor nodes added in the previous steps that directly influences the current node $X_i$.
+
+\item Create directed edges from the set $Parents(X_i)$ determined in the previous step to $X_i$.
+\item Compute the CPT for $P(X_i | Parents(X_i))$.
+\end{itemize}
+\end{enumerate}
+
+When we construct the network in this manner, observe that:
+
+\begin{itemize}
+\item By our choice of selection of parent nodes, we guarantee that our computation of the joint probabilities of $X_1,..., X_n$ using the Bayesian network gives us:
+
+\begin{equation*}
+P(X_1,..., X_n) =  \prod_i P(X_i | Parents(X_i)) = \prod_{i} P(X_i | X_1, ..., X_{i-1})
+\end{equation*}
+
+Which is exactly the chain rule of probability mentioned before. Thus, the construction methodology ensures that the Bayesian network accurately represents the computations of the joint probability using conditional independence, but with less computations since $Parents(X_i) \subset \{X_1,..., X_{i-1}$
+
+\item The network is \textbf{acyclic}, because we only ever link predecessor nodes to future nodes, but never the other way round. Hence, there is no way to go back to a node once it proceeds forward through the network.
+
+\end{itemize}
+
+\subsubsection{Conditional Independence in Bayesian networks}
+
+We have seen that Bayesian networks allows us to leverage on conditional independence to compute joint distributions. But what if we wish to determine whether a node in the network is conditionally independent of another in the network? The notion of conditional independence in such a case relies on the idea of a \textbf{Markov Blanket}, which says that a node $X$ is \textit{conditionally independent} of all other nodes in the network, given the nodes in it's Markov blanket. which are:
+
+\begin{itemize}
+\item The parents of the node $X$
+\item The children of the node $X$
+\item The parents of the children of the node $X$
+\end{itemize}
+
+\paragraph{Causal Chains:} Consider a path in the network consisting of the following form:
+
+\begin{equation*}
+A \rightarrow B \rightarrow C
+\end{equation*}
+
+That is, $A$ influences $B$ which influences $C$. It is clear that $A$ and $C$ are not \textit{necessarily} independent, because knowing $A$ would influence $C$ indirectly through $B$. However, we can show that $A$ is indeed \textit{conditionally independent} of $C$ \textit{given} that we know what $B$ is. More formally,
+
+\begin{equation*}
+\begin{aligned}
+P(C| A, B) &= \frac{P(A,B,C)}{P(A,B}\\
+&= \frac{P(A)P(B|A)P(C|B, A)}{P(A)P(B|A)} \text{ using Bayes rule}\\
+&= \frac{P(A)P(B|A)P(C|B)}{P(A)P(B|A)} \text{ by conditional independence of $C$ on $A$ in the path}\\
+& = P(C|B)
+\end{aligned}
+\end{equation*}
+
+which tells us that if we do have knowledge of $B$, knowing $A$ does not change our belief on $C$.
+
+\paragraph{Common Cause:} Consider now:
+
+\begin{equation*}
+B \leftarrow A \rightarrow C
+\end{equation*}
+
+where the node $A$ influences $B$ and $C$. Are $B$ and $C$ necessarily independent? It turns out they are not, because knowing $B$ may influence our beliefs on $A$, and hence on $C$. However, it can be shown that if we do know $A$, then $B$ and $C$ are conditionally independent:
+
+\begin{equation*}
+P(B|A,C) = \frac{P(A,B,C)}{P(A,C)} = \frac{P(A)P(B|A)P(C|A)}{P(A)P(C|A)} = P(B|A)
+\end{equation*}
+
+In similar fashion to the proof for causal chains.
+
+\paragraph{Common Effect:} However, in the following case:
+
+\begin{equation*}
+A \rightarrow B \leftarrow C
+\end{equation*}
+
+we actually have that observing a common effect makes its causes $B$ and $C$ \textbf{conditionally dependent}. Knowledge of effect $C$ results in a path from $A$ to $B$ in which information can leak through. That is, we have that $P(A|C,B) \neq P(A|C)$ but $P(A|B) = P(A)$.
+
+\subsubsection{$d$-separation}
+
+With our knowledge of the above cases of conditional independence of nodes with respect to a path of 3 nodes, we can in fact generalize this knowledge to paths of arbitrary lengths between nodes $X$ and $Y$ to determine if they are conditionally independent. We first introduce some definitions:
+
+\begin{definition}
+An directed path between $X$ and $Y$ is \textbf{active}, if every triple on it's path is active
+\end{definition}
+
+Previously, we determined the conditional independence of $X$ and $Y$ in the three cases before where they were connected in paths of length 3. To generalize this where $X$ and $Y$ contains a path of arbitrary length, we apply our knowledge of the 3 cases to sequences of every triple(3 nodes linked in sequential order) in the path. When considering these paths, we ignore the direction of the edges, but re-consider them again when determining if they are active because the directions tell us which of the cases it falls under.\\
+
+But what do we mean by active? Well, a triple is active if there is information leak from one end of the path to the other; That is, if the nodes at the ends of the triples are conditionally dependent. But this is exactly the 3 cases that we have seen previously! Putting into perspective, if a triple is active, then that means the nodes at the ends of the triples are \textbf{conditionally dependent}.
+
+That means that considering an un-directed path from $X$ to $Y$ of arbitrary length, if all directed triples on that path fall under any of the 3 cases before for conditional dependence, the path is active, and $X$ and $Y$ are conditionally dependent, because we have that information can flow from $X$ to $Y$ by conditional dependence of each triple.\\
+
+This provides us with a systematic way of checking if 2 nodes $X$ and $Y$ are conditionally independent in the Bayesian network using the following definition:
+
+\begin{definition}
+Nodes $X$ and $Y$ are conditionally independent in a Bayesian network if \textbf{no} paths from $X$ to $Y$ are active.
+\end{definition}
+
+\begin{center}
+\begin{figure}[!htb]
+\includegraphics[width=\linewidth]{active-triples.png}
+\caption{Table of conditions for active triples. Gray-ed out nodes represent knowledge of that node is present}
+\label{fig:active}
+\end{figure}
+\end{center}
+
 \end{document}
