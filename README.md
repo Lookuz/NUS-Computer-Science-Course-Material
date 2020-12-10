@@ -5,6 +5,7 @@ Projects and Coursework completed as a Computer Science Undergraduate in Nationa
 **Course Materials:**<br>
 - CS3243: Introduction to Artifical Intelligence(Typesetted notes)
 - CS4243: Computer Vision & Pattern Recognition(Typesetted notes)
+- CS4246: AI Planning and Decision Making(Typesetted notes)
 - CS4234: Optimization Algorithms(Typesetted notes, only for Kuhn Munkres Algorithm)
 - CS2102: Database Systems(Cheatsheet)
 - CS2105: Computer Networks(Cheatsheet)
